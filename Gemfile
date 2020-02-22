@@ -31,6 +31,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'html2haml'
 gem 'haml-rails', '~> 2.0.1'
 
+# Foundtion Gems
+gem 'foundation-rails'
+gem 'autoprefixer-rails'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

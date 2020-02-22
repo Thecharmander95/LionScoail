@@ -1,7 +1,12 @@
-h1,p {
+h1, p {
     color: darkslategray;
 }
 
-body {
+html body {
     background-color: khaki;
+    padding: 10px 0 10px 0
+}
+
+.grid-x {
+  @extend .grid-margin-x
 }
