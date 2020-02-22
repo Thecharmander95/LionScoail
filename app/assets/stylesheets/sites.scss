@@ -1,4 +1,4 @@
-h1, p {
+p {
     color: darkslategray;
 }
 
@@ -8,5 +8,9 @@ html body {
 }
 
 .grid-x {
-  @extend .grid-margin-x
+  @extend .grid-margin-x;
+}
+
+h1 {
+    color: darkslategray;
 }
