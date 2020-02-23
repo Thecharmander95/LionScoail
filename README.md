@@ -4,6 +4,8 @@ Lion Social is not your everyday social media. You can see what everyone posts f
 
 This is going to be the better social media. Also if there is any one being rude on it I will remove them.
 
+So Have Fun!!!
+
 Made by the Lion Social
 
 This is NOT A COPYRIGHT
