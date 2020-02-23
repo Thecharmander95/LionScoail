@@ -8,7 +8,7 @@ html body {
 }
 
 .grid-x {
-  @extend .grid-margin-x;
+  @extend .grid-margin-x !optional;
 }
 
 h1 {

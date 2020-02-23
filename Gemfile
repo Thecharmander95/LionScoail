@@ -35,6 +35,9 @@ gem 'haml-rails', '~> 2.0.1'
 gem 'foundation-rails'
 gem 'autoprefixer-rails'
 
+# devise gem
+gem 'devise'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -59,6 +62,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'hirb'
 end
 
 group :test do
