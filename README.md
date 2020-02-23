@@ -1,24 +1,11 @@
-# README
+Lion Social
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Lion Social is not your everyday social media. You can see what everyone posts form every were. You experience what people all over the world are doing and what they do for a living. You also experience different cultures. And the best thing about it its free and ad free unlike Facebook, Instagram, and also Snapchat.
 
-Things you may want to cover:
+This is going to be the better social media. Also if there is any one being rude on it I will remove them.
 
-* Ruby version
+Made by the Lion Social
 
-* System dependencies
+This is NOT A COPYRIGHT
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+But I do advise DON'T COPY THIS I WILL FIND OUT
