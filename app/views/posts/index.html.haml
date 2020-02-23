@@ -1,23 +1,6 @@
 %h1 Everyones Posts
 
-%table
-  %thead
-    %tr
-      %th User
-      %th Content
-      %th Show
-      %th Edit
-      %th Delete
-
-  %tbody
-    - @posts.each do |post|
-
-      %tr
-        %td= post.user.username
-        %td= post.content
-        %td= link_to 'Show', post
-        %td= link_to 'Edit', edit_post_path(post)
-        %td= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure? You do know this is not comeing back' }
+= render @posts
 %br
 
 = link_to 'New Post', new_post_path, class:"button"

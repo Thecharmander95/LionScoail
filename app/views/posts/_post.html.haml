@@ -1,0 +1,9 @@
+.callout
+  = post.user.username
+  %br/
+  = post.content
+  %br/
+  = link_to 'Show', post
+  = link_to 'Edit', edit_post_path(post) if current_user == post.user
+  = link_to 'Destroy', post, method: :delete,
+  data: { confirm: 'Are you sure? You do know this is not comeing back' } if current_user == post.user
