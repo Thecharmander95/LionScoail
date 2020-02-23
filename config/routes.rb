@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   root 'sites#home'
 
   get :about, to: 'sites#about'
+  get :admin, to: "sites#admin"
+  get :adminview, to: "sites#adminview"
 end

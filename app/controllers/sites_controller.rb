@@ -17,4 +17,11 @@ class SitesController < ApplicationController
       redirect_to posts_path
     end
   end
+
+  def admin
+  end
+
+  def adminview
+
+  end
 end

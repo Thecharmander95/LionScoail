@@ -11,5 +11,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     = render 'layouts/topbar'
+    // - if admin_signed_in?
+    //   = render 'layouts/topbaradmin'
     .grid-container
       = yield
