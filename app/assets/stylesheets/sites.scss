@@ -14,3 +14,20 @@ html body {
 h1 {
     color: darkslategray;
 }
+
+a.button {
+    background-color: bisque;
+}
+a {
+    color: orangered;
+}
+
+a:visited {
+    color: orange;
+}
+
+
+a.button:hover {
+    background-color: coral;
+    color: red;
+}
