@@ -18,17 +18,6 @@ class SitesController < ApplicationController
     end
   end
 
-  def admin
-  end
-
-  def adminview
-
-  end
-
-  def ownerview
-
-  end
-
   def destroy
     @user = User.find(params[:id])
     @user.destroy
