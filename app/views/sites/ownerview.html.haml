@@ -1,0 +1,33 @@
+- if owner_signed_in?
+  %h1 Users 'Owner View'
+  .callout
+    - @users = User.all
+    - @users.each do |u|
+      %br/
+      %h5 Users
+      %br/
+      = u.username
+      %br/
+      = u.email
+      %br/
+      = link_to "Delete",
+        user_path(u),
+        method: :delete,
+        data: { confirm: "Really delete this user? What did they do." }
+  .callout
+    - @admins = Admin.all
+    - @admins.each do |a|
+      %br/
+      %h5 Admins
+      %br/
+      = a.username
+      %br/
+      = a.email
+      %br/
+      = link_to "Delete",
+        admin_path(a),
+        method: :delete,
+        data: { confirm: "Really delete this user? What did they do." }
+- else
+  %h1 You dont have access to this
+  = link_to 'Home', root_path

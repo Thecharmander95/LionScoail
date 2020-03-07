@@ -18,3 +18,7 @@
         %li= link_to 'View Users', adminview_path
         %li= link_to 'Edit user', edit_admin_registration_path
         %li= link_to 'Sign out', destroy_admin_session_path, method: :delete
+      - if owner_signed_in?
+        %li= link_to 'View Users', ownerview_path
+        %li= link_to 'Edit user', edit_owner_registration_path
+        %li= link_to 'Sign out', destroy_owner_session_path, method: :delete
