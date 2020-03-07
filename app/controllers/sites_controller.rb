@@ -24,4 +24,10 @@ class SitesController < ApplicationController
   def adminview
 
   end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+      redirect_to posts_index_path, notice: "User deleted."
+  end
 end
