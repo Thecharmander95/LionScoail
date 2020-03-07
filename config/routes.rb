@@ -12,4 +12,7 @@ Rails.application.routes.draw do
      get "users/:id", to: "users#show", as: "user"
      delete "users/:id", to: "users#destroy"
   end
+  resources :posts do
+    resources :comments
+  end
 end

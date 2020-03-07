@@ -1,15 +1,14 @@
-= form_for @post do |f|
+%h3 Post a Comment
+= form_for [ @post, @comment ] do |f|
   - if f.object.errors.any?
     #error_explanation
       %h2= "#{pluralize(f.object.errors.count, "error")} prohibited this post from being saved:"
       %ul
         - f.object.errors.full_messages.each do |message|
           %li= message
-
-  .field
-    = f.label :content
-    = f.text_field :content
-  .actions
-    = f.submit 'Save', class: 'button', class: "button"
-  %h3 Post a Comment
-  %p= render partial: 'comments/form'
+  %p
+    = f.label :body
+    %br/
+    = f.text_area :body
+  %p
+    = f.submit 'Submit'
