@@ -1,5 +1,6 @@
-p {
+body p {
     color: darkslategray;
+    font-size: 16px;
 }
 
 html body {
@@ -46,4 +47,12 @@ input.button:hover {
 }
 input:visited {
     color: orange;
+}
+
+body h3 {
+    color: chocolate;
+}
+
+body h5{
+    color: brown;
 }

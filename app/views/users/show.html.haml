@@ -1,0 +1,16 @@
+%h1= @user.username
+%h3 Posts form this user
+
+- @posts.each do |post|
+  .callout
+    = post.content
+    %br/
+    = link_to 'Comments', post
+    = link_to 'Destroy', post, method: :delete,
+    data: { confirm: 'Are you sure? You do know this is not comeing back' } if current_user == post.user
+    %br/
+%br
+ 
+
+- if current_user.role == "admin"
+  %h6= link_to "Delete", user_path, method: :delete, data: { confirm: "Really delete this user? What did they do." }, class: "button"

@@ -1,6 +1,15 @@
 %h1 Everyones Posts
 
-= render @posts
+- @posts.each do |post|
+  .callout
+    = link_to post.user.username, user_path(post.user), class: "box"
+    %br/
+    = post.content
+    %br/
+    = link_to 'Comments', post, class: "dude"
+    = link_to 'Destroy', post, method: :delete,
+    data: { confirm: 'Are you sure? You do know this is not comeing back' }, class: "dude" if current_user == post.user
+    %br/
 %br
 
 = link_to 'New Post', new_post_path, class:"button"
