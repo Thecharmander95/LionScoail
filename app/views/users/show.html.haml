@@ -15,8 +15,10 @@
     %br/
 %br
 
-= link_to 'Edit profile', edit_user_path(@user), class:"button" if current_user == @user
-
+%h3 About this User
+.callout
+  %p= @user.body
+  %br/
 
 - if current_user.role == "admin"
   %h6= link_to "Delete", user_path, method: :delete, data: { confirm: "Really delete this user? What did they do." }, class: "button"
