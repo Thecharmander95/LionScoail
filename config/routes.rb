@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   root 'sites#home'
 
   get :about, to: 'sites#about'
-  get :view, to: "sites#view"
   get :usered, to: "sites#usered"
   resources :users
   resources :posts do

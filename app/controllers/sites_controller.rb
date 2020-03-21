@@ -24,10 +24,6 @@ class SitesController < ApplicationController
       redirect_to posts_index_path, notice: "User deleted."
   end
 
-  def view
-    redirect_to root_path unless current_user.role == "admin"
-  end
-
   def usered
   end
 
