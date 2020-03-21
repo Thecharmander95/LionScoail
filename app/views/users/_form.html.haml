@@ -10,9 +10,10 @@
     = f.label :body
     = f.text_area :body
   .field
-    = f.label :avatar
+    = f.label :avatar, "Profile Picture"
     = f.file_field :avatar
     - if f.object.avatar.attached?
       = image_tag f.object.avatar.variant(resize_to_limit: [400, 400])
+  = link_to 'Edit user settings', edit_user_registration_path, class: "button"
   .actions
     = f.submit 'Save', class: 'button', class: "button"

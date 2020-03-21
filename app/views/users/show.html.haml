@@ -2,7 +2,6 @@
 
 - if @user.avatar.attached?
   = image_tag @user.avatar.variant(resize_to_limit: [400, 400])
-= link_to 'Edit avatar', edit_user_path(@user)
 
 %h3 Posts form this user
 
@@ -15,6 +14,8 @@
     data: { confirm: 'Are you sure? You do know this is not comeing back' } if current_user == post.user
     %br/
 %br
+
+= link_to 'Edit profile', edit_user_path(@user), class:"button" if current_user == @user
 
 
 - if current_user.role == "admin"
