@@ -1,0 +1,18 @@
+= form_for user do |f|
+  - if f.object.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(f.object.errors.count, "error")} prohibited this post from being saved:"
+      %ul
+        - f.object.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :body
+    = f.text_area :body
+  .field
+    = f.label :avatar
+    = f.file_field :avatar
+    - if f.object.avatar.attached?
+      = image_tag f.object.avatar.variant(resize_to_limit: [400, 400])
+  .actions
+    = f.submit 'Save', class: 'button', class: "button"
