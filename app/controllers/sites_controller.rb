@@ -27,4 +27,7 @@ class SitesController < ApplicationController
   def usered
   end
 
+  def usersettings
+  end
+
 end

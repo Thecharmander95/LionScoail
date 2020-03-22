@@ -1,12 +1,8 @@
 %h5#notice= notice
 
-%h6
-  %b Content:
-  = @post.content
-
-- if current_user == @post.user
-  %h4 In order to delete post delete all comments then delete post
-
+%h4
+  %b Post content is:
+  %b= @post.content
 = render 'comments/form'
 %h3
   Comments (#{@post.comments.count})
@@ -19,6 +15,6 @@
       = comment.body
       %br/
       = link_to 'Delete', [comment.post, comment], :method => :delete,
-      data: { confirm: 'Are you sure?' } if current_user == @post.user
+      data: { confirm: 'Are you sure?' } if current_user == comment.user
 
 = link_to 'Back', posts_path, class: "button"
