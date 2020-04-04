@@ -6,7 +6,12 @@ Rails.application.routes.draw do
   get :about, to: 'sites#about'
   get :usered, to: "sites#usered"
   get :usersettings, to: "sites#usersettings"
-  resources :users
+  resources :relationships, only: [:create, :destroy]
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   resources :posts do
     resources :comments
   end

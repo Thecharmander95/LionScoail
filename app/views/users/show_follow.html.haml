@@ -1,0 +1,22 @@
+.row
+  %aside.col-md-4
+    %section.user_info
+      - if @user.avatar.attached?
+        = image_tag @user.avatar.variant(resize_to_limit: [200, 200])
+      %h1= @user.username
+      %span= link_to "view my profile", @user
+      %span
+        %b Posts:
+        = @user.posts.count
+    %section.stats
+      = render 'shared/stats'
+      - if @users.any?
+        .user_avatars
+          - @users.each do |user|
+            = link_to avatar_for(user, size: 30), user
+  .col-md-8
+    %h3= @title
+    - if @users.any?
+      %ul.users.follow
+        = render @users
+      = will_paginate

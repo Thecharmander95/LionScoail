@@ -3,6 +3,8 @@
 - if @user.avatar.attached?
   = image_tag @user.avatar.variant(resize_to_limit: [200, 200])
 
+%section.stats= render 'shared/stats'
+= render 'follow_form', user: @user if user_signed_in?
 %h3
   Posts for this user (#{@user.posts.count})
 

@@ -10,7 +10,7 @@
     %br/
     = link_to 'Comments', post, class: "dude"
     = link_to 'Destroy', post, method: :delete,
-    data: { confirm: 'Are you sure? You do know this is not comeing back' }, class: "dude" if current_user == post.user
+    data: { confirm: 'Are you sure? You do know this is not comeing back' }, class: "dude" if current_user?(post.user)
     %br/
 %br
 
