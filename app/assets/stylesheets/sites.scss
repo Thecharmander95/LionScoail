@@ -39,6 +39,7 @@ h1 {
 
 input.button {
   background-color: bisque;
+  color: orangered;
 }
 
 input.button:hover {
@@ -60,4 +61,16 @@ body h5{
 a.hover {
     background-color: coral;
     color: red;
+}
+
+strong#following {
+    color: orange;
+}
+
+strong#followers {
+    color: orange;
+}
+
+span {
+    color: chocolate;
 }
