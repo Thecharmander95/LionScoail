@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   root 'sites#home'
 
   get :about, to: 'sites#about'
-  get :usered, to: "sites#usered"
   get :usersettings, to: "sites#usersettings"
   resources :relationships, only: [:create, :destroy]
   resources :users do

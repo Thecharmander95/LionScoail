@@ -24,9 +24,6 @@ class SitesController < ApplicationController
       redirect_to posts_index_path, notice: "User deleted."
   end
 
-  def usered
-  end
-
   def usersettings
   end
 
