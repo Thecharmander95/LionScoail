@@ -20,4 +20,5 @@
       %h3= @title
       - if @users.any?
         %ul.users.follow
-          = render @users
+          .callout
+            = render @users
