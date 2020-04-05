@@ -10,7 +10,7 @@
     - @posts.each do |post|
       .callout
         = link_to user_path(post.user), class: "box" do
-          = image_tag post.user.avatar.variant(resize_to_fill: [40, 40]) if post.user.avatar.attached?
+          = image_tag post.user.avatar.variant(resize_to_fill: [60, 60]) if post.user.avatar.attached?
           = post.user.username
         %br/
         .center

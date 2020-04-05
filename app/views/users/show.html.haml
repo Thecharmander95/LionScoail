@@ -1,22 +1,30 @@
-%h1= @user.username
+.grid-x
+  .small-4.cell
 
-- if @user.avatar.attached?
-  = image_tag @user.avatar.variant(resize_to_limit: [200, 200])
+    %h1= @user.username
 
-%section.stats= render 'shared/stats'
-= render 'follow_form', user: @user if user_signed_in?
-%h3
-  Posts for this user (#{@user.posts.count})
+    - if @user.avatar.attached?
+      = image_tag @user.avatar.variant(resize_to_limit: [200, 200])
 
-- @posts.each do |post|
-  .callout
-    = post.content
-    %br/
-    = link_to 'Comments', post
-    = link_to 'Destroy', post, method: :delete,
-    data: { confirm: 'Are you sure? You do know this is not comeing back' } if current_user == post.user
-    %br/
-%br
+    %section.stats= render 'shared/stats'
+    = render 'follow_form', user: @user if user_signed_in?
+  .small-8.cell
+    %h3
+      Posts for this user (#{@user.posts.count})
+
+    - @posts.each do |post|
+      .callout
+        %br/
+        .center
+          .thumbnail= image_tag post.picture if post.picture.attached?
+        %br/
+        = post.content
+        %br/
+        = link_to 'Comments', post, class: "dude"
+        = link_to 'Destroy', post, method: :delete,
+        data: { confirm: 'Are you sure? You do know this is not comeing back' }, class: "dude" if current_user?(post.user)
+        %br/
+    %br
 
 %h3 About this User
 .callout
