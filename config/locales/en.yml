@@ -31,3 +31,14 @@
 
 en:
   hello: "Hello world"
+
+  helpers:
+    submit:
+      post:
+        create: "Post"
+        update: "Edit post"
+
+  activerecord:
+    attributes:
+      post:
+        content: "Body"

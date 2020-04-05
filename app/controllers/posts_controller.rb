@@ -6,6 +6,8 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.by_newest
+    @post = current_user.posts.new
+    @user = current_user
   end
 
   # GET /posts/1
@@ -27,7 +29,6 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = current_user.posts.new(post_params)
-
     respond_to do |format|
       if @post.save
         format.html { redirect_to posts_path, notice: 'Post was successfully created.' }
@@ -42,6 +43,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
+    @post.picture.attach(post_params[:picture]) if post_params[:picture].present?
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to posts_path, notice: 'Post was successfully updated.' }
@@ -72,5 +74,6 @@ class PostsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def post_params
       params.require(:post).permit(:content)
+      params.require(:post).permit(:content, :picture)
     end
 end
