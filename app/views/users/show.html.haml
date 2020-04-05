@@ -1,5 +1,5 @@
 .grid-x
-  .small-4.cell
+  .medium-4.cell
 
     %h1= @user.username
 
@@ -8,7 +8,7 @@
 
     %section.stats= render 'shared/stats'
     = render 'follow_form', user: @user if user_signed_in?
-  .small-8.cell
+  .medium-8.cell
     %h3
       Posts for this user (#{@user.posts.count})
 
@@ -16,7 +16,8 @@
       .callout
         %br/
         .center
-          .thumbnail= image_tag post.picture if post.picture.attached?
+        - if post.picture.attached?
+          .thumbnail= image_tag post.picture.variant(resize: "200x200")
         %br/
         = post.content
         %br/

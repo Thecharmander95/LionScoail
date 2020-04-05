@@ -20,3 +20,7 @@
 $(document).on('turbolinks:load', function() {
     $(function(){ $(document).foundation(); });
 });
+
+document.getElementById("frmPost").onsubmit = function(){
+    location.reload(true);
+}

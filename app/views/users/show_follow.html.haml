@@ -1,5 +1,5 @@
 .grid-x
-  .small-4.cell
+  .medium-4.cell
     .row
       %aside.col-md-5
         %section.user_info
@@ -15,7 +15,7 @@
               = image_tag @user.avatar.variant(resize_to_limit: [200, 200])
         %section.stats
           = render 'shared/stats'
-  .small-7.cell
+  .medium-7.cell
     .col-md-8
       %h3= @title
       - if @users.any?
