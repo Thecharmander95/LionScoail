@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :posts
-  devise_for :users
   root 'sites#home'
+  devise_for :users
 
+  resources :posts
   get :about, to: 'sites#about'
   get :usersettings, to: "sites#usersettings"
   resources :relationships, only: [:create, :destroy]

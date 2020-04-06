@@ -11,5 +11,6 @@ ActionMailer::Base.smtp_settings = {
   domain:               ENV['SENDGRID_DOMAIN'],
   port:                 ENV['SENDGRID_PORT'],
   authentication:       ENV['SENDGRID_AUTHENTICATION'],
+  openssl_verify_mode:  ENV['SMTP_OPENSSL_VERIFY_MODE'],
   enable_starttls_auto: ENV['SMTP_ENABLE_STARTTLS_AUTO']
 }
