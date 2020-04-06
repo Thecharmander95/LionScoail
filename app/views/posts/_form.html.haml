@@ -9,7 +9,7 @@
             = message
   .field
     = f.label :content
-    = f.text_field :content
+    = f.text_area :content, rows: 5
   %span.picture
     = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png'
   .actions

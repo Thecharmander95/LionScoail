@@ -4,9 +4,9 @@ class ApplicationController < ActionController::Base
   include UsersHelper
 
 
-    protected
+  protected
 
-    def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
-    end
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
+  end
 end
