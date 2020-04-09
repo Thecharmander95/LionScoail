@@ -3,6 +3,8 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index
     @users = User.all
+    @users = User.by_newest
+
   end
 
   def destroy

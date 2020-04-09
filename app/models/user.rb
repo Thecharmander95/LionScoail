@@ -16,6 +16,9 @@ class User < ApplicationRecord
 
   validates :username, uniqueness: true
 
+  scope :by_newest, -> { self.order(created_at: :desc) }
+
+
   def follow(other_user)
     following << other_user
   end
