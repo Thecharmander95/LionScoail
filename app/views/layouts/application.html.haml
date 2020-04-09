@@ -1,15 +1,16 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %meta{charset: 'utf-8'}/
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}/
+    -# google verification
     %meta{:content => "yfQIk-brcczxGwLPh8HpzX4OifIFoKv0SdLJk4X0Yuw", :name => "google-site-verification"}/
+
     %title Lion Social
+    = favicon_link_tag asset_pack_path('media/images/favicon.ico')
+    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': true
     = csrf_meta_tags
-    = favicon_link_tag
-    = csp_meta_tag
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     = render 'layouts/topbar'
     .grid-container

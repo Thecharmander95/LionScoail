@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'webpacker', '~> 4.x'
 
 # Html to Haml gem
 gem 'html2haml'
@@ -50,7 +51,7 @@ gem "aws-sdk-s3", require: false
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '>= 1.1.0', require: false
+gem 'bootsnap'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

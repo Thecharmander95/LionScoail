@@ -1,5 +1,18 @@
 {
   "name": "LionSocial",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@rails/actioncable": "^6.0.2-2",
+    "@rails/activestorage": "^6.0.2-2",
+    "@rails/ujs": "^6.0.2-2",
+    "@rails/webpacker": "4.2.2",
+    "foundation-sites": "^6.6.3",
+    "jquery": "^3.4.1",
+    "turbolinks": "^5.2.0",
+    "webpack": "^4.42.1",
+    "what-input": "^5.2.7"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.10.3"
+  }
 }
