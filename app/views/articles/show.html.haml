@@ -1,0 +1,9 @@
+%h1 Showing selected article
+%p
+  Title: #{@article.title}
+%p
+  Description: #{@article.description}
+%p
+  = link_to "Edit", edit_article_path(@article)
+%p
+  = link_to 'Back', articles_path
