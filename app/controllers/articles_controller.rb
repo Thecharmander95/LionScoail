@@ -33,6 +33,8 @@ end
 
 def index
   @articles = Article.all
+  @user = current_user
+  @article = current_user.articles.new
 end
 
 def destroy
@@ -47,6 +49,6 @@ def destroy
   end
 
   def article_params
-    params.require(:article).permit(:title, :description, :content)
+    params.require(:article).permit(:title, :description, :content, :type)
   end
 end

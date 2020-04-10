@@ -10,7 +10,7 @@
     = render 'follow_form', user: @user if user_signed_in?
   .medium-8.cell
     %h3
-      Posts for this user (#{@user.posts.count})
+      Posts form this user (#{@user.posts.count})
 
     - @user.posts.each do |post|
       .callout
@@ -26,11 +26,37 @@
         data: { confirm: 'Are you sure? You do know this is not comeing back' }, class: "dude" if current_user?(post.user)
         %br/
     %br
-
-%h3 About this User
-.callout
-  %p= @user.body
-%br/
+.grid-x
+  .medium-4.cell
+    %h3 About this User
+    .callout
+      %p= @user.body
+    %br/
+  .medium-8.cell
+    %h3 Articles form this user (#{@user.articles.count})
+    - @articles.each do |article|
+      .callout
+        = link_to user_path(article.user), class: "box" do
+          = image_tag article.user.avatar.variant(resize_to_fill: [60, 60]) if article.user.avatar.attached?
+        = article.user.username
+        %br/
+        Article's Title =
+        = article.title
+        %br/
+        Article's Description =
+        = article.description
+        %br/
+        Article's type of article =
+        = article.type
+        %br/
+        How long ago the article was created at
+        = time_ago_in_words(article.created_at)
+        %br/
+        To read the article
+        = link_to 'Read', article_path(article)
+        %br/
+        = link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Are you sure?"}, class: "dude" if current_user?(article.user)
+        %br/
 
 - if current_user.role == "admin"
   %h6= link_to "Delete", user_path, method: :delete, data: { confirm: "Really delete this user? What did they do." }, class: "button"

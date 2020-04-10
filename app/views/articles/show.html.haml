@@ -1,9 +1,16 @@
-%h1 Showing selected article
+%h1 Showing Article
+.callout
+  %p Title: #{@article.title}
+  %br/
+  %p Description: #{@article.description}
+  %br/
+  %p Type:
+  %p= @article.type
+  %br/
+  %p Content:
+  %p= @article.content
+  %br/
 %p
-  Title: #{@article.title}
+  = link_to "Edit", edit_article_path(@article), class: "button" if current_user?(@article.user)
 %p
-  Description: #{@article.description}
-%p
-  = link_to "Edit", edit_article_path(@article)
-%p
-  = link_to 'Back', articles_path
+  = link_to 'Back', articles_path, class:"button"

@@ -16,6 +16,8 @@ before_action :set_user, only: [:show, :edit, :update, :destroy]
     @posts = @user.posts
     @posts = Post.by_newest
     @user  = User.find(params[:id])
+    @articles = @user.articles
+
   end
 
   def edit
