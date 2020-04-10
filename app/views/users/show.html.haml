@@ -1,7 +1,7 @@
 .grid-x
   .medium-4.cell
 
-    %h1= @user.username
+    %h3= @user.username
 
     - if @user.avatar.attached?
       = image_tag @user.avatar.variant(resize_to_limit: [200, 200])
