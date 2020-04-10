@@ -1,6 +1,15 @@
-%h1 Welcome to Lion Social
+- if user_signed_in?
+  %h1 Welcome to Lion Social
 
-%h5 Please consider hitting the sign up button to get started.
+  %h6 Would you like to see/create
+  %h6= link_to "Articles", articles_path
+  %h6 Or would you like to see/create
+  %h6= link_to "Posts", posts_path
 
-= link_to "Sign Up/Log In", user_session_path, class: "button"
-= image_pack_tag("home_lion.jpg")
+- else
+  %h1 Welcome to Lion Social
+
+  %h5 Please consider hitting the sign up button to get started.
+
+  = link_to "Sign Up/Log In", user_session_path, class: "button"
+  = image_pack_tag("home_lion.jpg")

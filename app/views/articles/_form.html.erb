@@ -8,12 +8,19 @@
 <% end %>
 <%= form_for @article do |f| %>
  <p>
-  <%= f.label :title %><br>
+  <%= f.label :title %>
+  <br>
   <%= f.text_field :title %>
  </p>
  <p>
-  <%= f.label :description %><br>
+  <%= f.label :description %>
+  <br>
   <%= f.text_area :description %>
+ </p>
+ <p>
+  <%= f.label :content %>
+  <br>
+  <%= f.text_area :content, rows: 10 %>
  </p>
  <p>
   <%= f.submit %>
