@@ -35,6 +35,7 @@ def index
   @articles = Article.all
   @user = current_user
   @article = current_user.articles.new
+  @articles = Article.order('title ASC')
 end
 
 def destroy
@@ -49,6 +50,6 @@ def destroy
   end
 
   def article_params
-    params.require(:article).permit(:title, :description, :content, :type)
+    params.require(:article).permit(:title, :description, :content, :articleused)
   end
 end
