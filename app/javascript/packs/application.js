@@ -18,6 +18,10 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
+function printPage() {
+    window.print()
+}
+
 // Foundation setup.
 import Foundation from 'foundation-sites'
 $(document).on('turbolinks:load', function() {

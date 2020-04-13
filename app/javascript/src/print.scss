@@ -1,0 +1,56 @@
+@media print {
+  html, body {
+    overflow-x: visible !important;
+    font-size: 78%;
+  }
+
+  body {
+    margin-left: 1.905cm;
+    margin-right: 1.905cm;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0.3rem;
+    margin-bottom: 0.2rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+  }
+
+  nav, .top-bar, .sub_top_bar, .button , footer, .hide_on_print {
+    display: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a[href]:after {
+    content: none !important;
+  }
+
+  .show_on_print {
+    display: block;
+  }
+
+  .print_new_page {
+    page-break-before: always;
+  }
+
+  .noprint {
+    visibility: hidden;
+  }
+}

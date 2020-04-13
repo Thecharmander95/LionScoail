@@ -1,17 +1,18 @@
-.top-bar
-  .top-bar-left
-    %ul.dropdown.menu{"data-dropdown-menu" => ""}
-      %li
-        %h4= link_to 'Home', root_path
+.noprint
+  .top-bar
+    .top-bar-left
+      %ul.dropdown.menu{"data-dropdown-menu" => ""}
+        %li
+          %h4= link_to 'Home', root_path
 
-  .top-bar-right
-    %ul.menu
-      - if user_signed_in?
-        %li= link_to "Users", users_path
-        %li= link_to "Profile", user_path(current_user)
-        %li= link_to 'Edit Profile', edit_user_path(current_user)
-        %li= link_to 'Sign out', destroy_user_session_path, method: :delete
+    .top-bar-right
+      %ul.menu
+        - if user_signed_in?
+          %li= link_to "Users", users_path
+          %li= link_to "Profile", user_path(current_user)
+          %li= link_to 'Edit Profile', edit_user_path(current_user)
+          %li= link_to 'Sign Out', destroy_user_session_path, method: :delete
 
-      - else
-        %li= link_to 'Sign up', new_user_registration_path
-        %li= link_to 'Login', new_user_session_path
+        - else
+          %li= link_to 'Sign up', new_user_registration_path
+          %li= link_to 'Login', new_user_session_path

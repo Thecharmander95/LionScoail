@@ -17,22 +17,13 @@ body h1 {
 }
 
 a.button {
-    background-color: bisque;
+    background-color: yellow;
+    color: red;
 }
-
-a.buttonbox {
-    background-color: bisque;
-}
-
 
 a {
     color: orangered;
 }
-
-a:visited {
-    color: orange;
-}
-
 
 a.button:hover {
     background-color: coral;

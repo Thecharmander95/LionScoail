@@ -1,16 +1,18 @@
-%h1 Showing Article
-.callout
-  %p Title: #{@article.title}
-  %br/
-  %p Description: #{@article.description}
-  %br/
-  %p Type:
-  %p= @article.articleused
-  %br/
-  %p Content:
-  %p= @article.content
-  %br/
-%p
-  = link_to "Edit", edit_article_path(@article), class: "button" if current_user?(@article.user)
-%p
-  = link_to 'Back', articles_path, class:"button"
+%h1 #{@article.title}
+%br/
+%p Description:
+%p= @article.description
+%br/
+%p Type:
+%p= @article.articleused
+%br/
+%p Content:
+%p= @article.content
+%br/
+.noprint
+  %p
+    = link_to "Print this Page", "javascript:print()", class: "button"
+  %p
+    = link_to "Edit", edit_article_path(@article), class: "button" if current_user?(@article.user)
+  %p
+    = link_to 'Back', articles_path, class:"button"
