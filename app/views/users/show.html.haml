@@ -14,7 +14,6 @@
 
     - @user.posts.each do |post|
       .callout
-        %br/
         .center
         - if post.picture.attached?
           .thumbnail= image_tag post.picture.variant(resize: "200x200")

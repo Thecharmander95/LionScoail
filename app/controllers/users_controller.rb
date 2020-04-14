@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
     @posts = @user.posts
     @posts = Post.by_newest
     @user  = User.find(params[:id])
