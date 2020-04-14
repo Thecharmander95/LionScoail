@@ -20,9 +20,9 @@
         %br/
         = post.content
         %br/
-        = link_to 'Comments', post, class: "dude"
+        = link_to 'Comments', post, class: "button"
         = link_to 'Destroy', post, method: :delete,
-        data: { confirm: 'Are you sure? You do know this is not comeing back' }, class: "dude" if current_user?(post.user)
+        data: { confirm: 'Are you sure? You do know this is not comeing back' }, class: "button" if current_user?(post.user)
         %br/
     %br
 .grid-x
@@ -54,7 +54,7 @@
         To read the article
         = link_to 'Read', article_path(article)
         %br/
-        = link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Are you sure?"}, class: "dude" if current_user?(article.user)
+        = link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Are you sure?"}, class: "button" if current_user?(article.user)
         %br/
 
 - if current_user.role == "admin"

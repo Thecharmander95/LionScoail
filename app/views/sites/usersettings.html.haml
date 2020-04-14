@@ -1,13 +1,17 @@
 %h1 All users
-.callout
-  - @users = User.all
-  - @users.each do |u|
+- @users = User.all
+- @users.each do |u|
+  .callout
+    Username =
     = u.username
     %br/
+    Email =
     = u.email
     %br/
+    Bio =
     = u.body
     %br/
+    Role =
     = u.role
     %br/
-%br
+  %br
