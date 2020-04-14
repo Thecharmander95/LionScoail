@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    @user = User.find(params[:id])
     @user.destroy
     redirect_to root_path, notice: 'User deleted.'
   end
@@ -22,6 +23,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = User.find(params[:id])
     @user.avatar.attach(user_params[:avatar]) if user_params[:avatar].present?
 
     respond_to do |format|
