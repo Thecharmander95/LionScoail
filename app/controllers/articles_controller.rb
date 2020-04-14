@@ -51,6 +51,6 @@ def destroy
   end
 
   def article_params
-    params.require(:article).permit(:title, :description, :content, :articleused)
+    params.require(:article).permit(:title, :description, :content, :articleused, :sources)
   end
 end
