@@ -5,6 +5,7 @@ class Article < ActiveRecord::Base
   validates :articleused, presence:true, length: { minimum:2}
 
   belongs_to :user
+  has_many :feedbacks
 
   def self.find_by_first_letter(letter)
    where('title LIKE ?', "#{letter}%").order('title ASC')

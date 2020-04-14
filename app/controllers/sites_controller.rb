@@ -1,5 +1,5 @@
 class SitesController < ApplicationController
-  
+
   def home
   end
 
@@ -17,6 +17,7 @@ class SitesController < ApplicationController
   end
 
   def usersettings
+    @bob = h1 bob
   end
 
 end

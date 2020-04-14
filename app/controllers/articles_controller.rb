@@ -16,6 +16,7 @@ class ArticlesController < ApplicationController
  end
 
  def show
+   @feedback = @article.feedbacks.new
  end
 
  def edit
