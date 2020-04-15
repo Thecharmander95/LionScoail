@@ -1,0 +1,15 @@
+- @abouts.each do |about|
+  %br/
+  %h3= about.title
+  %br/
+  %h5= about.toppara
+  %br/
+  %h4= about.change
+  %h6= about.list1
+  %h6= about.list2
+  %h6= about.list3
+  %br/
+  %h5= about.buttum
+  %br/
+  = link_to 'Delete', about_path(about), method: :delete, data: {confirm: "You must make a new about page"}, class: "button" if current_user.role == "admin"
+%br/

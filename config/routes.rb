@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   resources :posts
+  resources :abouts
   devise_for :users
   root 'sites#home'
   resources :articles
-  get :about, to: 'sites#about'
   get :usersettings, to: "sites#usersettings"
   resources :relationships, only: [:create, :destroy]
   resources :users do
@@ -17,5 +17,4 @@ Rails.application.routes.draw do
   resources :articles do
     resources :feedbacks
   end
-
 end

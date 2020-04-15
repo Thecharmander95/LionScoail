@@ -6,13 +6,13 @@ class ArticlesController < ApplicationController
   end
 
   def create
-  @article = current_user.articles.new(article_params)
-  if @article.save
-   flash[:notice] = "Article was successfully created"
-   redirect_to article_path(@article)
-  else
-   render 'new'
-  end
+    @article = current_user.articles.new(article_params)
+    if @article.save
+      flash[:notice] = "Article was successfully created"
+      redirect_to article_path(@article)
+    else
+      render 'new'
+    end
  end
 
  def show
