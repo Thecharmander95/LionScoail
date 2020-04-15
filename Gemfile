@@ -27,8 +27,11 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails'
-gem 'will_paginate'
 gem 'webpacker', '~> 4.x'
+
+# Paginate
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
 
 # Html to Haml gem
 gem 'html2haml'
