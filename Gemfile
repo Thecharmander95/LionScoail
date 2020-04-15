@@ -27,7 +27,9 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails'
-gem 'webpacker', '~> 4.x'
+gem 'webpacker', '~> 5.x'
+
+gem "sidekiq"
 
 # Paginate
 gem 'will_paginate'
