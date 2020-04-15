@@ -35,7 +35,16 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
 
       t.timestamps null: false
     end
+    add_column :users, :body, :text
+    add_column :users, :username, :string
+    add_index :users, :username, unique: true
 
+    User.all.each do |user|
+      user.update_attribute(:username, "name_#{user.id}")
+    end
+
+    change_column_null :users, :username, false
+    add_column :users, :role, :string
     add_index :users, :email,                unique: true
     add_index :users, :reset_password_token, unique: true
     # add_index :users, :confirmation_token,   unique: true

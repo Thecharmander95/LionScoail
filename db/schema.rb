@@ -53,8 +53,8 @@ ActiveRecord::Schema.define(version: 2020_04_15_151941) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "articleused"
     t.text "sources"
+    t.text "articleused"
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
@@ -104,9 +104,9 @@ ActiveRecord::Schema.define(version: 2020_04_15_151941) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "body"
     t.string "username", null: false
     t.string "role"
-    t.text "body"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
