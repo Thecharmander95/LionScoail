@@ -7,7 +7,7 @@
     = render 'form'
   .medium-8.cell
     %h1 Everyones Posts
-    - @stories.each do |storie|
+    - @dps.each do |storie|
       .callout
         = link_to user_path(storie.user), class: "box" do
           = image_tag storie.user.avatar.variant(resize_to_fill: [60, 60]) if storie.user.avatar.attached?
