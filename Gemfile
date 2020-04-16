@@ -31,6 +31,7 @@ gem 'webpacker', '~> 5.x'
 
 gem "sidekiq"
 
+
 # Paginate
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
