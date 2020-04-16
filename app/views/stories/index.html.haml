@@ -1,0 +1,30 @@
+.grid-x
+  .medium-4.cell
+    %h3= @user.username
+    - if @user.avatar.attached?
+      = image_tag @user.avatar.variant(resize_to_fill: [150, 150])
+    %section.stats= render 'shared/stats'
+    = render 'form'
+  .medium-8.cell
+    %h1 Everyones Posts
+    - @stories.each do |storie|
+      .callout
+        = link_to user_path(storie.user), class: "box" do
+          = image_tag storie.user.avatar.variant(resize_to_fill: [60, 60]) if storie.user.avatar.attached?
+          = storie.user.username
+        %br/
+        .center
+          -  if storie.picture.attached?
+            .thumbnail= image_tag storie.picture.variant(resize: "200x200")
+        %br/
+        = storie.content
+        %br/
+        = time_ago_in_words(storie.created_at)
+        ago
+        %br/
+        = link_to 'Comments', storie, class: "dude"
+        %br/
+        = link_to 'Destroy', storie, method: :delete,
+        data: { confirm: 'Are you sure? You do know this is not comeing back' }, class: "dude" if current_user?(storie.user)
+        %br/
+    %br
