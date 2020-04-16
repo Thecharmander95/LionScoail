@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :posts
   resources :abouts
+  resources :stories
   devise_for :users
   root 'sites#home'
   resources :articles
