@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @posts = @user.posts
     @posts = Post.by_newest
     @articles = @user.articles
-
+    @dps = @user.dissaperingposts
   end
 
   def edit

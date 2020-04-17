@@ -11,8 +11,9 @@
   %body
     = render 'layouts/topbar'
     - flash.each do |name, msg|
-      %ul
-        %li= msg
+      .callout
+        %ul
+          %li= msg
     .grid-container
       = yield
     = render 'layouts/footer'

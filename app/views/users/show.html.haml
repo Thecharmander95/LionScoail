@@ -1,5 +1,5 @@
 .grid-x
-  .medium-4.cell
+  .medium-6.cell
 
     %h3= @user.username
 
@@ -8,7 +8,7 @@
 
     %section.stats= render 'shared/stats'
     = render 'follow_form', user: @user if user_signed_in?
-  .medium-8.cell
+  .medium-6.cell
     %h3
       Posts form this user (#{@user.posts.count})
 
@@ -26,19 +26,23 @@
         %br/
     %br
 .grid-x
-  .medium-4.cell
-    %h3 About this User
-    .callout
-      %p= @user.body
-    %br/
-  .medium-8.cell
+  .medium-6.cell
+    %h3 User's Story
+    - @dps.each do |story|
+      .callout
+        .center
+          -  if story.picture.attached?
+            .thumbnail= image_tag story.picture.variant(resize: "200x200")
+        %br/
+        = story.content
+        %br/
+        = time_ago_in_words(story.created_at)
+        ago
+        %br/
+  .medium-6.cell
     %h3 Articles form this user (#{@user.articles.count})
     - @articles.each do |article|
       .callout
-        = link_to user_path(article.user), class: "box" do
-          = image_tag article.user.avatar.variant(resize_to_fill: [60, 60]) if article.user.avatar.attached?
-        = article.user.username
-        %br/
         Article's Title =
         = article.title
         %br/
@@ -56,6 +60,10 @@
         %br/
         = link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Are you sure?"}, class: "button" if current_user?(article.user)
         %br/
+%h3 About this User
+.callout
+  %p= @user.body
+  %br/
 
 - if current_user.role == "admin"
   %h6= link_to "Delete", user_path, method: :delete, data: { confirm: "Really delete this user? What did they do." }, class: "button"

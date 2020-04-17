@@ -5,14 +5,18 @@
         %section.user_info
           %h1= @user.username
           %br/
-          %h6= link_to "view my profile", @user
+          %h6= link_to "view my profile", @user, class: "button"
+          %br/
+          - if @user.avatar.attached?
+            = image_tag @user.avatar.variant(resize_to_limit: [200, 200])
           %br/
           %span
             %b Posts:
             = @user.posts.count
             %br/
-            - if @user.avatar.attached?
-              = image_tag @user.avatar.variant(resize_to_limit: [200, 200])
+            %b Articles:
+            = @user.articles.count
+
         %section.stats
           = render 'shared/stats'
   .medium-7.cell

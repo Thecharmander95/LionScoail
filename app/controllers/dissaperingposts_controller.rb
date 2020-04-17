@@ -26,9 +26,7 @@ class DissaperingpostsController < ApplicationController
 
   def destroy
     @dp.destroy
-    flash[:notice] = "Article was deleted"
-    redirect_to dissaperingposts_path
-    @dp.recent
+    flash[:notice] = "Story was deleted"
   end
 
   private
