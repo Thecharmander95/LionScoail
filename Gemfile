@@ -27,10 +27,12 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails'
+# Webpacker
 gem 'webpacker', '~> 5.x'
+gem 'cocoon', '~> 1.2.10'
 
+# Background Stuff
 gem "sidekiq"
-
 
 # Paginate
 gem 'will_paginate'

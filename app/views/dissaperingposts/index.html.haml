@@ -6,25 +6,21 @@
     %section.stats= render 'shared/stats'
     = render 'form'
   .medium-8.cell
-    %h1 Everyones Posts
-    - @dps.each do |storie|
+    %h1 Everyones Stories
+    - @dps.each do |story|
       .callout
-        = link_to user_path(storie.user), class: "box" do
-          = image_tag storie.user.avatar.variant(resize_to_fill: [60, 60]) if storie.user.avatar.attached?
-          = storie.user.username
+        = link_to user_path(story.user), class: "box" do
+          = image_tag story.user.avatar.variant(resize_to_fill: [60, 60]) if story.user.avatar.attached?
+          = story.user.username
         %br/
         .center
-          -  if storie.picture.attached?
-            .thumbnail= image_tag storie.picture.variant(resize: "200x200")
+          -  if story.picture.attached?
+            .thumbnail= image_tag story.picture.variant(resize: "200x200")
         %br/
-        = storie.content
+        = story.content
         %br/
-        = time_ago_in_words(storie.created_at)
+        = time_ago_in_words(story.created_at)
         ago
         %br/
-        = link_to 'Comments', storie, class: "dude"
+        = link_to 'Destroy', dissaperingposts_path(story), method: :delete, data: { confirm: 'Are you sure? You do know this is not comeing back' }, class: "dude" if current_user?(story.user)
         %br/
-        = link_to 'Destroy', storie, method: :delete,
-        data: { confirm: 'Are you sure? You do know this is not comeing back' }, class: "dude" if current_user?(storie.user)
-        %br/
-    %br
