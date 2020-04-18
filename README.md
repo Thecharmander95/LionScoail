@@ -4,12 +4,19 @@
 
 This is going to be better social media. Also if anyone is being rude on it I will remove them.
 
-So Have Fun!!!
+Whats New in version 17    | Whats Coming Soon
+-----------------------    | -------------
+Stories                    | Suggestions
+Chat rooms                 | Liked Articles
+
+![picture alt](https://lionsocial.herokuapp.com/packs/media/images/home_lion-8c5a278deac2e71e55b50419d59186cc.jpg)
+
+More updates to come!!!! Stay tuned!
 
 Made by the Lion Social
 
 **This is NOT A COPYRIGHT**
 
-But I do advise **DON'T COPY THIS I WILL FIND OUT AND CALL THE COPS!!!**
+But I do advise **Plz don't copy this**
 
-Version 11
+Version 17:sweat_smile:
