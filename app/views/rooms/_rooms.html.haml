@@ -1,0 +1,11 @@
+%div
+  = link_to new_room_path, class: 'button' do
+    Create a room
+- if @rooms.present?
+  %nav
+    - @rooms.each do |room|
+      .callout
+        = link_to room.name, room_path(room)
+- else
+  %div
+    The are no rooms

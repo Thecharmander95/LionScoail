@@ -33,6 +33,7 @@ gem 'cocoon', '~> 1.2.10'
 
 # Background Stuff
 gem "sidekiq"
+gem 'redis'
 
 # Paginate
 gem 'will_paginate'

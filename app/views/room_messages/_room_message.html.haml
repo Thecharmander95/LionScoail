@@ -1,0 +1,9 @@
+- if room_message.persisted?
+  .callout
+    = room_message.user.username
+    %br/
+    = room_message.message
+    %br/
+    %div
+      %small
+        = room_message.created_at

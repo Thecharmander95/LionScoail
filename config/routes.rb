@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  resources :rooms do
+    resources :room_messages
+  end
   resources :posts
   resources :abouts
   resources :dissaperingposts
