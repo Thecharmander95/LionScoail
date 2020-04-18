@@ -2,8 +2,6 @@
   .callout
     = room_message.user.username
     %br/
-    = room_message.message
+    %b= room_message.message
     %br/
-    %div
-      %small
-        = room_message.created_at
+    = time_ago_in_words(room_message.created_at)
