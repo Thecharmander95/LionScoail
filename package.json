@@ -7,17 +7,22 @@
     "@rails/ujs": "^6.0.2-2",
     "@rails/webpacker": "4.2.2",
     "autolinker": "^3.14.1",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.5.2",
+    "file-loader": "^6.0.0",
     "foundation-sites": "^6.6.3",
     "jquery": "^3.4.1",
+    "sass-loader": "^8.0.2",
     "turbolinks": "^5.2.0",
-    "webpack": "5.0.1",
+    "webpack": "^4.42.1",
     "what-input": "^5.2.7"
   },
   "devDependencies": {
+    "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
   },
   "engines": {
-    "node": "12.16.1",
+    "node": "12.16.2",
     "yarn": "1.22.4",
     "npm": "6.13.7"
   }
