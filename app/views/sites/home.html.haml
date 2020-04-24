@@ -1,16 +1,28 @@
+%h1 Welcome to Lion Social
 - if user_signed_in?
-  %h1 Welcome to Lion Social
-
-  %h6 Would you like to see/create
-  %h6= link_to "Articles", articles_path, class:"button"
-  %h6 Or would you like to see/create
-  %h6= link_to "Posts", posts_path, class: "button"
-  %h6 Join a chat room
-  %h6= link_to "Chat rooms", rooms_path, class: "button"
+  .grid-x
+    .medium-6.cell
+      %h3
+        Welcome Back
+        = current_user.username
+      %h5 You may chose what you would like to do.
+      %br/
+      %h5 You have
+      %section.stats= render 'shared/stats'
+    .medium-6.cell
+      %h4 Would you like to View Articles
+      %h4= link_to "Articles", articles_path, class:"button"
+  %br/
+  %br/
+  .grid-x
+    .medium-6.cell
+      %h4 Would you like to view posts
+      %h4= link_to "Posts", posts_path, class: "button"
+    .medium-6.cell
+      %h4 Join a Chat Room
+      %h4= link_to "Chat Rooms", rooms_path, class: "button"
 
 - else
-  %h1 Welcome to Lion Social
-
   %h5 Please consider hitting the sign up button to get started.
 
   = link_to "Sign Up/Log In", user_session_path, class: "button"
