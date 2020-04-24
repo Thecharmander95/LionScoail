@@ -10,6 +10,7 @@ class ErrorsController < ApplicationController
     if @error.save
       flash[:notice] = "Error was successfully reported. We will review it and fix this error #{current_user.username}."
       redirect_to root_path
+      ErrormailerMailer.error_email.deliver_now
     else
       render 'new'
     end
