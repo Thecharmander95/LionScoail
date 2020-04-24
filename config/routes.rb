@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   end
   resources :posts
   resources :abouts
+  resources :errors
   resources :dissaperingposts
   devise_for :users
   root 'sites#home'
