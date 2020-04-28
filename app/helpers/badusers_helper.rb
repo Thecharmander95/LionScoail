@@ -1,0 +1,2 @@
+module BadusersHelper
+end

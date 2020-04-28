@@ -1,5 +1,5 @@
 class ErrorsController < ApplicationController
-  before_action :set_error, only: [:show, :destroy]
+  before_action :set_error, only: [:destroy]
 
   def new
     @error = Error.new
@@ -16,22 +16,19 @@ class ErrorsController < ApplicationController
     end
   end
 
- def show
- end
-
  def index
    @errors = Error.all
    @errors = Error.by_newest
  end
 
  def destroy
-   @error.errors.destroy
+   @error.destroy
    flash[:notice] = "Error was deleted"
   end
 
  private
   def set_error
-    @article = Error.find(params[:id])
+    @error = Error.find(params[:id])
   end
 
   def error_params

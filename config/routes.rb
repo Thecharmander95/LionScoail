@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :dissaperingposts
   resources :relationships, only: [:create, :destroy]
   resources :articles
-  resources :helps
+  resources :badusers
   # All resources with do and end
   resources :users do
     member do
