@@ -1,14 +1,13 @@
-%h1 All Bad Users
-- @errors.each do |error|
+%h1 People who are reported
+- @bads.each do |bad|
   .callout
-    The Error Is =
-    = error.error
+    Username =
+    = bad.user
     %br/
-    The Error's Description =
-    = error.description
+    Why =
+    = bad.what
     %br/
-    How long ago the error was created at
-    = time_ago_in_words(error.created_at)
+    = time_ago_in_words(bad.created_at)
+    ago
     %br/
-    = link_to 'Delete', error_path(error), method: :delete, data: {confirm: "Are you sure?"}, class: "dude"
-    %br/
+    = link_to 'Destroy', bad, method: :delete, data: { confirm: 'Are you sure?' }

@@ -15,4 +15,5 @@ class SitesController < ApplicationController
 
   def usersettings
   end
+  
 end

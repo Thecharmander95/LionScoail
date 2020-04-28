@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :relationships, only: [:create, :destroy]
   resources :articles
   resources :badusers
+  resources :acindents
   # All resources with do and end
   resources :users do
     member do

@@ -19,8 +19,12 @@
       %h4 Would you like to view posts
       %h4= link_to "Posts", posts_path, class: "button"
     .medium-6.cell
-      %h4 Join a Chat Room
-      %h4= link_to "Chat Rooms", rooms_path, class: "button"
+      - if current_user.role == "bad_user"
+        %h4 You are banned from seeing Chats for a week.
+        %p If you think this is wrong click #{link_to 'here', new_acindent_path}
+      - else
+        %h4 Join a Chat Room
+        %h4= link_to "Chat Rooms", rooms_path, class: "button"
 
 - else
   %h5 Please consider hitting the sign up button to get started.

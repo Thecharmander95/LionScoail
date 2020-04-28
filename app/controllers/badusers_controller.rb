@@ -8,7 +8,7 @@ class BadusersController < ApplicationController
   def create
     @bad = Baduser.new(baduser_params)
     if @bad.save
-      flash[:notice] = "The user was successfully reported. We will decide if we would block them. #{current_user.username}."
+      flash[:notice] = "The user was successfully reported. We will decide if we would block them #{current_user.username}."
       redirect_to root_path
       BaduserMailer.newreport.deliver_now
     else
@@ -17,6 +17,7 @@ class BadusersController < ApplicationController
   end
 
  def index
+   @users = User.find_by_role('bad_user')
    @bads = Baduser.all
    @bads = Baduser.by_newest
  end
@@ -32,7 +33,7 @@ class BadusersController < ApplicationController
   end
 
   def baduser_params
-    params.require(:baduser).permit(:user, :why, :what)
+    params.require(:baduser).permit(:user, :what)
   end
 
 end

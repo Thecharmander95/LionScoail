@@ -1,0 +1,16 @@
+- if @bad.errors.any?
+  %h2 The following errors prevented the article from saving:
+  %ul
+    - @error.errors.full_messages.each do |msg|
+      %li= msg
+= form_for @bad do |f|
+  %p
+    = f.label :What_is_your_username?
+    %br/
+    = f.text_field :username
+  %p
+    = f.label :Why_do_you_think_you_should_not_be_blocked?
+    %br/
+    = f.text_area :explain
+  %p
+    = f.submit "Send Email", data: { confirm: 'Are you sure?' }, class: "button"

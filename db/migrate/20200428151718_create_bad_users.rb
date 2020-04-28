@@ -2,7 +2,6 @@ class CreateBadUsers < ActiveRecord::Migration[6.0]
   def change
     create_table :badusers do |t|
       t.text :user
-      t.text :why
       t.text :what
 
       t.timestamps

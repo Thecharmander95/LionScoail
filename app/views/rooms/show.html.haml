@@ -1,14 +1,16 @@
 .grid-x
   .medium-4.cell
-    %h3= @user.username
-    - if @user.avatar.attached?
-      = image_tag @user.avatar.variant(resize_to_fill: [150, 150])
-    %section.stats= render 'shared/stats'
-    %br/
-    = render partial: 'rooms'
+    - if current_user.role == "bad_user"
+      %h4 Think you can try that sorry. Come back to this in a week.
+    - else
+      %h3= @user.username
+      - if @user.avatar.attached?
+        = image_tag @user.avatar.variant(resize_to_fill: [150, 150])
+      %section.stats= render 'shared/stats'
+      %br/
+      = render partial: 'rooms'
 
   .medium-8.cell
-
     %h1
       This room is
       = @room.name

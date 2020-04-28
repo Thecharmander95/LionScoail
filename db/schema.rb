@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_28_151718) do
+ActiveRecord::Schema.define(version: 2020_04_28_173147) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 2020_04_28_151718) do
     t.text "list2"
     t.text "list3"
     t.text "buttum"
+  end
+
+  create_table "acindents", force: :cascade do |t|
+    t.string "username"
+    t.string "explain"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -60,7 +67,6 @@ ActiveRecord::Schema.define(version: 2020_04_28_151718) do
 
   create_table "badusers", force: :cascade do |t|
     t.text "user"
-    t.text "why"
     t.text "what"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

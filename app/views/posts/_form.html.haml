@@ -1,23 +1,26 @@
-= form_for @post do |f|
-  - if f.object.errors.any?
-    #error_explanation
-      %h2
-        = "#{pluralize(f.object.errors.count, "error")} prohibited this post from being saved:"
-      %ul
-        - f.object.errors.full_messages.each do |message|
-          %li
-            = message
-  .field
-    = f.label :content
-    = f.text_area :content, rows: 5
-  %span.picture
-    = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png'
-  .actions
-    = f.submit class: 'button'
-:javascript
-  $('#micropost_picture').bind('change', function() {
-    var size_in_megabytes = this.files[0].size/1024/1024;
-    if (size_in_megabytes > 5) {
-      alert('Maximum file size is 5MB. Please choose a smaller file.');
-    }
-  });
+- if current_user.role == "bad_user"
+  %h4 You are banned from posting anything for a week.
+- else
+  = form_for @post do |f|
+    - if f.object.errors.any?
+      #error_explanation
+        %h2
+          = "#{pluralize(f.object.errors.count, "error")} prohibited this post from being saved:"
+        %ul
+          - f.object.errors.full_messages.each do |message|
+            %li
+              = message
+    .field
+      = f.label :content
+      = f.text_area :content, rows: 5
+    %span.picture
+      = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png'
+    .actions
+      = f.submit class: 'button'
+  :javascript
+    $('#micropost_picture').bind('change', function() {
+      var size_in_megabytes = this.files[0].size/1024/1024;
+      if (size_in_megabytes > 5) {
+        alert('Maximum file size is 5MB. Please choose a smaller file.');
+      }
+    });

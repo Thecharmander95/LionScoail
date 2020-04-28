@@ -1,0 +1,2 @@
+module AcindentsHelper
+end
