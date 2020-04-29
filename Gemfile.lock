@@ -100,7 +100,6 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
-    childprocess (3.0.0)
     cocoon (1.2.14)
     coderay (1.1.2)
     coffee-rails (5.0.0)
@@ -228,7 +227,6 @@ GEM
       ffi (~> 1.9)
     ruby_parser (3.14.2)
       sexp_processor (~> 4.9)
-    rubyzip (2.3.0)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -236,9 +234,12 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.7)
     sassc (2.3.0)
       ffi (~> 1.9)
-    selenium-webdriver (3.142.7)
-      childprocess (>= 0.5, < 4.0)
-      rubyzip (>= 1.2.2)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     semantic_range (2.3.0)
     sexp_processor (4.14.1)
     sidekiq (6.0.7)
@@ -279,10 +280,6 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    webdrivers (4.3.0)
-      nokogiri (~> 1.6)
-      rubyzip (>= 1.3.0)
-      selenium-webdriver (>= 3.0, < 4.0)
     webpacker (5.1.1)
       activesupport (>= 5.2)
       rack-proxy (>= 0.6.1)
@@ -326,15 +323,14 @@ DEPENDENCIES
   puma (~> 4.3)
   rails (~> 6.0.2)
   redis
-  sassc
-  selenium-webdriver
+  sassc-rails
   sidekiq
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
+  tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
-  webdrivers
   webpacker (~> 5.x)
   will_paginate
   will_paginate-bootstrap
