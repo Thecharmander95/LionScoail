@@ -1,5 +1,5 @@
 - if current_user.role == "bad_user"
-  %h4 You are banned from posting anything for a week.
+  = render "sites/banned"
 - else
   = form_for @dp do |f|
     - if f.object.errors.any?

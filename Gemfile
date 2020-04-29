@@ -6,9 +6,9 @@ ruby '2.7.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2'
 # Use postgresql as the database for Active Record
-gem 'pg', '>= 0.18', '< 2.0'
+gem 'pg'
 # Use Puma as the app server
-gem 'puma', '~> 4.3'
+gem 'puma'
 # Use SCSS for stylesheets
 gem 'sassc-rails'
 # Use Uglifier as compressor for JavaScript assets
@@ -19,7 +19,7 @@ gem "actionview", ">= 6.0.2.2"
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 5.0'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
+gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -41,7 +41,7 @@ gem 'will_paginate-bootstrap'
 
 # Html to Haml gem
 gem 'html2haml'
-gem 'haml-rails', '~> 2.0.1'
+gem 'haml-rails'
 
 # Foundtion Gems
 gem 'foundation-rails'
@@ -54,7 +54,7 @@ gem 'devise'
 gem 'hirb'
 
 # Use ActiveStorage variant
-gem 'mini_magick', '~> 4.8'
+gem 'mini_magick'
 gem 'image_processing'
 gem "aws-sdk-s3", require: false
 
