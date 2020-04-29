@@ -2,7 +2,7 @@
 
 ###### Anthony Midili https://github.com/anthonymidili.
 
-###### Michael Hartl for the idea.
+###### Michael Hartl https://github.com/mhartl for his book.
 
 # Made by
 
