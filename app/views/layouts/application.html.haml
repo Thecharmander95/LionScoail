@@ -12,10 +12,11 @@
     = csrf_meta_tags
   %body
     = render 'layouts/topbar'
-    - flash.each do |name, msg|
-      .callout
-        %ul
-          %li= msg
+    .noprint
+      - flash.each do |name, msg|
+        .callout
+          %ul
+            %li= msg
     .grid-container
       = yield
     = render 'layouts/footer'

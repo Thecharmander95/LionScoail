@@ -24,7 +24,7 @@ class AcindentsController < ApplicationController
  def destroy
    @bad.destroy
    flash[:notice] = "The report was deleted"
-   redirect_to acindents_path
+   redirect_to root_path
  end
 
  private

@@ -3,6 +3,13 @@
 %p
   Go check it out at
   = @url2
+%p If you think that they should be unbanned do this.
+%ul
+  %li Step 1: Open a console
+  %li Step 2: Run 'Heroku run rails c'
+  %li Step 3: Run 'r = User.find_by_username('THERE USERNAME')'
+  %li Step 4: Run 'r.update_attribute(:role , '')'
+%p Thats it
 %h4
   Thanks
   %br/

@@ -17,7 +17,6 @@ class BadusersController < ApplicationController
   end
 
  def index
-   @users = User.find_by_role('bad_user')
    @bads = Baduser.all
    @bads = Baduser.by_newest
  end
@@ -25,10 +24,11 @@ class BadusersController < ApplicationController
  def destroy
    @bad.destroy
    flash[:notice] = "The report was deleted"
+   redirect_to root_path
  end
 
  private
-  def set_error
+  def set_bad
     @bad = Baduser.find(params[:id])
   end
 
