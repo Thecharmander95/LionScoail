@@ -24,6 +24,7 @@ class ErrorsController < ApplicationController
  def destroy
    @error.destroy
    flash[:notice] = "Error was deleted"
+   redirect_to errors_path
   end
 
  private
