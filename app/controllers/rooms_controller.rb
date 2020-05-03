@@ -6,6 +6,7 @@ class RoomsController < ApplicationController
   def index
     @user = current_user
     @rooms = Room.all
+    @rooms = Room.order('name ASC')
   end
 
   def new
@@ -40,7 +41,17 @@ class RoomsController < ApplicationController
     @room_message = @room.room_messages.new
     @room_messages = @room.room_messages
     @room_messages = @room_messages.by_newest
+    @rooms = Room.order('name ASC')
   end
+
+  def destroy
+    @room.destroy
+    respond_to do |format|
+      format.html { redirect_to rooms_url, notice: 'Room was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
 
   protected
 

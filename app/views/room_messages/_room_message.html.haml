@@ -1,8 +1,5 @@
 - if room_message.persisted?
   .callout
     = room_message.user.username
-    %br/
-    %b= room_message.message
-    %br/
-    = time_ago_in_words(room_message.created_at)
-    ago
+    said:
+    = room_message.message

@@ -1,7 +1,5 @@
 = form_for [@room, @room_message], id: 'new_messages_form', remote: true do |f|
-  %p
-    = f.label :Message
-    %br/
-    = f.text_area :message, id: 'textarea_message_box'
-  %p
-    = f.submit 'Submit', class: "button"
+  = f.label :Send_a_message
+  = f.text_field :message
+  = f.submit "Send", class: "button"
+  %br/

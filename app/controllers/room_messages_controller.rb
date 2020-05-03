@@ -7,12 +7,15 @@ class RoomMessagesController < ApplicationController
     @room_messages = @room.room_messages
     respond_to do |format|
       if @room_message.save
-        format.html { redirect_to @room, notice: 'Room was successfully created.' }
-        format.json { render :show, status: :created, location: @room }
+        ActionCable.server.broadcast "room_channel",
+        username: @room_message.user.username,
+        message: @room_message.message,
+        room: @room.id
+
+        format.html { redirect_to @room }
         format.js
       else
         format.html { render @room }
-        format.json { render json: @room.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -20,7 +23,7 @@ class RoomMessagesController < ApplicationController
   protected
 
   def load_entities
-    @room = Room.find params[:room_id]
+    @room = Room.find(params[:room_id])
   end
 
   def room_message_params

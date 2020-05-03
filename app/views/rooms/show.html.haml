@@ -1,7 +1,9 @@
 .grid-x
   .medium-4.cell
+    - if current_user.role == "admin"
+      = link_to 'Destroy', @room, method: :delete, data: { confirm: 'Are you sure? You do know this is not comeing back' }, class: "button"
     - if current_user.role == "bad_user"
-      %h4 Think you can try that sorry. Come back to this in a week.
+      = render "sites/banned"
     - else
       %h3= @user.username
       - if @user.avatar.attached?
@@ -11,9 +13,12 @@
       = render partial: 'rooms'
 
   .medium-8.cell
-    %h1
-      This room is
-      = @room.name
-    = render 'room_messages/form'
-    #room_messages
-      = render @room_messages
+    - if current_user.role == "bad_user"
+      = render "sites/banned"
+    - else
+      %h1
+        This room is
+        = @room.name
+      = render 'room_messages/form'
+      %div{id: "room_messages#{@room.id}"}
+        = render @room_messages
