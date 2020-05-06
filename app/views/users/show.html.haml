@@ -27,6 +27,7 @@
     %br
 .grid-x
   .medium-6.cell
+    %br/
     %h3 User's Story
     - @dps.each do |story|
       .callout
@@ -40,6 +41,7 @@
         ago
         %br/
   .medium-6.cell
+    %br/
     %h3 Articles form this user (#{@user.articles.count})
     - @articles.each do |article|
       .callout
@@ -60,6 +62,7 @@
         %br/
         = link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Are you sure?"}, class: "button" if current_user?(article.user)
         %br/
+%br/
 %h3 About this User
 .callout
   %p= @user.body

@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
-  validates :username, uniqueness: true
+  validates :username, uniqueness: true, length: { minimum:1}
 
   scope :by_newest, -> { self.order(created_at: :desc) }
 
