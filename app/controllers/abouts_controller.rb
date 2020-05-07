@@ -21,7 +21,7 @@ class AboutsController < ApplicationController
   def update
     if @about.update(about_params)
      flash[:notice] = "About page was updated"
-     redirect_to article_path(@about)
+     redirect_to abouts_path
     else
      flash[:notice] = "About page was not updated"
      render 'edit'

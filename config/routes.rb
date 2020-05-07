@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :badusers
   resources :acindents
   resources :suggestions
+  resources :helps
   # All resources with do and end
   resources :users do
     member do
