@@ -9,6 +9,7 @@ Whats New in version 19    | Whats Coming Soon | What I added
 Live time Messages         | I dont know yet   | Suggestions   
 Suggestions                |                   | Real time Chat
 Help Page                  |                   | Help page
+Made all my mailers in to one |
 
 ![picture error](https://lionsocial.herokuapp.com/packs/media/images/home_lion-10507de0758c6bb3b9c3a3afb1b19fbc.jpg)
 

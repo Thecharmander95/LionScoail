@@ -10,7 +10,7 @@ class BadusersController < ApplicationController
     if @bad.save
       flash[:notice] = "The user was successfully reported. We will decide if we would block them #{current_user.username}."
       redirect_to root_path
-      BaduserMailer.newreport.deliver_now
+      AllMailer.newreport.deliver_now
     else
       render 'new'
     end

@@ -10,6 +10,7 @@ class HelpsController < ApplicationController
     if @help.save
       flash[:notice] = "What you needed help with is being sent to us."
       redirect_to root_path
+      AllMailer.help.deliver_now
     else
       render 'new'
     end

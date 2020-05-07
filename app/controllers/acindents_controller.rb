@@ -10,7 +10,7 @@ class AcindentsController < ApplicationController
     if @bad.save
       flash[:notice] = "The email was successfully sent. We will decide if we would unblock you #{current_user.username}."
       redirect_to root_path
-      BaduserMailer.acindent.deliver_now
+      AllMailer.acindent.deliver_now
     else
       render 'new'
     end

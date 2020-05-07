@@ -10,7 +10,7 @@ class SuggestionsController < ApplicationController
     if @sg.save
       flash[:notice] = "The suggestion was reported! Thank you #{current_user.username}!"
       redirect_to root_path
-      SuggestionMailer.sg.deliver_now
+      AllMailer.sg.deliver_now
     else
       render 'new'
     end
