@@ -13,6 +13,7 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :articles, dependent: :destroy
   has_many :dissaperingposts, dependent: :destroy
+  has_many :suggestions, dependent: :destroy
 
   has_one_attached :avatar
 

@@ -1,0 +1,12 @@
+%h1 All Suggestions
+- @sgs.each do |sg|
+  .callout
+    The Suggestion Is =
+    = sg.name
+    %br/
+    How long ago the suggestion was created at
+    = time_ago_in_words(sg.created_at)
+    ago
+    %br/
+    = link_to 'Delete', suggestion_path(sg), method: :delete, data: {confirm: "Did you do it?"}, class: "dude"
+    %br/
