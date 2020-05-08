@@ -1,13 +1,16 @@
-%h1 People who are reported
-- @bads.each do |bad|
-  .callout
-    Username =
-    = bad.user
-    %br/
-    Why =
-    = bad.what
-    %br/
-    = time_ago_in_words(bad.created_at)
-    ago
-    %br/
-    = link_to 'Destroy', bad, method: :delete, data: { confirm: 'Are you sure?' }
+- if current_user.role == "admin"
+  %h1 People who are reported
+  - @bads.each do |bad|
+    .callout
+      Username =
+      = bad.user
+      %br/
+      Why =
+      = bad.what
+      %br/
+      = time_ago_in_words(bad.created_at)
+      ago
+      %br/
+      = link_to 'Destroy', bad, method: :delete, data: { confirm: 'Are you sure?' }
+- else
+  = link_to 'Back', root_path, class: "button"
