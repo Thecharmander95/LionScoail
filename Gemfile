@@ -47,6 +47,8 @@ gem 'haml-rails', '~> 2.0.1'
 gem 'foundation-rails'
 gem 'autoprefixer-rails'
 
+gem 'friendly_id', '~> 5.2.4'
+
 # devise gem
 gem 'devise'
 

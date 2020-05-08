@@ -128,6 +128,8 @@ GEM
       railties (>= 3.1.0)
       sass (>= 3.3.0)
       sprockets-es6 (>= 0.9.0)
+    friendly_id (5.2.5)
+      activerecord (>= 4.0.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     haml (5.1.2)
@@ -314,6 +316,7 @@ DEPENDENCIES
   coffee-rails (~> 5.0)
   devise
   foundation-rails
+  friendly_id (~> 5.2.4)
   haml-rails (~> 2.0.1)
   hirb
   html2haml

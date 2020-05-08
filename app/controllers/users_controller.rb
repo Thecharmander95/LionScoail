@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     @posts = @user.posts
     @posts = Post.by_newest
     @articles = @user.articles
