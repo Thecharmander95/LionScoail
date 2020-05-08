@@ -1,14 +1,16 @@
 .grid-x
-  .medium-6.cell
-
+  .medium-4.cell
     %h3= @user.username
 
     - if @user.avatar.attached?
-      = image_tag @user.avatar.variant(resize_to_limit: [200, 200])
-
+      = image_tag @user.avatar.variant(resize_to_fill: [150, 150])
+    .bio
+      %p= @user.body
+      %br/
+      
     %section.stats= render 'shared/stats'
     = render 'follow_form', user: @user if user_signed_in?
-  .medium-6.cell
+  .medium-4.cell
     %h3
       Posts form this user (#{@user.posts.count})
 
@@ -25,25 +27,9 @@
         data: { confirm: 'Are you sure? You do know this is not comeing back' }, class: "button" if current_user?(post.user)
         %br/
     %br
-.grid-x
-  .medium-6.cell
-    %br/
-    %h3 User's Story
-    - @dps.each do |story|
-      .callout
-        .center
-          -  if story.picture.attached?
-            .thumbnail= image_tag story.picture.variant(resize: "200x200")
-        %br/
-        = story.content
-        %br/
-        = time_ago_in_words(story.created_at)
-        ago
-        %br/
-  .medium-6.cell
-    %br/
+  .medium-4.cell
     %h3 Articles form this user (#{@user.articles.count})
-    - @articles.each do |article|
+    - @user.articles.each do |article|
       .callout
         Article's Title =
         = article.title
@@ -64,9 +50,6 @@
         %br/
 %br/
 %h3 About this User
-.callout
-  %p= @user.body
-  %br/
 
 - if current_user.role == "admin"
   %h6= link_to "Delete", user_path, method: :delete, data: { confirm: "Really delete this user? What did they do." }, class: "button"

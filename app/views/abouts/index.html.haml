@@ -11,5 +11,6 @@
   %br/
   %h5= about.buttum
   %br/
-  = link_to 'Delete', about_path(about), method: :delete, data: {confirm: "You must make a new about page"}, class: "button" if current_user.role == "admin"
+  - if user_signed_in?
+    = link_to 'Delete', about_path(about), method: :delete, data: {confirm: "You must make a new about page"}, class: "button" if current_user.role == "admin"
 %br/
