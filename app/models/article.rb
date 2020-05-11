@@ -9,5 +9,9 @@ class Article < ActiveRecord::Base
 
   def self.find_by_first_letter(letter)
    where('title LIKE ?', "#{letter}%").order('title ASC')
- end
+  end
+
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
 end

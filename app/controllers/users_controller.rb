@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     @user.destroy
     redirect_to root_path, notice: 'User deleted.'
   end
@@ -19,11 +19,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     @user.avatar.attach(user_params[:avatar]) if user_params[:avatar].present?
 
     respond_to do |format|
@@ -39,14 +39,14 @@ class UsersController < ApplicationController
 
   def following
     @title = "Following"
-    @user  = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     @users = @user.following
     render 'show_follow'
   end
 
   def followers
     @title = "Followers"
-    @user  = User.find(params[:id])
+    @user = User.friendly.find(params[:id])
     @users = @user.followers
     render 'show_follow'
   end
@@ -55,7 +55,7 @@ class UsersController < ApplicationController
   private
 
     def set_user
-      @user = User.find(params[:id])
+      @user = User.friendly.find(params[:id])
     end
 
     def user_params

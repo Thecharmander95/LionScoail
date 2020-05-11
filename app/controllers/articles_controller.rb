@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:edit, :update, :show, :destroy]
+  before_action :set_article, only: [:edit, :update, :destroy, :show]
 
   def new
     @article = current_user.articles.new
@@ -47,7 +47,7 @@ def destroy
 
  private
   def set_article
-    @article = Article.find(params[:id])
+    @article = Article.friendly.find(params[:id])
   end
 
   def article_params

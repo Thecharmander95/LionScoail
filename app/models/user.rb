@@ -23,6 +23,7 @@ class User < ApplicationRecord
 
   extend FriendlyId
   friendly_id :username, use: :slugged
+  
   def follow(other_user)
     following << other_user
   end

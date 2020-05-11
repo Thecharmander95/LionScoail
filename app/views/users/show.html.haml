@@ -7,8 +7,9 @@
     .bio
       %p= @user.body
       %br/
-      
+
     %section.stats= render 'shared/stats'
+    %br/
     = render 'follow_form', user: @user if user_signed_in?
   .medium-4.cell
     %h3
