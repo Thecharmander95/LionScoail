@@ -7,6 +7,7 @@
 #
 # To learn more, check out the guide:
 #
+
 # http://norman.github.io/friendly_id/file.Guide.html
 
 FriendlyId.defaults do |config|
@@ -18,7 +19,7 @@ FriendlyId.defaults do |config|
 
   config.reserved_words = %w(new edit index session login logout users admin
     stylesheets assets javascripts images)
-    
+
   # This adds an option to treat reserved words as conflicts rather than exceptions.
   # When there is no good candidate, a UUID will be appended, matching the existing
   # conflict behavior.

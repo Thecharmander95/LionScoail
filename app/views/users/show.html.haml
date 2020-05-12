@@ -4,9 +4,12 @@
 
     - if @user.avatar.attached?
       = image_tag @user.avatar.variant(resize_to_fill: [150, 150])
-    .bio
+    %h5
+      = @user.username
+      bio
+    .callout
       %p= @user.body
-      %br/
+    %br/
 
     %section.stats= render 'shared/stats'
     %br/
@@ -50,7 +53,11 @@
         = link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Are you sure?"}, class: "button" if current_user?(article.user)
         %br/
 %br/
-%h3 About this User
+- if current_user == @user
+  - if current_user.phone == ""
+    %h4 A friendly message from Lion Socail
+    .callout
+      Hi we suggest you add a phone number to your account. Thank you, Lion Socail
 
 - if current_user.role == "admin"
   %h6= link_to "Delete", user_path, method: :delete, data: { confirm: "Really delete this user? What did they do." }, class: "button"
