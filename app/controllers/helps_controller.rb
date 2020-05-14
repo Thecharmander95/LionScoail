@@ -30,6 +30,10 @@ class HelpsController < ApplicationController
   end
 
   def index
+    if current_user.role == "admin"
+    else
+      redirect_to root_path, notice: "Your not that user"
+    end
     @helps = Help.all
   end
 

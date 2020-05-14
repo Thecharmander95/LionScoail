@@ -18,6 +18,10 @@ class SuggestionsController < ApplicationController
 
   def index
     @sgs = Suggestion.all
+    if current_user.role == "admin"
+    else
+      redirect_to root_path, notice: "Your not that user"
+    end
   end
 
   def destroy

@@ -17,6 +17,10 @@ class BadusersController < ApplicationController
   end
 
  def index
+   if current_user.role == "admin"
+   else
+     redirect_to root_path, notice: "Your not that user"
+   end
    @bads = Baduser.all
    @bads = Baduser.by_newest
  end

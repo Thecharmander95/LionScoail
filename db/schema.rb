@@ -149,9 +149,7 @@ ActiveRecord::Schema.define(version: 2020_05_11_231424) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "slug"
     t.index ["name"], name: "index_rooms_on_name", unique: true
-    t.index ["slug"], name: "index_rooms_on_slug", unique: true
   end
 
   create_table "suggestions", force: :cascade do |t|

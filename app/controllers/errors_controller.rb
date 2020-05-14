@@ -17,6 +17,10 @@ class ErrorsController < ApplicationController
   end
 
  def index
+   if current_user.role == "admin"
+   else
+     redirect_to root_path, notice: "Your not that user"
+   end
    @errors = Error.all
    @errors = Error.by_newest
  end

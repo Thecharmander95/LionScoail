@@ -17,6 +17,10 @@ class AcindentsController < ApplicationController
   end
 
  def index
+   if current_user.role == "admin"
+   else
+     redirect_to root_path, notice: "Your not that user"
+   end
    @bads = Acindent.all
    @bads = Acindent.by_newest
  end
