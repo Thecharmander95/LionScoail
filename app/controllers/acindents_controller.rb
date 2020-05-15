@@ -1,5 +1,6 @@
 class AcindentsController < ApplicationController
   before_action :set_bad, only: [:destroy]
+  before_action :configure_admin, only: [:index]
 
   def new
     @bad = Acindent.new
@@ -17,10 +18,6 @@ class AcindentsController < ApplicationController
   end
 
  def index
-   if current_user.role == "admin"
-   else
-     redirect_to root_path, notice: "Your not that user"
-   end
    @bads = Acindent.all
    @bads = Acindent.by_newest
  end

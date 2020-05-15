@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'sites#home'
   # All get
-  get :usersettings, to: "sites#usersettings"
+  get :admin, to: "admins#usersettings"
   # All the resources
   resources :posts
   resources :abouts

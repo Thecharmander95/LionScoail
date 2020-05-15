@@ -1,5 +1,6 @@
 class HelpsController < ApplicationController
   before_action :set_help, only: [:edit, :update, :destroy]
+  before_action :configure_admin, only: [:index]
 
   def new
     @help = Help.new
@@ -30,10 +31,6 @@ class HelpsController < ApplicationController
   end
 
   def index
-    if current_user.role == "admin"
-    else
-      redirect_to root_path, notice: "Your not that user"
-    end
     @helps = Help.all
   end
 

@@ -1,5 +1,6 @@
 class BadusersController < ApplicationController
   before_action :set_bad, only: [:destroy]
+  before_action :configure_admin, only: [:index]
 
   def new
     @bad = Baduser.new
@@ -17,10 +18,6 @@ class BadusersController < ApplicationController
   end
 
  def index
-   if current_user.role == "admin"
-   else
-     redirect_to root_path, notice: "Your not that user"
-   end
    @bads = Baduser.all
    @bads = Baduser.by_newest
  end
