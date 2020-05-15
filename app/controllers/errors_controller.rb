@@ -1,6 +1,6 @@
 class ErrorsController < ApplicationController
   before_action :set_error, only: [:destroy]
-  before_action :configure_admin, only: [:index]
+  before_action :configure_admin, only: [:index, :destroy]
 
   def new
     @error = Error.new

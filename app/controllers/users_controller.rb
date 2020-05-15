@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :configure_admin, only: [:destroy]
+  before_action :configure_user, only: [:edit]
+
   def index
     @users = User.all
     @users = User.by_newest
@@ -20,10 +23,6 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.friendly.find(params[:id])
-    if current_user == @user
-    else
-      redirect_to root_path, notice: "Your not that user"
-    end
   end
 
   def update

@@ -1,6 +1,6 @@
 class AcindentsController < ApplicationController
   before_action :set_bad, only: [:destroy]
-  before_action :configure_admin, only: [:index]
+  before_action :configure_admin, only: [:index, :destroy]
 
   def new
     @bad = Acindent.new
