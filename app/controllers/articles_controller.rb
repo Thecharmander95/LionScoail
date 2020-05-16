@@ -33,9 +33,12 @@ class ArticlesController < ApplicationController
 end
 
 def index
+  if user_signed_in?
+    @user = current_user
+    @article = current_user.articles.new
+  else
+  end
   @articles = Article.all
-  @user = current_user
-  @article = current_user.articles.new
   @articles = Article.order('title ASC')
 end
 

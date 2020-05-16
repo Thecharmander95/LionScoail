@@ -15,19 +15,22 @@
 
   %h3
     Feedback (#{@article.feedbacks.count})
-
-  - @article.feedbacks.each do |feedback|
-    - if feedback.persisted?
-      .callout
-        = feedback.user.username
-        %br/
-        = feedback.body
-        %br/
-        = link_to 'Delete', [feedback.article, feedback], :method => :delete,
-        data: { confirm: 'Are you sure?' } if current_user == feedback.user
+  - if user_signed_in?
+    - @article.feedbacks.each do |feedback|
+      - if feedback.persisted?
+        .callout
+          = feedback.user.username
+          %br/
+          = feedback.body
+          %br/
+          = link_to 'Delete', [feedback.article, feedback], :method => :delete,
+          data: { confirm: 'Are you sure?' } if current_user == feedback.user
+  - else
+    %p #{link_to "Sign in", new_user_session_path} to leave some feedback.
   %p
     = link_to "Print this Page", "javascript:print()", class: "button"
-  %p
-    = link_to "Edit", edit_article_path(@article), class: "button" if current_user?(@article.user)
+  - if user_signed_in?
+    %p
+      = link_to "Edit", edit_article_path(@article), class: "button" if current_user?(@article.user)
   %p
     = link_to 'Back', articles_path, class:"button"

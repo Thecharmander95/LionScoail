@@ -1,11 +1,16 @@
 .grid-x
   .medium-4.cell
-    %h3= @user.username
-    - if @user.avatar.attached?
-      = image_tag @user.avatar.variant(resize_to_fill: [150, 150])
-    %section.stats= render 'shared/stats'
-    %h5 Create your own!!
-    = render 'form'
+    - if user_signed_in?
+      %h3= @user.username
+      - if @user.avatar.attached?
+        = image_tag @user.avatar.variant(resize_to_fill: [150, 150])
+      %section.stats= render 'shared/stats'
+      %h5 Create your own!!
+      = render 'form'
+    - else
+      %h3 #{link_to "Sign in", new_user_session_path} to see your username
+      %h5 #{link_to "Sign in", new_user_session_path} to make your own article.
+
   .medium-8.cell
     %h1 All Articles
     - @articles.each do |article|
@@ -13,6 +18,7 @@
         = link_to user_path(article.user), class: "box" do
           = image_tag article.user.avatar.variant(resize_to_fill: [60, 60]) if article.user.avatar.attached?
         = article.user.username
+        article
         %br/
         Article's Title =
         = article.title
