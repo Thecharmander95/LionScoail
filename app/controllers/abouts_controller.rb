@@ -1,6 +1,7 @@
 class AboutsController < ApplicationController
   before_action :set_about, only: [:edit, :update, :destroy]
-  before_action :configure_admin, only: [:new, :destroy]
+  before_action :check_admin, only: [:new, :destroy, :edit]
+
   def new
     @about = About.new
   end
