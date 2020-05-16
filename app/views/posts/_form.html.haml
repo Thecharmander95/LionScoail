@@ -1,5 +1,5 @@
 - if current_user.role == "bad_user"
-  = render "sites/banned"
+  = render "shared/banned"
 - else
   = form_for @post do |f|
     - if f.object.errors.any?

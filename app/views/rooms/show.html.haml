@@ -3,7 +3,7 @@
     - if current_user.role == "admin"
       = link_to 'Destroy', @room, method: :delete, data: { confirm: 'Are you sure? You do know this is not comeing back' }, class: "button"
     - if current_user.role == "bad_user"
-      = render "sites/banned"
+      = render "shared/banned"
     - else
       %h3= @user.username
       - if @user.avatar.attached?
@@ -14,7 +14,7 @@
 
   .medium-8.cell
     - if current_user.role == "bad_user"
-      = render "sites/banned"
+      = render "shared/banned"
     - else
       %h1
         This room is

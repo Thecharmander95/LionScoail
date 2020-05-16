@@ -4,6 +4,7 @@ class RoomsController < ApplicationController
   before_action :load_entities
 
   def index
+    @room = Room.new
     @user = current_user
     @rooms = Room.all
     @rooms = Room.order('name ASC')

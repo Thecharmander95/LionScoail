@@ -1,6 +1,6 @@
 class HelpsController < ApplicationController
   before_action :set_help, only: [:edit, :update, :destroy]
-  before_action :configure_admin, only: [:index, :destroy]
+  before_action :check_admin, only: [:index, :destroy]
 
   def new
     @help = Help.new

@@ -4,12 +4,9 @@
 
 This is going to be better social media. Also if anyone is being rude on it I will remove them.
 
-Whats New in version 19    | Whats Coming Soon | What I added  
+Whats New in version 20    | Whats Coming Soon | What I added  
 -----------------------    | -------------     | -------------
-Live time Messages         | I dont know yet   | Suggestions   
-Suggestions                |                   | Real time Chat
-Help Page                  |                   | Help page
-Made all my mailers in to one |
+Added security             | 2fa               | Security
 
 ![picture error](https://lionsocial.herokuapp.com/packs/media/images/home_lion-10507de0758c6bb3b9c3a3afb1b19fbc.jpg)
 
@@ -19,4 +16,6 @@ Made by the Lion Social
 
 **Plz don't copy this**
 
-Version 19 :sweat_smile:
+Version 20 :sweat_smile:
+
+Version released on heroku 19

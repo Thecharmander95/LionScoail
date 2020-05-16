@@ -1,6 +1,6 @@
 class BadusersController < ApplicationController
   before_action :set_bad, only: [:destroy]
-  before_action :configure_admin, only: [:index, :destroy]
+  before_action :check_admin, only: [:index, :destroy]
 
   def new
     @bad = Baduser.new

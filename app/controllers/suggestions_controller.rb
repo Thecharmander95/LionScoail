@@ -1,6 +1,6 @@
 class SuggestionsController < ApplicationController
   before_action :set_sg, only: [:destroy]
-  before_action :configure_admin, only: [:index, :destroy]
+  before_action :check_admin, only: [:index, :destroy]
 
   def new
     @sg = Suggestion.new

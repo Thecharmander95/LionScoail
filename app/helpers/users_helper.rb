@@ -3,7 +3,7 @@ module UsersHelper
     user == current_user
   end
 
-  def configure_user
+  def check_user
     @user = User.friendly.find(params[:id])
     if current_user == @user
     else
