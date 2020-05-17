@@ -4,6 +4,8 @@ class Message < ApplicationRecord
 
   validates_presence_of :body, :conversation_id, :user_id
 
+  scope :by_newest, -> { self.order(created_at: :desc) }
+
   private
     def message_time
       created_at.strftime("%d/%m/%y at %l:%M %p")

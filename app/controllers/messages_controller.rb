@@ -9,6 +9,7 @@ class MessagesController < ApplicationController
     @messages.where("user_id != ? AND read = ?", current_user.id, false).update_all(read: true)
 
     @message = @conversation.messages.new
+    @messages = @messages.by_newest
   end
 
   def create
@@ -16,6 +17,11 @@ class MessagesController < ApplicationController
     @message.user = current_user
 
     if @message.save
+      ActionCable.server.broadcast "message_channel",
+      username: @message.user.username,
+      conversation: @conversation.id,
+      message: @message.body
+
       redirect_to conversation_messages_path(@conversation)
     end
   end

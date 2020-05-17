@@ -1,0 +1,12 @@
+= form_for [@conversation, @message] do |f|
+  .field
+    = f.text_area :body, placeholder: "Your message"
+  = f.submit "Send"
+%br/
+
+- if current_user.role == "bad_user"
+  = render "shared/banned"
+- else
+  %h1
+  %div{id: "messages#{@conversation.id}"}
+    = render @messages
