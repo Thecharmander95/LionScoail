@@ -10,6 +10,7 @@ class MessagesController < ApplicationController
 
     @message = @conversation.messages.new
     @messages = @messages.by_newest
+    @conversations = Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id)
   end
 
   def create
