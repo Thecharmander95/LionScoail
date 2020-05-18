@@ -6,8 +6,9 @@ This is going to be better social media. Also if anyone is being rude on it I wi
 
 Whats New in version 20    | Whats Coming Soon | What I added  
 -----------------------    | -------------     | -------------
-Added security             |                   | Security
-Made it so anyone can see articles not if your signed in. |
+Added security             |  IDK ye           | Security
+Made it so anyone can see articles not if your singed in. |
+Added private messages.|
 
 ![picture error](https://lionsocial.herokuapp.com/packs/media/images/home_lion-10507de0758c6bb3b9c3a3afb1b19fbc.jpg)
 
