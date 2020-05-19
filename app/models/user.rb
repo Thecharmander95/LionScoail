@@ -6,8 +6,8 @@ class User < ApplicationRecord
   # Following and Unfollowing
   has_many :active_relationships, class_name:  "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :passive_relationships, class_name:  "Relationship", foreign_key: "followed_id", dependent: :destroy
-  has_many :following, through: :active_relationships, source: :followed
-  has_many :followers, through: :passive_relationships, source: :follower
+  has_many :following, through: :active_relationships, source: :followed, dependent: :delete_all
+  has_many :followers, through: :passive_relationships, source: :follower, dependent: :delete_all
 
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -15,7 +15,9 @@ class User < ApplicationRecord
   has_many :dissaperingposts, dependent: :destroy
   has_many :suggestions, dependent: :destroy
   has_many :room_messages, dependent: :delete_all
-  has_one_attached :avatar
+  has_many :messages, dependent: :delete_all
+  has_one_attached :avatar, dependent: :destroy
+
 
   validates :username, uniqueness: true, length: { minimum:1}
 
@@ -23,7 +25,7 @@ class User < ApplicationRecord
 
   extend FriendlyId
   friendly_id :username, use: :slugged
-  
+
   def follow(other_user)
     following << other_user
   end
