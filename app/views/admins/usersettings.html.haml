@@ -1,4 +1,4 @@
-%h1 All users
+%h3 All users
 - @users.each do |u|
   .callout
     Username =
@@ -20,3 +20,15 @@
         %h6= link_to "Delete", user_path(u), method: :delete, data: { confirm: "Really delete this user? What did they do." }
 
   %br
+%h3 All Conversations
+%p
+  %b Only Delete If Its Making Proploms.
+- @conversations.each do |c|
+  .callout
+    Sender =
+    = c.sender.username
+    %br/
+    Receiver =
+    = c.receiver.username
+    %br/
+    = link_to 'Destroy', c, method: :delete, data: { confirm: 'Are you sure?' }

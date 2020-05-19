@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   resources :rooms do
     resources :room_messages
   end
-  resources :conversations, only: [:index, :create] do
+  resources :conversations, only: [:index, :create, :destroy] do
     resources :messages, only: [:index, :create]
   end
 end

@@ -18,7 +18,6 @@ class User < ApplicationRecord
   has_many :messages, dependent: :delete_all
   has_one_attached :avatar, dependent: :destroy
 
-
   validates :username, uniqueness: true, length: { minimum:1}
 
   scope :by_newest, -> { self.order(created_at: :desc) }
