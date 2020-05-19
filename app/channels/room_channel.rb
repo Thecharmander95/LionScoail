@@ -6,7 +6,7 @@ class RoomChannel < ApplicationCable::Channel
 
   def unsubscribed
     # Any cleanup needed when channel is unsubscribed
-    room = Room.find(params[:room_id])
+    room = Room.find(params[:id])
 
     # Remove the current user from the list
     redis.lrem(key_for(room.id), 1, current_user.id)

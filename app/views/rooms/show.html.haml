@@ -10,10 +10,9 @@
         = image_tag @user.avatar.variant(resize_to_fill: [150, 150])
       %section.stats= render 'shared/stats'
       %br/
-      = render partial: 'rooms'
-      %br/
       = render 'room_messages/form'
-
+      %br/
+      = render partial: 'rooms'
   .medium-8.cell
     - if current_user.role == "bad_user"
       = render "shared/banned"
