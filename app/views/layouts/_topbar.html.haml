@@ -13,6 +13,12 @@
           %li= link_to "Users", users_path
           %li= link_to "Your Messages", conversations_path
           %li.has-submenu
+            %a{:herf => "#0"} Everything
+            %ul.submenu.menu.vertical{"data-submenu" => ""}
+              %li= link_to "Articles", articles_path
+              %li= link_to "Posts", posts_path
+              %li= link_to "Chat Rooms", rooms_path
+          %li.has-submenu
             %a{:href => "#0"} #{current_user.username}
             %ul.submenu.menu.vertical{"data-submenu" => ""}
               %li= link_to "Profile" , user_path(current_user)
