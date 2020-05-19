@@ -13,4 +13,10 @@
     Role =
     = u.role
     %br/
+    - if current_user.role == "admin"
+      - unless u == current_user
+        Delete user
+        %br/
+        %h6= link_to "Delete", user_path(u), method: :delete, data: { confirm: "Really delete this user? What did they do." }
+
   %br
