@@ -1,34 +1,36 @@
-%h3 All users
-- @users.each do |u|
-  .callout
-    Username =
-    = u.username
-    %br/
-    Email =
-    = u.email
-    %br/
-    Bio =
-    = u.body
-    %br/
-    Role =
-    = u.role
-    %br/
-    - if current_user.role == "admin"
-      - unless u == current_user
-        Delete user
+.grid-x
+  .medium-6.cell
+    %h3 All users
+    - @users.each do |u|
+      .callout
+        Username =
+        = u.username
         %br/
-        %h6= link_to "Delete", user_path(u), method: :delete, data: { confirm: "Really delete this user? What did they do." }
-
-  %br
-%h3 All Conversations
-%p
-  %b Only Delete If Its Making Proploms.
-- @conversations.each do |c|
-  .callout
-    Sender =
-    = c.sender.username
-    %br/
-    Receiver =
-    = c.receiver.username
-    %br/
-    = link_to 'Destroy', c, method: :delete, data: { confirm: 'Are you sure?' }
+        Email =
+        = u.email
+        %br/
+        Bio =
+        = u.body
+        %br/
+        Role =
+        = u.role
+        %br/
+        - if current_user.role == "admin"
+          - unless u == current_user
+            Delete user
+            %br/
+            %h6= link_to "Delete", user_path(u), method: :delete, data: { confirm: "Really delete this user? What did they do." }
+      %br
+  .medium-6.cell
+    %h3 All Conversations
+    %p
+      %b Only Delete If Its Making Proploms.
+    - @conversations.each do |c|
+      .callout
+        Sender =
+        = c.sender.username
+        %br/
+        Receiver =
+        = c.receiver.username
+        %br/
+        = link_to 'Destroy', c, method: :delete, data: { confirm: 'Are you sure?' }
