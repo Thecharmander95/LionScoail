@@ -1,6 +1,6 @@
 import consumer from "./consumer"
 
-var audio = new Audio("https://notificationsounds.com/soundfiles/c3992e9a68c5ae12bd18488bc579b30d/file-sounds-1143-clearly.mp3", "https://notificationsounds.com/soundfiles/c3992e9a68c5ae12bd18488bc579b30d/file-sounds-1143-clearly.ogg", "https://notificationsounds.com/soundfiles/c3992e9a68c5ae12bd18488bc579b30d/file-sounds-1143-clearly.wav");
+var audio = new Audio("https://notificationsounds.com/soundfiles/6364d3f0f495b6ab9dcf8d3b5c6e0b01/file-sounds-862-glitchy-language.wav");
 
 consumer.subscriptions.create("MessageChannel", {
   connected() {

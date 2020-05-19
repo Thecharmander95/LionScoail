@@ -11,6 +11,8 @@
       %section.stats= render 'shared/stats'
       %br/
       = render partial: 'rooms'
+      %br/
+      = render 'room_messages/form'
 
   .medium-8.cell
     - if current_user.role == "bad_user"
@@ -19,6 +21,5 @@
       %h1
         This room is
         = @room.name
-      = render 'room_messages/form'
       %div{id: "room_messages#{@room.id}"}
         = render @room_messages
