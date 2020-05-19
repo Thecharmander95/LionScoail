@@ -26,6 +26,7 @@ $(document).on('turbolinks:load', function() {
   $(document).foundation()
 });
 
+
 // Custom scss files.
 import 'src/application'
 

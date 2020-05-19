@@ -4,6 +4,7 @@ class MessagesController < ApplicationController
   end
 
   def index
+    @page_title = "Messages Lion Socail"
     @messages = @conversation.messages
 
     @messages.where("user_id != ? AND read = ?", current_user.id, false).update_all(read: true)

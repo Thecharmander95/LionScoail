@@ -18,6 +18,7 @@ class ErrorsController < ApplicationController
   end
 
  def index
+   @page_title = "Errors Lion Socail"
    @errors = Error.all
    @errors = Error.by_newest
  end

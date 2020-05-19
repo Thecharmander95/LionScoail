@@ -19,6 +19,7 @@ class DissaperingpostsController < ApplicationController
   end
 
   def index
+    @page_title = "Stories Lion Socail"
     @dps = Dissaperingpost.by_newest
     @user = current_user
     @dp = current_user.dissaperingposts.new

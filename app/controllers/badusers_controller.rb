@@ -18,6 +18,7 @@ class BadusersController < ApplicationController
   end
 
  def index
+   @page_title = "Badusers Lion Socail"
    @bads = Baduser.all
    @bads = Baduser.by_newest
  end

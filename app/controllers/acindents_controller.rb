@@ -18,6 +18,7 @@ class AcindentsController < ApplicationController
   end
 
  def index
+   @page_title = "'Acindent' users Lion Socail"
    @bads = Acindent.all
    @bads = Acindent.by_newest
  end

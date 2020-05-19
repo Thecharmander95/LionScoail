@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
   before_action :set_user
-  before_action :configure_admin
+  before_action :check_admin
 
   def usersettings
   end

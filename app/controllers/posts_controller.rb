@@ -6,6 +6,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
+    @page_title = "Posts Lion Socail"
     @posts = Post.by_newest
     @post = current_user.posts.new
     @user = current_user

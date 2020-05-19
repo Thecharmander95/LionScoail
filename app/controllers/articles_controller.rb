@@ -18,6 +18,7 @@ class ArticlesController < ApplicationController
 
  def show
    @feedback = @article.feedbacks.new
+   @page_title = "#{@article.title} Article Lion Socail"
  end
 
  def edit
@@ -34,6 +35,7 @@ class ArticlesController < ApplicationController
 end
 
 def index
+  @page_title = "Articles Lion Socail"
   if user_signed_in?
     @user = current_user
     @article = current_user.articles.new

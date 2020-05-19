@@ -30,6 +30,7 @@ class AboutsController < ApplicationController
   end
 
   def index
+    @page_title = "About Lion Socail"
     @abouts = About.all
   end
 

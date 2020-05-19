@@ -4,6 +4,7 @@ class RoomsController < ApplicationController
   before_action :load_entities
 
   def index
+    @page_title = "Chat rooms Lion Socail"
     @room = Room.new
     @user = current_user
     @rooms = Room.all
@@ -38,6 +39,7 @@ class RoomsController < ApplicationController
   end
 
   def show
+    @page_title = "#{@room.name} Lion Socail"
     @user = current_user
     @room_message = @room.room_messages.new
     @room_messages = @room.room_messages

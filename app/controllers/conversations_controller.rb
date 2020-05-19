@@ -1,5 +1,6 @@
 class ConversationsController < ApplicationController
   def index
+    @page_title = "Conversations Lion Socail"
     @users = User.where.not(id: current_user.id)
     @conversations = Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id)
   end
