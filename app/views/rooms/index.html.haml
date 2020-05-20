@@ -13,4 +13,5 @@
   .medium-8.cell
     %h4 Join any chat room that is shown on the left or make your own.
     %br/
-    = render partial: 'rooms'
+    %div{id: "rooms"}
+      = render @rooms
