@@ -79,3 +79,7 @@ img.small {
 .feed_photo {
   padding-top: 5px;
 }
+
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after{
+  border-color: #ff0000 transparent transparent;
+}
