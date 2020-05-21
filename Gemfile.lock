@@ -61,7 +61,7 @@ GEM
     autoprefixer-rails (9.7.6)
       execjs
     aws-eventstream (1.1.0)
-    aws-partitions (1.318.0)
+    aws-partitions (1.319.0)
     aws-sdk-core (3.96.1)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.239.0)
@@ -70,7 +70,7 @@ GEM
     aws-sdk-kms (1.31.0)
       aws-sdk-core (~> 3, >= 3.71.0)
       aws-sigv4 (~> 1.1)
-    aws-sdk-s3 (1.65.0)
+    aws-sdk-s3 (1.66.0)
       aws-sdk-core (~> 3, >= 3.96.1)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.1)
@@ -171,7 +171,7 @@ GEM
     orm_adapter (0.5.0)
     pg (1.2.3)
     public_suffix (4.0.5)
-    puma (4.3.4)
+    puma (4.3.5)
       nio4r (~> 2.0)
     rack (2.2.2)
     rack-protection (2.0.8.1)
@@ -309,7 +309,7 @@ DEPENDENCIES
   mini_magick (~> 4.8)
   pg (>= 0.18, < 2.0)
   puma (~> 4.3)
-  rails (~> 6.0.3)
+  rails (~> 6)
   redis
   selenium-webdriver
   sidekiq
@@ -324,3 +324,6 @@ DEPENDENCIES
 
 RUBY VERSION
    ruby 2.7.1p83
+
+BUNDLED WITH
+   2.1.4
