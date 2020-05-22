@@ -1,3 +1,12 @@
+= form_for [@room, @room_message] do |f|
+  - if f.object.errors.any?
+    #error_explanation
+      %h2
+        = "#{pluralize(f.object.errors.count, "error")} prohibited this post from being saved:"
+      %ul
+        - f.object.errors.full_messages.each do |message|
+          %li
+            = message
 = form_for [@room, @room_message], id: 'new_messages_form', remote: true do |f|
   = f.label :Send_a_message
   = f.text_field :message
