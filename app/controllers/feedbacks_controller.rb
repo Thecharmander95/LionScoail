@@ -17,7 +17,7 @@ class FeedbacksController < ApplicationController
   end
 
   def destroy
-    @article = Article.find(params[:article_id])
+    @article = Article.friendly.find(params[:article_id])
     @feedback = Feedback.find(params[:id])
     @feedback.destroy
     redirect_to article_path(@feedback.article)
@@ -29,6 +29,6 @@ class FeedbacksController < ApplicationController
     end
 
     def set_article
-      @article = Article.find(params[:article_id])
+      @article = Article.friendly.find(params[:article_id])
     end
 end

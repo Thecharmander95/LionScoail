@@ -1,11 +1,7 @@
-%h5#notice= notice
-
-%h4
-  %b Post content is:
-  %b= @post.content
-= render 'comments/form'
 %h3
   Comments (#{@post.comments.count})
+
+= render 'comments/form'
 
 - @post.comments.each do |comment|
   - if comment.persisted?
