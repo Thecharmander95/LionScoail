@@ -32,3 +32,5 @@ import 'src/application'
 
 // images and fonts
 require.context('../images', true)
+
+import 'packs/direct_upload'

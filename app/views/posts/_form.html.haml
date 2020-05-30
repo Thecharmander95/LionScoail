@@ -14,7 +14,7 @@
       = f.label :content
       = f.text_area :content, rows: 5
     %span.picture
-      = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png'
+      = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', direct_upload: true
     .actions
       = f.submit class: 'button'
   :javascript
