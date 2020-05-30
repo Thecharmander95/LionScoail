@@ -13,6 +13,11 @@ gem 'puma', '~> 4.3'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+# Use Capistrano for deployment
+# gem 'capistrano-rails', group: :development
+# Reduces boot times through caching; required in config/boot.rb
+gem 'bootsnap'
+
 
 # Webpacker
 gem 'webpacker', '~> 5.x'
@@ -46,12 +51,6 @@ gem "aws-sdk-s3", require: false
 gem 'fastimage'
 
 gem 'hirb'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
