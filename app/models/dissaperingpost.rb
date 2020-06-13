@@ -2,6 +2,7 @@ class Dissaperingpost < ApplicationRecord
   belongs_to :user
 
   has_one_attached :picture
+  has_one_attached :video
 
   # Scopes
   scope :by_newest, -> { self.order(created_at: :desc) }

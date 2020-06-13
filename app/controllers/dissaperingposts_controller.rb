@@ -36,7 +36,6 @@ class DissaperingpostsController < ApplicationController
   end
 
   def dp_params
-    params.require(:dissaperingpost).permit(:content)
-    params.require(:dissaperingpost).permit(:content, :picture)
+    params.require(:dissaperingpost).permit(:content, :picture, :video)
   end
 end
