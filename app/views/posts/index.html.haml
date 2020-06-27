@@ -16,11 +16,11 @@
           = post.user.username
         %br/
         .center
-          -  if post.picture.attached?
-            .thumbnail= image_tag post.picture.variant(resize: "200x200")
-          %br/
-          - if post.video.attached?
-            = video_tag rails_blob_path(post.video), controls: true, class: "small"
+          - if post.picture.attached?
+            - if post.picture.image?
+              .thumbnail= image_tag post.picture.variant(resize: "200x200")
+            - if post.picture.video?
+              = video_tag rails_blob_path(post.picture), controls: true, class: "small"
 
         %br/
         = post.content

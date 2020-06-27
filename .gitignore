@@ -26,9 +26,6 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-.env
-.tool-versions
-
 /public/packs
 /public/packs-test
 /node_modules

@@ -14,14 +14,11 @@
       = f.label :content
       = f.text_area :content, rows: 5
     %span.picture
-      (Picture)
-      = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png', direct_upload: true
+      (Picture or Video)
+      = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png,video/mp4,video/mov,video/webm', direct_upload: true
     %br/
-    %span.video
-      (Video)
-      = f.file_field :video, accept: 'video/mp4,video/mov,video/webm', direct_upload: true
     .actions
-      = f.submit class: 'button'
+      = f.submit "Post", class: 'button'
   :javascript
     $('#micropost_picture').bind('change', function() {
       var size_in_megabytes = this.files[0].size/1024/1024;

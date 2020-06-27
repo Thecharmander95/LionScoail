@@ -17,9 +17,6 @@
       (Picture)
       = f.file_field :picture, accept: 'image/jpeg,image/gif,image/png,video/mp4,video/mov,video/webm', direct_upload: true
     %br/
-    // %span.video
-    //   (Video)
-    //   = f.file_field :video, accept: 'video/mp4,video/mov,video/webm', direct_upload: true
     .actions
       = f.submit "Post Story", class: 'button'
   :javascript
