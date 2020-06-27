@@ -20,7 +20,7 @@
       %h4= link_to "Posts", posts_path, class: "button"
     .medium-6.cell
       - if current_user.role == "bad_user"
-        = render "banned"
+        = render "shared/banned"
       - else
         %h4 Join a Chat Room.
         %h4= link_to "Chat Rooms", rooms_path, class: "button"
