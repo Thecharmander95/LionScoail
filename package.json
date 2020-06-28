@@ -2,12 +2,12 @@
   "name": "LionSocial",
   "private": true,
   "dependencies": {
-    "@rails/actioncable": "^6.0.2-2",
-    "@rails/activestorage": "^6.0.2-2",
-    "@rails/ujs": "^6.0.2-2",
-    "@rails/webpacker": "4.2.2",
+    "@rails/actioncable": "^6.x",
+    "@rails/activestorage": "^6.x",
+    "@rails/ujs": "^6.x",
+    "@rails/webpacker": "5.x",
     "babel-loader": "^8.1.0",
-    "chokidar": "^3",
+    "chokidar": "^3.4.x",
     "css-loader": "^3.5.2",
     "file-loader": "^6.0.0",
     "foundation-sites": "^6.6.3",
@@ -23,7 +23,7 @@
   },
   "engines": {
     "yarn": "1.22.x",
-    "node": "12.x",
+    "node": "14.x",
     "npm": "6.x"
   }
 }
