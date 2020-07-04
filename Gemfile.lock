@@ -306,7 +306,7 @@ DEPENDENCIES
   hirb
   html2haml
   image_processing
-  jbuilder (~> 2.5)
+  jbuilder (~> 2.7)
   listen (>= 3.2.1)
   mini_magick (~> 4.8)
   pg (>= 0.18, < 2.0)
