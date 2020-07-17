@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_17_231947) do
+ActiveRecord::Schema.define(version: 2020_07_17_200243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 2020_05_17_231947) do
     t.text "list2"
     t.text "list3"
     t.text "buttum"
+    t.text "linkgithub"
+    t.text "githubtitle"
   end
 
   create_table "acindents", force: :cascade do |t|
