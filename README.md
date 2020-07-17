@@ -6,7 +6,8 @@ This is going to be better social media. Also if anyone is being rude on it I wi
 
 Whats New in version 21    | Whats Coming Soon | What I added  
 -----------------------    | -------------     | -------------
-Fixing Alot of errors      |  IDK yet          |
+Fixing A lot of errors     |  IDK yet          |
+Disabled stories TEMPORARY |
 
 ![picture error](https://lionsocial.herokuapp.com/packs/media/images/home_lion-10507de0758c6bb3b9c3a3afb1b19fbc.jpg)
 
@@ -18,5 +19,5 @@ Made by the Lion Social
 
 Version 21 :sweat_smile:
 
-Version released on Heroku 20
+Version released on Heroku 21
 https://lionsocial.herokuapp.com/
