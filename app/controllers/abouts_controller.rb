@@ -47,6 +47,6 @@ class AboutsController < ApplicationController
     end
 
     def about_params
-      params.require(:about).permit(:title, :toppara, :change, :list1, :list2, :list3, :buttum)
+      params.require(:about).permit(:title, :toppara, :change, :list1, :list2, :list3, :buttum, :linkgithub, :githubtitle)
     end
 end
