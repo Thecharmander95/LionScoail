@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   resources :posts
   resources :abouts
   resources :errors
-  resources :dissaperingposts
   resources :relationships, only: [:create, :destroy]
   resources :articles
   resources :badusers

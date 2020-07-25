@@ -10,5 +10,7 @@ class CreateArticles < ActiveRecord::Migration[5.1]
     end
     add_column :articles, :sources, :text
     add_column :articles, :articleused, :text
+    add_column :articles, :slug, :string
+    add_index :articles, :slug, unique: true
   end
 end

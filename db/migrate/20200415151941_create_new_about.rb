@@ -9,5 +9,7 @@ class CreateNewAbout < ActiveRecord::Migration[6.0]
       t.text :list3
       t.text :buttum
     end
+    add_column :abouts, :linkgithub, :text
+    add_column :abouts, :githubtitle, :text
   end
 end
