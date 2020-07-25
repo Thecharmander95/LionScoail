@@ -19,5 +19,5 @@ Made by the Lion Social
 
 Version 22 :sweat_smile:
 
-Version released on Heroku 21
+Version released on Heroku 22
 https://lionsocial.herokuapp.com/
