@@ -45,3 +45,11 @@
         = c.name
         %br/
         = link_to "Destory", c, method: :delete, data: { confirm: "Are you sure?"}
+  .medium-6.cell
+    %h3 Users who are banned.
+    - @users.each do |u|
+      - if u.role == 'bad_user'
+        .callout
+          = u.username
+          %br/
+          To unblock follow the same steps as blocking but this time have the inside of these "" blank.
