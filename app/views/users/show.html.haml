@@ -8,9 +8,7 @@
     %section.stats= render 'shared/stats'
     %br/
     %h5
-      = @user.username
-      bio
-
+      #{@user.username}'s bio
     .callout
       %p= @user.body
       %br/

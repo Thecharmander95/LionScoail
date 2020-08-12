@@ -17,7 +17,7 @@
     = f.text_area :body, rows: 3
   .field
     = f.label :avatar, "Profile Picture"
-    = f.file_field :avatar, direct_upload: true
+    = f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png'
     - if f.object.avatar.attached?
       = image_tag f.object.avatar.variant(resize_to_limit: [400, 400])
   .actions

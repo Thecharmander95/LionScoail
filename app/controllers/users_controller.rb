@@ -19,19 +19,17 @@ class UsersController < ApplicationController
     @posts = @user.posts
     @posts = Post.by_newest
     @articles = @user.articles
-    @dps = @user.dissaperingposts
-    @page_title = "#{@user.username} profile Lion Socail"
+    @page_title = "#{@user.username}'s profile Lion Socail"
   end
 
   def edit
     @user = User.friendly.find(params[:id])
-    @page_title = "Edit #{@user.username} Lion Socail"
+    @page_title = "Edit #{@user.username}'s Lion Socail"
   end
 
   def update
     @user = User.friendly.find(params[:id])
     @user.avatar.attach(user_params[:avatar]) if user_params[:avatar].present?
-
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to root_path, notice: 'User was successfully updated.' }
