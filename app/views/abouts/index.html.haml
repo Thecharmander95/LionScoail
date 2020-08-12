@@ -17,4 +17,3 @@
   - if user_signed_in?
     - if current_user.role == "admin"
       = link_to 'Delete', about_path(about), method: :delete, data: {confirm: "You must make a new about page"}, class: "button"
-%br/
