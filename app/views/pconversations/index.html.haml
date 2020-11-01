@@ -1,0 +1,15 @@
+.grid-x
+  .medium-6.cell
+    %h3 Current Conversations for #{current_user.username}
+    - @pconversations.each do |pconversation|
+      .callout
+        = link_to pconversation.recipient(current_user).username, pconversation_pmessages_path(pconversation)
+        - if !pconversation.unread_message_count(current_user).zero?
+          (#{pconversation.unread_message_count(current_user)})
+        %br/
+        = link_to 'Destroy Conversation', pconversation, method: :delete, data: { confirm: 'Are you sure?' }
+  .medium-6.cell
+    %h3 All Brosis Users
+    - @users.each do |user|
+      .callout
+        = link_to user.username, pconversations_path(sender_id: current_user.id, receiver_id: user.id), method: :post

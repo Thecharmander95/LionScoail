@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_01_193059) do
+ActiveRecord::Schema.define(version: 2020_16_17_231729) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -129,6 +129,24 @@ ActiveRecord::Schema.define(version: 2020_11_01_193059) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "pconversations", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "receiver_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "pmessages", force: :cascade do |t|
+    t.text "body"
+    t.bigint "pconversation_id"
+    t.bigint "user_id"
+    t.boolean "read", default: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pconversation_id"], name: "index_pmessages_on_pconversation_id"
+    t.index ["user_id"], name: "index_pmessages_on_user_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "content"
     t.bigint "user_id", null: false
@@ -186,6 +204,7 @@ ActiveRecord::Schema.define(version: 2020_11_01_193059) do
     t.string "slug"
     t.string "phone"
     t.string "verfaied"
+    t.string "brosis"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["slug"], name: "index_users_on_slug", unique: true
@@ -200,6 +219,8 @@ ActiveRecord::Schema.define(version: 2020_11_01_193059) do
   add_foreign_key "feedbacks", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
+  add_foreign_key "pmessages", "pconversations"
+  add_foreign_key "pmessages", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "room_messages", "rooms"
   add_foreign_key "room_messages", "users"

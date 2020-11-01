@@ -24,3 +24,6 @@
     = f.submit 'Save', class: 'button'
     or
     = link_to 'Edit user settings', edit_user_registration_path, class: "button"
+    - if current_user.brosis == "yes"
+      or
+      = link_to "Delete my account", pconversations_path, class: "button"

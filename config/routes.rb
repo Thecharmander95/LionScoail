@@ -31,4 +31,10 @@ Rails.application.routes.draw do
   resources :conversations, only: [:index, :create, :destroy] do
     resources :messages, only: [:index, :create]
   end
+
+  # Private Brosis only stuff
+  resources :pconversations, only: [:index, :create, :destroy] do
+    resources :pmessages, only: [:index, :create]
+  end
+
 end
