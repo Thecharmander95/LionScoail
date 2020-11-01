@@ -18,6 +18,7 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap'
 
+gem "actionview", ">= 6"
 
 # Webpacker
 gem 'webpacker', '~> 5.x'
