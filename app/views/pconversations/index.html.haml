@@ -11,7 +11,7 @@
   .medium-6.cell
     %h3 All Brosis Users
     - @users.each do |user|
-      - if user.brosis == ""
-      -else
+      - if user.brosis == "yes"
         .callout
           = link_to user.username, pconversations_path(sender_id: current_user.id, receiver_id: user.id), method: :post
+      -else
