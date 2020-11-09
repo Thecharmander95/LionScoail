@@ -14,8 +14,6 @@ class User < ApplicationRecord
   has_many :articles, dependent: :destroy
   has_many :suggestions, dependent: :destroy
   has_many :room_messages, dependent: :delete_all
-  has_many :messages, dependent: :delete_all
-  has_many :conversations, dependent: :delete_all
   has_one_attached :avatar, dependent: :destroy
 
   validates :username, uniqueness: true, length: { minimum:1}
@@ -45,8 +43,4 @@ class User < ApplicationRecord
    Post.where("user_id IN (#{following_ids})
                     OR user_id = :user_id", user_id: id)
   end
-
-  # Brosis stuff
-  has_many :pmessages, dependent: :delete_all
-  has_many :pconversations, dependent: :delete_all
 end
