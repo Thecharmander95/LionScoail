@@ -12,10 +12,6 @@ html body {
   @extend .grid-margin-x !optional;
 }
 
-body h1 {
-    color: darkslategray;
-}
-
 a.button {
     background-color: yellow;
     color: red;
@@ -31,7 +27,7 @@ a.button:hover {
 }
 
 h1 {
-    color: brown;
+    color: #FF6633;
 }
 
 input.button {
