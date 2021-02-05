@@ -23,8 +23,6 @@ class MessagesController < ApplicationController
       username: @message.user.username,
       conversation: @conversation.id,
       message: @message.body
-
-      redirect_to conversation_messages_path(@conversation)
     end
   end
 

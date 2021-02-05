@@ -33,27 +33,6 @@
         data: { confirm: 'Are you sure? You do know this is not comeing back' }, class: "button" if current_user?(post.user)
         %br/
     %br
-  .medium-4.cell
-    %h3 Articles form this user (#{@user.articles.count})
-    - @user.articles.each do |article|
-      .callout
-        Article's Title =
-        = article.title
-        %br/
-        Article's Description =
-        = article.description
-        %br/
-        Article's type of article =
-        = article.articleused
-        %br/
-        How long ago the article was created at
-        = time_ago_in_words(article.created_at)
-        %br/
-        To read the article
-        = link_to 'Read', article_path(article)
-        %br/
-        = link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Are you sure?"}, class: "button" if current_user?(article.user)
-        %br/
 %br/
 - if current_user.role == "admin"
   %h6= link_to "Delete", user_path, method: :delete, data: { confirm: "Really delete this user? What did they do." }, class: "button"

@@ -314,7 +314,7 @@ DEPENDENCIES
   mini_magick (~> 4.8)
   pg (>= 0.18, < 2.0)
   puma (~> 4.3)
-  rails (~> 6)
+  rails (~> 6.1)
   redis
   selenium-webdriver
   sidekiq
@@ -331,4 +331,4 @@ RUBY VERSION
    ruby 3.0.0p0
 
 BUNDLED WITH
-   2.2.6
+   2.2.8

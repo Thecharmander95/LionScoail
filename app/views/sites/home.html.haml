@@ -10,8 +10,8 @@
       %h5 You have
       %section.stats= render 'shared/stats'
     .medium-6.cell
-      %h4 Would you like to view articles.
-      %h4= link_to "Articles", articles_path, class:"button"
+      %h4 Would you like to view your messages.
+      %h4= link_to "Messages", conversations_path, class:"button"
   %br/
   %br/
   .grid-x
@@ -28,6 +28,5 @@
 - else
   %h5 Please consider hitting the sign up or the sign in button to get started.
   %br/
-  %h5 If your are here to read some articles click #{link_to "here", articles_path}
   = link_to "Sign Up/Log In", user_session_path, class: "button"
   = image_pack_tag("home_lion.jpg")
