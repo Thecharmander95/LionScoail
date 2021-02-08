@@ -7,7 +7,6 @@ class RoomsController < ApplicationController
     @page_title = "Chat rooms Lion Socail"
     @room = Room.new
     @user = current_user
-    @rooms = Room.all
     @rooms = Room.order('name ASC')
   end
 
@@ -19,8 +18,9 @@ class RoomsController < ApplicationController
     @room = Room.new permitted_parameters
     @rooms = Room.all
     if @room.save
-      ActionCable.server.broadcast "roomdisplay_channel",
-      message: flash[:success] = "A new room was added refersh the page to see it"
+      ActionCable.server.broadcast("roomdisplay_channel", {
+      message: "A new room was added refersh the page to see it"
+      })
       flash[:success] = "Room #{@room.name} was created successfully"
       redirect_to rooms_path
     else

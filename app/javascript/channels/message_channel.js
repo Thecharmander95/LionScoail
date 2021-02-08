@@ -1,6 +1,6 @@
 import consumer from "./consumer"
 
-var audio = new Audio("https://notificationsounds.com/soundfiles/6364d3f0f495b6ab9dcf8d3b5c6e0b01/file-sounds-862-glitchy-language.wav");
+// var audio = new Audio("https://notificationsounds.com/soundfiles/6364d3f0f495b6ab9dcf8d3b5c6e0b01/file-sounds-862-glitchy-language.wav");
 
 consumer.subscriptions.create("MessageChannel", {
   connected() {
@@ -10,13 +10,14 @@ consumer.subscriptions.create("MessageChannel", {
   },
 
   received(data) {
-    $('#messages' + data.conversation).prepend(
+    alert('message')
+    $('#messages' + data["conversation"]).prepend(
       '<div class="callout">' +
-      data.username +
+      data["username"] +
       " said: " +
-      data.message +
+      data["message"] +
       '</div>'
     )
-    audio.play();
+    // audio.play();
   }
 });

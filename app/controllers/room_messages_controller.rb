@@ -7,10 +7,11 @@ class RoomMessagesController < ApplicationController
     @room_messages = @room.room_messages
     respond_to do |format|
       if @room_message.save
-        ActionCable.server.broadcast "room_channel",
+        ActionCable.server.broadcast("room_channel", {
         username: @room_message.user.username,
         message: @room_message.message,
         room: @room.id
+        })
 
         format.html { redirect_to @room }
         format.js

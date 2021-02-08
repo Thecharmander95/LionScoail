@@ -19,10 +19,11 @@ class MessagesController < ApplicationController
     @message.user = current_user
 
     if @message.save
-      ActionCable.server.broadcast "message_channel",
+      ActionCable.server.broadcast("message_channel", {
       username: @message.user.username,
       conversation: @conversation.id,
       message: @message.body
+      })
 
       redirect_to conversation_messages_path(@conversation)
     end
