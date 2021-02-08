@@ -11,7 +11,7 @@ consumer.subscriptions.create("RoomdisplayChannel", {
 
   received(data) {
     $('#rooms').prepend(
-      data.message 
+      data["message"]
     )
   }
 });
