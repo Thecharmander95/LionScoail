@@ -10,7 +10,6 @@ consumer.subscriptions.create("MessageChannel", {
   },
 
   received(data) {
-    alert('message')
     $('#messages' + data["conversation"]).prepend(
       '<div class="callout">' +
       data["username"] +
