@@ -7,8 +7,6 @@
     = render 'form'
   .medium-8.cell
     %h1 Everyones Posts
-    // %h6 If you want to see people's stories
-    // = link_to "Stories", dissaperingposts_path, class: "button"
     - @posts.each do |post|
       .callout
         = link_to user_path(post.user), class: "box" do

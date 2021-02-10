@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @page_title = "Posts Lion Socail"
-    @posts = Post.by_newest
+    @posts = Post.of_followed_users(current_user.following).by_newest
     @post = current_user.posts.new
     @user = current_user
   end
