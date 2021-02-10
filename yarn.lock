@@ -4521,6 +4521,11 @@ move-concurrently@^1.0.1:
     rimraf "^2.5.4"
     run-queue "^1.0.3"
 
+mp3@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/mp3/-/mp3-0.1.0.tgz#e53e4723e34698ee3ffddcdb60bf88356a4910c1"
+  integrity sha1-5T5HI+NGmO4//dzbYL+INWpJEME=
+
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"

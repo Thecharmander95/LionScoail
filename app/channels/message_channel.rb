@@ -6,6 +6,6 @@ class MessageChannel < ApplicationCable::Channel
   end
 
   def unsubscribed
-      current_user.disappear
+    current_user.disappear
   end
 end

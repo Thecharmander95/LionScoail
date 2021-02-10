@@ -1,6 +1,6 @@
 import consumer from "./consumer"
 
-// var audio = new Audio("https://notificationsounds.com/soundfiles/6364d3f0f495b6ab9dcf8d3b5c6e0b01/file-sounds-862-glitchy-language.wav");
+var audio = new Audio("https://proxy.notificationsounds.com/notification-sounds/goes-without-saying-608/download/file-sounds-1149-goes-without-saying.ogg");
 
 consumer.subscriptions.create("MessageChannel", {
   connected() {
@@ -17,6 +17,6 @@ consumer.subscriptions.create("MessageChannel", {
       data["message"] +
       '</div>'
     )
-    // audio.play();
+    audio.play();
   }
 });
