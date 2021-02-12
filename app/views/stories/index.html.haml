@@ -1,0 +1,26 @@
+.grid-x
+  .medium-4.cell
+    %h3= @user.username
+    - if @user.avatar.attached?
+      = image_tag @user.avatar.variant(resize_to_fill: [150, 150])
+    %section.stats= render 'shared/stats'
+    = render 'form'
+  .medium-8.cell
+    %h1 People who you follow stories.
+    - @storys.each do |story|
+      .callout
+        = link_to user_path(story.user), class: "box" do
+          = image_tag story.user.avatar.variant(resize_to_fill: [60, 60]) if story.user.avatar.attached?
+          = story.user.username
+        %br/
+        .center
+          - if story.picture.attached?
+            - if story.picture.image?
+              .thumbnail= image_tag story.picture.variant(resize: "200x200")
+            - if story.picture.video?
+              = video_tag rails_blob_path(story.picture), controls: true, class: "small"
+
+        %br/
+        = story.content
+        %br/
+    %br

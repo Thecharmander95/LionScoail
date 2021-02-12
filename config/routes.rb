@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :acindents
   resources :suggestions
   resources :helps
+  resources :stories
   # All resources with do and end
   resources :users do
     member do
