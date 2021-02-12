@@ -62,6 +62,20 @@ ActiveRecord::Schema.define(version: 2021_02_08_001233) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "articles", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "content"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "sources"
+    t.text "articleused"
+    t.string "slug"
+    t.index ["slug"], name: "index_articles_on_slug", unique: true
+    t.index ["user_id"], name: "index_articles_on_user_id"
+  end
+
   create_table "badusers", force: :cascade do |t|
     t.text "user"
     t.text "what"
@@ -91,6 +105,16 @@ ActiveRecord::Schema.define(version: 2021_02_08_001233) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "feedbacks", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "article_id", null: false
+    t.text "body"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["article_id"], name: "index_feedbacks_on_article_id"
+    t.index ["user_id"], name: "index_feedbacks_on_user_id"
   end
 
   create_table "helps", force: :cascade do |t|
@@ -176,8 +200,11 @@ ActiveRecord::Schema.define(version: 2021_02_08_001233) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "articles", "users"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
+  add_foreign_key "feedbacks", "articles"
+  add_foreign_key "feedbacks", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
   add_foreign_key "posts", "users"

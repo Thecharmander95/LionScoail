@@ -1,28 +1,41 @@
 .grid-x
-  .medium-4.cell
-    %h3= @user.username
-
+  .medium-1.cell
+  .medium-3.cell
     - if @user.avatar.attached?
       = image_tag @user.avatar.variant(resize_to_fill: [150, 150])
-
-    %section.stats= render 'shared/stats'
-    %br/
+    - else
+      .small
+        = image_pack_tag ("profilepic.png")
+  .medium-8.cell
+    %h1= @user.username
     %h5
-      #{@user.username}'s bio
-    .callout
-      %p= @user.body
-      %br/
+      .grid-x
+        .medium-2.cell
+          %b
+            #{@user.posts.count}
+          posts
+        .medium-2.cell
+          %b
+            %a{:href => "#{followers_user_path(@user)}"}
+              #{@user.followers.count}
+          followers
+        .medium-2.cell
+          %b
+            %a{:href => "#{following_user_path(@user)}"}
+              #{@user.following.count}
+          following
+    %br/
+    %p= @user.body
+    %br/
     = render 'follow_form', user: @user if user_signed_in?
-  .medium-4.cell
-    %h3
-      Posts form this user (#{@user.posts.count})
-
-    - @user.posts.each do |post|
+.grid-x
+  - @user.posts.each do |post|
+    .medium-4.cell
       .callout
         .center
           - if post.picture.attached?
             - if post.picture.image?
-              .thumbnail= image_tag post.picture.variant(resize: "200x200")
+              .thumbnail= image_tag post.picture.variant(resize: "350x350")
             - if post.picture.video?
               = video_tag rails_blob_path(post.picture), controls: true, class: "small"
         %br/
