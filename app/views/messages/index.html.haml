@@ -5,15 +5,6 @@
       .field
         = f.text_area :body, placeholder: "Your message"
       = f.submit "Send", class: "button"
-    %h3 Other conversations your in.
-    - @conversations.each do |conversation|
-      .callout
-        = link_to conversation.recipient(current_user).username, conversation_messages_path(conversation)
-        - if !conversation.unread_message_count(current_user).zero?
-          (#{conversation.unread_message_count(current_user)})
-
-    %br/
-    = link_to "Back", conversations_path, class: "button"
   .medium-6.cell
     - if current_user.role == "bad_user"
       = render "shared/banned"
@@ -21,3 +12,4 @@
       %h1
       %div{id: "messages#{@conversation.id}"}
         = render @messages
+= link_to "Back", conversations_path, class: "button"

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'sites#home'
+  root 'homes#index'
   # All get
   get :admin, to: "admins#usersettings"
   # All the resources

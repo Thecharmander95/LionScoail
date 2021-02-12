@@ -6,7 +6,7 @@
     %section.stats= render 'shared/stats'
     = render 'form'
   .medium-8.cell
-    %h1 Everyones Posts
+    %h1 People who you follow posts.
     - @posts.each do |post|
       .callout
         = link_to user_path(post.user), class: "box" do
