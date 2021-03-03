@@ -7,6 +7,7 @@
     "@rails/activestorage": "^6.x",
     "@rails/ujs": "^6.x",
     "@rails/webpacker": "5.2.1",
+    "av": "^0.4.9",
     "babel-loader": "^8.1.0",
     "chokidar": "^3.4.x",
     "css-loader": "^3.5.2",

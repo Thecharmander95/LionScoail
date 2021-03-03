@@ -32,5 +32,6 @@ import 'src/application'
 
 // images and fonts
 require.context('../images', true)
+require.context('../audio', true)
 
 import 'packs/direct_upload'
