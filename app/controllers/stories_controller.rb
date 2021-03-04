@@ -24,9 +24,13 @@ class StoriesController < ApplicationController
 
   def destroy
     @story.destroy
-    respond_to do |format|
-      format.html { redirect_to stories_url, notice: 'Story was successfully destroyed.' }
-      format.json { head :no_content }
+    if CleanStoriesJob.perform_now(@story[:id])
+      respond_to do |format|
+        format.html { redirect_to stories_url, notice: 'Story was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      common_error(@story.errors.full_messages)
     end
   end
 

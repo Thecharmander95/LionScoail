@@ -1,4 +1,5 @@
 class ConversationsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @page_title = "Conversations Lion Socail"
     @users = User.where.not(id: current_user.id)

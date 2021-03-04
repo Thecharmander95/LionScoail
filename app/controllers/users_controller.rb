@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
   before_action :check_admin, only: [:destroy]
   before_action :check_user, only: [:edit]
 
