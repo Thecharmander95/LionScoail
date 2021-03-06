@@ -1,6 +1,6 @@
 class FeedbacksController < ApplicationController
   before_action :set_article
-
+  before_action :authenticate_user!
   def new
     @feedback = @article.feedbacks.new
   end

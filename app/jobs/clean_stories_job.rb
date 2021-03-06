@@ -1,5 +1,5 @@
 class CleanStoriesJob < ApplicationJob
-  queue_as :story
+  queue_as :default
   sidekiq_options retry: 3
 
   def perform
