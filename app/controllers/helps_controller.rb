@@ -36,7 +36,7 @@ class HelpsController < ApplicationController
   end
 
   def destroy
-    @page_title = "Help Lion Socail"
+    @page_title = "Help Lion social"
     @help.destroy
     flash[:notice] = "Thank you for helping that user."
     redirect_to root_path

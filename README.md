@@ -4,11 +4,13 @@
 
 This is going to be better social media. Also if anyone is being rude on it I will remove them.
 
-Whats New in version 26            | Whats Coming Soon
+What's New in version 27            | What's Coming Soon
 -----------------------            | -------------     
-Shows only the posts of people who you follow |
+Online/ offline feature upgrade    |
+Article's are coming back          |
+Lion Wiki merge.                   |
 
-![picture error: cant find picture](https://lionsocial.herokuapp.com/packs/media/images/home_lion 10507de0758c6bb3b9c3a3afb1b19fbc.jpg)
+![picture error: cant find picture](https://social.lionnav.com/packs/media/images/home_lion-10507de0758c6bb3b9c3a3afb1b19fbc.jpg)
 
 More updates to come!!!! Stay tuned!
 
@@ -17,5 +19,5 @@ More updates to come!!!! Stay tuned!
 
 Version 26 :sweat_smile:
 
-Version released on Heroku 25
+Version released on Heroku 26
 https://social.lionnav.com/

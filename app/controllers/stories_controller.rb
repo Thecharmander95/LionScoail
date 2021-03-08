@@ -3,7 +3,7 @@ class StoriesController < ApplicationController
   before_action :set_story, only: [:destroy]
 
   def index
-    @page_title = "Stories Lion Socail"
+    @page_title = "Stories Lion social"
     @storys = Story.of_followed_users(current_user.following).by_newest
     @story = current_user.stories.new
     @user = current_user

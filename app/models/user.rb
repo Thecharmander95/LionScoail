@@ -14,6 +14,7 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :suggestions, dependent: :destroy
   has_many :room_messages, dependent: :delete_all
+  has_many :artcles, dependent: :delete_all
   has_one_attached :avatar, dependent: :destroy
 
   validates :username, uniqueness: true, length: { minimum:1}

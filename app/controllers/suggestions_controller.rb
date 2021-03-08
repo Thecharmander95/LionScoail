@@ -19,7 +19,7 @@ class SuggestionsController < ApplicationController
   end
 
   def index
-    @page_title = "Suggestions Lion Socail"
+    @page_title = "Suggestions Lion social"
     @sgs = Suggestion.all
   end
 

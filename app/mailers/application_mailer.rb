@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'lionsocail@no.reply'
+  default from: 'lionsocial@no.reply'
   layout 'mailer'
 end

@@ -1,0 +1,31 @@
+- if current_user.role == "bad_user"
+  = render "shared/banned"
+- else
+  - if @article.errors.any?
+    %h2 The following errors prevented the article from saving:
+    %ul
+      - @article.errors.full_messages.each do |msg|
+        %li= msg
+  = form_for @article do |f|
+    %p
+      = f.label :title
+      %br/
+      = f.text_field :title
+    %p
+      = f.label :description
+      %br/
+      = f.text_area :description
+    %p
+      = f.label :type
+      %br/
+      =f.text_field :articleused
+    %p
+      = f.label :Sources
+      %br/
+      = f.text_field :sources
+    %p
+      = f.label :content
+      %br/
+      = f.text_area :content, rows: 10
+    %p
+      = f.submit class: "button"
