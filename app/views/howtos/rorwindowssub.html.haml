@@ -1,0 +1,74 @@
+%h1 Set up Ruby on Rail on Winodws Subsystem
+%h3 Getting started
+%h5 To install Ruby on Rails the first thing you need to is turn on Devloper Mode in settings.
+%h5 After you turned that on open Power Shell and run.
+.codeblock
+  %p $ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+  %p $ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+%h5 After you have done that open Microsoft Store and install Ubuntu and open it and follow its set up and come back here.
+
+%h3 Installing Ruby
+%h5 Before we can install Rbenv to install ruby we need to install some dependences.
+.codeblock
+  %p $ sudo apt-get update
+  %p $ sudo apt install -y libpq-dev git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev software-properties-common libffi-dev universal-ctags git openssl python rcm silversearcher-ag tmux imagemagick watchman
+%h5 Next, we are going to install rbenv so we can install ruby. This will take a while.
+.codeblock
+  %p $ cd
+  %p $ git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+  %p $ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+  %p $ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+  %p $ exec $SHELL
+  %p $ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+  %p $ echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
+  %p $ exec $SHELL
+  %p $ rbenv install 3.0.0
+  %p $ rbenv global 3.0.0
+  %p $ ruby -v
+%h5 After that is done installing we need to install bundler.
+.codeblock
+  %p $ gem install bundler
+%h3 Configuring Git
+%h5 This part of installing Ruby on Rails requries a github account if you do not have a account #{link_to "click here", "https://github.com/", target: :_blank}.
+%h5 To have Ubuntu know your github account run.
+.codeblock
+  %p $ git config --global color.ui true
+  %p $ git config --global user.name "YOUR USERNAME"
+  %p $ git config --global user.email "YOUR@EMAIL.com"
+%h3 Installing rails
+%h5 Before we install rails we need to add Node and Yarn.
+.codeblock
+  %p $ curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash -
+  %p $ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+  %p $ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+  %p $ sudo apt update
+  %p $ sudo apt-get install -y nodejs yarn
+%h5 Now that we have dependences for rails installed we can now install rails.
+.codeblock
+  %p $ gem install rails
+  %p $ rbenv rehash
+  %p $ ruby -v
+%h3 Installing Postgress
+%h5 In order to add a database we need to install Postgress #{link_to "click here", "https://www.enterprisedb.com/downloads/postgres-postgresql-downloads", target: :_blank} to get the installer.
+%h5 in order for Ubuntu to use it run this.
+.codeblock
+  %p $ libpq-dev
+%h3 Installing Heroku
+%h5 In order for the public to use/see your site you are going to need heroku. Also  heroku is used to see what your devloping before you publish to the web.
+.codeblock
+  %p $ curl https://cli-assets.heroku.com/install.sh | sh
+  %p heroku -v
+  %p heroku login
+%h3 Install Atom
+%h5 Atom is used to edit the files you need to create your site. #{link_to "Click here", "https://www.atom.io", target: :_blank} to download atom.
+%h5 Now that we have everything installed lets create your first site.
+%h3 Using Ruby on rails.
+%h5 Follow this guide to create your first app.
+.codeblock
+  %p $ cd /mnt/c
+  %p $ mkdir -p code
+  %p $ rails new *the name* -d postgresql
+  %p $ rails db:setup
+  %p $ heroku local
+%h5 Before using heroku local create the file Procfile and put this #{ link_to "code", "https://github.com/DJ967/FunnyComics/blob/master/Procfile", target: :_blank} in it.
+%h5 Thats it!

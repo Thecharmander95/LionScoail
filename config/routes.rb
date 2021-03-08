@@ -32,4 +32,11 @@ Rails.application.routes.draw do
   resources :conversations, only: [:index, :create, :destroy] do
     resources :messages, only: [:index, :create]
   end
+  # Lion Wiki gets
+  get "howtos/rorwindowssub"
+  get "howtos/rorbrewubuntu"
+  get "howtos/rormacos"
+  get 'infos/index'
+  get 'howtos/index'
+  get "infos/calabria"
 end

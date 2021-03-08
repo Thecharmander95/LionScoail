@@ -91,3 +91,8 @@ video.small {
 .dropdown.menu > li.is-dropdown-submenu-parent > a::after{
   border-color: #ff0000 transparent transparent;
 }
+
+.codeblock {
+  background-color: darkgray;
+  font-size: 14px;
+}
