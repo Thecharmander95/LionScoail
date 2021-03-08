@@ -43,4 +43,8 @@ class User < ApplicationRecord
    Post.where("user_id IN (#{following_ids})
                     OR user_id = :user_id", user_id: id)
   end
+
+  def online?
+    updated_at > 5.minutes.ago
+  end
 end
