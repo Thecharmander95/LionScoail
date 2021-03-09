@@ -6,5 +6,9 @@ class AdminsController < ApplicationController
     @conversations = Conversation.all
     @rooms = Room.all
   end
-  
+
+  def disablefeatures
+    @disables = Disable.all
+  end
+
 end

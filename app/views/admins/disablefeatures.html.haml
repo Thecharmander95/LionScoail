@@ -1,0 +1,16 @@
+%h1 Enable or Disable Features
+- @disables.each do |disable|
+  .callout
+    %h6 Id is #{disable.id}
+    %br/
+    %h6 Are posts disable? #{disable.postdisable}
+    %br/
+    %h6 Are private conversations disabled? #{disable.conversationdisable}
+    %br/
+    %h6 Are articles disabled? #{disable.articledisable}
+    %br/
+    %h6 Are Chat rooms disabled? #{disable.chatroomdisable}
+    %br/
+    %h6 Are stories disabled? #{disable.storydisable}
+    %br/
+    %h6= link_to "Update Features", edit_disable_path(disable)

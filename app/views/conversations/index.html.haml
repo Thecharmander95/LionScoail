@@ -9,7 +9,7 @@
         %br/
         %p= link_to 'Delete Conversation', conversation, method: :delete, data: { confirm: 'Are you sure?' }
   .medium-6.cell
-    %h3 All Users #{current_user.username}
+    %h3 All Users
     - @users.each do |user|
       - @conversations.each do |conversation|
         .callout

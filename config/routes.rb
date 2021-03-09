@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'homes#index'
   # All get
   get :admin, to: "admins#usersettings"
+  get :features, to: "admins#disablefeatures"
   # All the resources
   resources :posts
   resources :abouts
