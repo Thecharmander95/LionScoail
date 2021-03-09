@@ -8,6 +8,14 @@ html body {
     padding: 10px 0 10px 0
 }
 
+.online_status {
+  color: red;
+  transition: color 1s ease;
+  &.online {
+    color: green;
+  }
+}
+
 .grid-x {
   @extend .grid-margin-x !optional;
 }

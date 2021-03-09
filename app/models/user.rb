@@ -21,6 +21,8 @@ class User < ApplicationRecord
   validates :username, uniqueness: true, length: { minimum:1}
 
   scope :by_newest, -> { self.order(created_at: :desc) }
+  scope :of_followed_users, -> (following_users) { where user_id: following_users }
+
 
   extend FriendlyId
   friendly_id :username, use: :slugged
@@ -47,6 +49,6 @@ class User < ApplicationRecord
   end
 
   def online?
-    updated_at > 5.minutes.ago
+    !Redis.new.get("user_#{self.id}_online").nil?
   end
 end

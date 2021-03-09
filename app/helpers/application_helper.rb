@@ -1,6 +1,10 @@
 module ApplicationHelper
   include DisablesHelper
   include UsersHelper
+  include ConversationsHelper
+  include ArticlesHelper
+  include PostsHelper
+
   def check_admin
     if user_signed_in?
       if current_user.role == "admin"
@@ -10,6 +14,11 @@ module ApplicationHelper
     else
       redirect_to root_path, notice: "You do not have access to this"
     end
+  end
+
+  def online_status(user)
+    content_tag :span, user.username,
+                class: "user-#{user.id} online_status #{'online' if user.online?}"
   end
 
 end

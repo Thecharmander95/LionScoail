@@ -1,10 +1,13 @@
 .grid-x
   .medium-6.cell
     %h3 Send a message
-    = form_for [@conversation, @message] do |f|
-      .field
-        = f.text_area :body, placeholder: "Your message"
-      = f.submit "Send", class: "button"
+    - if current_user.role == "bad_user"
+      = render "shared/banned"
+    - else
+      = form_for [@conversation, @message] do |f|
+        .field
+          = f.text_area :body, placeholder: "Your message"
+        = f.submit "Send", class: "button"
   .medium-6.cell
     - if current_user.role == "bad_user"
       = render "shared/banned"

@@ -9,10 +9,13 @@
         %br/
         %p= link_to 'Delete Conversation', conversation, method: :delete, data: { confirm: 'Are you sure?' }
   .medium-6.cell
-    %h3 All Users
+    %h3 All Users #{current_user.username}
     - @users.each do |user|
-      .callout
-        %h6= link_to user.username, conversations_path(sender_id: current_user.id, receiver_id: user.id), method: :post
-        %br/
-        %p Is the user online? #{user.online?}
-        
+      - @conversations.each do |conversation|
+        .callout
+          %p= online_status user
+          %h6= link_to "Enter/Start the conversation", conversations_path(sender_id: current_user.id, receiver_id: user.id), method: :post
+          - if !conversation.unread_message_count(current_user).zero?
+            (#{conversation.unread_message_count(current_user)})
+          %br/
+          %p= link_to 'Delete Conversation', conversation, method: :delete, data: { confirm: 'If you do not have a conversation with this user then hit cancel. If you do then delete it if you want to.' }
