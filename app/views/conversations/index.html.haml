@@ -13,5 +13,3 @@
     - @users.each do |user|
       .callout
         %h6= link_to user.username, conversations_path(sender_id: current_user.id, receiver_id: user.id), method: :post
-        %br/
-        %p Is the user online? #{user.online?}

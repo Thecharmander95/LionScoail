@@ -48,7 +48,4 @@ class User < ApplicationRecord
                     OR user_id = :user_id", user_id: id)
   end
 
-  def online?
-    !Redis.new.get("user_#{self.id}_online").nil?
-  end
 end
