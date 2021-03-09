@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :suggestions
   resources :helps
   resources :stories
+  resources :disables
   # All resources with do and end
   resources :users do
     member do
@@ -31,6 +32,10 @@ Rails.application.routes.draw do
   end
   resources :conversations, only: [:index, :create, :destroy] do
     resources :messages, only: [:index, :create]
+  end
+
+  resources :articles do
+    resources :feedbacks
   end
   # Lion Wiki gets
   get "howtos/rorwindowssub"

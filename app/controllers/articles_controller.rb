@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:edit, :update, :destroy, :show]
   before_action :is_article_user, only: [:edit]
+  before_action :articledisable_check
 
   def new
     @article = current_user.articles.new

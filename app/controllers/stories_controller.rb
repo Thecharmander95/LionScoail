@@ -1,6 +1,7 @@
 class StoriesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_story, only: [:destroy]
+  before_action :storydisable_check
 
   def index
     @page_title = "Stories Lion social"
