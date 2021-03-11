@@ -8,7 +8,6 @@
     "@rails/ujs": "^6.x",
     "@rails/webpacker": "5.2.1",
     "babel-loader": "^8.1.0",
-    "chokidar": "^3.4.x",
     "css-loader": "^3.5.2",
     "file-loader": "^6.0.0",
     "foundation-sites": "^6.6.3",
