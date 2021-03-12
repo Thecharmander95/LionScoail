@@ -7,6 +7,8 @@ This is going to be better social media. Also if anyone is being rude on it I wi
 What's New in version 28           |
 -----------------------            |     
 Errors on heroku fixed             |
+Online Feature Fixed               |
+Articles and Stories fixed         |
 
 ![picture error: cant find picture](https://social.lionnav.com/packs/media/images/home_lion-10507de0758c6bb3b9c3a3afb1b19fbc.jpg)
 
