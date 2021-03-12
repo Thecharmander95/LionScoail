@@ -25,9 +25,9 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments
   end
-  # resources :articles do
-  #   resources :feedbacks
-  # end
+  resources :articles do
+    resources :feedbacks
+  end
   resources :rooms do
     resources :room_messages
   end

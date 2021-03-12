@@ -100,6 +100,14 @@ ActiveRecord::Schema.define(version: 2021_03_12_005458) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "disables", force: :cascade do |t|
+    t.string "postdisable"
+    t.string "conversationdisable"
+    t.string "articledisable"
+    t.string "chatroomdisable"
+    t.string "storydisable"
+  end
+
   create_table "errors", force: :cascade do |t|
     t.string "error"
     t.text "description"
