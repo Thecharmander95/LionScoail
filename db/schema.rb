@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_10_212935) do
+ActiveRecord::Schema.define(version: 2021_03_12_004413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,14 +86,6 @@ ActiveRecord::Schema.define(version: 2021_03_10_212935) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "disables", force: :cascade do |t|
-    t.string "postdisable"
-    t.string "conversationdisable"
-    t.string "articledisable"
-    t.string "chatroomdisable"
-    t.string "storydisable"
-  end
-
   create_table "errors", force: :cascade do |t|
     t.string "error"
     t.text "description"
@@ -155,14 +147,6 @@ ActiveRecord::Schema.define(version: 2021_03_10_212935) do
     t.index ["name"], name: "index_rooms_on_name", unique: true
   end
 
-  create_table "stories", force: :cascade do |t|
-    t.text "content"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_stories_on_user_id"
-  end
-
   create_table "suggestions", force: :cascade do |t|
     t.string "name"
     t.bigint "user_id", null: false
@@ -199,6 +183,5 @@ ActiveRecord::Schema.define(version: 2021_03_10_212935) do
   add_foreign_key "posts", "users"
   add_foreign_key "room_messages", "rooms"
   add_foreign_key "room_messages", "users"
-  add_foreign_key "stories", "users"
   add_foreign_key "suggestions", "users"
 end
