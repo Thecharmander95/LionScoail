@@ -1,5 +1,9 @@
 - if message.persisted?
   .callout
+    .center
+      Sent at:
+      = time_ago_in_words(message.created_at)
+      ago
     = message.user.username
     said:
     = message.body
