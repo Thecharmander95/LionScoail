@@ -48,4 +48,9 @@ class User < ApplicationRecord
                     OR user_id = :user_id", user_id: id)
   end
 
+  # User online?
+  def online?
+    updated_at > 5.minutes.ago
+  end
+
 end

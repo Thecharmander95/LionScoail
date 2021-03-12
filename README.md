@@ -4,18 +4,15 @@
 
 This is going to be better social media. Also if anyone is being rude on it I will remove them.
 
-What's New in version 27            |
+What's New in version 28           |
 -----------------------            |     
-Online/ offline feature upgrade    |
-Article's are coming back          |
-Lion Wiki merge.|
-Added feature disable                   |
+Errors on heroku fixed             |
 
 ![picture error: cant find picture](https://social.lionnav.com/packs/media/images/home_lion-10507de0758c6bb3b9c3a3afb1b19fbc.jpg)
 
 More updates to come!!!! Stay tuned!
 
-Version 26 :sweat_smile:
+Version 28 :sweat_smile:
 
-Version released on Heroku 26
+Version released on Heroku 27
 https://social.lionnav.com/
