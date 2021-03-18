@@ -1,27 +1,11 @@
 %h1 Every User
-- @users.each do |user|
-  .callout
-    .grid-x
-      .medium-6.cell
+.grid-x
+  - @users.each do |user|
+    .medium-4.cell
+      .callout
         = user.username
         %br/
-        Bio =
-        = user.body
+        Bio = #{user.body}
         %br/
-        How long the user has joind us for
-        = time_ago_in_words(user.created_at)
+        = link_to "#{user.username}'s Profile", user_path(user)
         %br/
-        = user.username
-        Profile
-        = link_to "Users Profile", user_path(user)
-        %br/
-      .medium-6.cell
-        Follow/Unfollow
-        = user.username
-        %br/
-        = render 'follow_form', user: user if user_signed_in?
-    - if current_user.role == "admin"
-      - unless user == current_user
-        Delete user
-        %br/
-        %h6= link_to "Delete", user_path(user), method: :delete, data: { confirm: "Really delete this user? What did they do." }
