@@ -12,5 +12,5 @@
     %h3 All Users
     - @users.each do |user|
       .callout
-        %h6= link_to user.username, conversations_path(sender_id: current_user.id, receiver_id: user.id), method: :post
-        %p= online_status user
+        %h6= online_status user
+        %h6= link_to "Start Conversation", conversations_path(sender_id: current_user.id, receiver_id: user.id), method: :post

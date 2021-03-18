@@ -10,6 +10,13 @@
         = f.submit "Send", class: "button"
         %br/
         = link_to "Back", conversations_path, class: "button"
+    %br/
+    %h5 Other Conversations
+    - @conversations.each do |conversation|
+      .callout
+        %h6= link_to conversation.recipient(current_user).username, conversation_messages_path(conversation)
+        - if !conversation.unread_message_count(current_user).zero?
+          (#{conversation.unread_message_count(current_user)})
   .medium-6.cell
     - if current_user.role == "bad_user"
       = render "shared/banned"
