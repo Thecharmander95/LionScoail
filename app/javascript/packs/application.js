@@ -30,8 +30,9 @@ $(document).on('turbolinks:load', function() {
 // Custom scss files.
 import 'src/application'
 
-// images and fonts
+// images
 require.context('../images', true)
+
 require.context('../audio', true)
 
 import 'packs/direct_upload'

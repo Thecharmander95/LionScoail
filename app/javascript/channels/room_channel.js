@@ -1,6 +1,7 @@
 import consumer from "./consumer"
 
-var audio = new Audio("https://proxy.notificationsounds.com/notification-sounds/goes-without-saying-608/download/file-sounds-1149-goes-without-saying.ogg");
+import audio from "../audio/goes-without-saying-608.ogg";
+var sound = new Audio(audio);
 
 consumer.subscriptions.create("RoomChannel", {
   connected() {
@@ -17,6 +18,6 @@ consumer.subscriptions.create("RoomChannel", {
       data["message"] +
       '</div>'
     )
-    audio.play();
+    sound.play();
   }
 });
