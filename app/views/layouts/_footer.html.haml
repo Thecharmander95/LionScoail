@@ -1,12 +1,11 @@
 .noprint
   %footer.footer
     %small
-      %h3 #{link_to "LionNav.com", "https://social.lionnav.com", target: :blank} by #{link_to "DJ967", "https://github.com/DJ967", target: :blank}
+      %h3 #{link_to "LionNav.com", "https://lionnav.com", target: :blank} by #{link_to "DJ967", "https://github.com/DJ967", target: :blank}
     %nav
       %ul
-        - if user_signed_in?
-          %li= link_to "Leave a Suggestion", new_suggestion_path
-          %li= link_to "Report a User", new_baduser_path
-          %li= link_to "Report a Error", new_error_path
-          %li= link_to "Help", new_help_path
+        %li= link_to "Leave a Suggestion", new_suggestion_path
+        %li= link_to "Report a User", new_baduser_path
+        %li= link_to "Report a Error", new_error_path
+        %li= link_to "Help", new_help_path
         %li= link_to "About", abouts_path
