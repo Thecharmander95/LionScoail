@@ -38,10 +38,11 @@ Rails.application.routes.draw do
   resources :articles do
     resources :feedbacks
   end
+
   # Lion Wiki gets
   get "howtos/rorwindowssub"
   get "howtos/rorbrewubuntu"
-  get "howtos/rormacos"
+  get "howtos/intelrormacos"
   get 'infos/index'
   get 'howtos/index'
   get "infos/calabria"

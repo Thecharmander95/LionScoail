@@ -8,6 +8,6 @@ class HowtosController < ApplicationController
   def rorbrewubuntu
   end
 
-  def rormacos
+  def intelmacos
   end
 end

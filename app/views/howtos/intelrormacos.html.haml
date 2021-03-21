@@ -5,12 +5,19 @@
 %h3 Installing the script.
 %h5 Just run this.
 .codeblock
-  %p $ curl --remote-name https://raw.githubusercontent.com/thoughtbot/laptop/master/mac
+  %p curl --remote-name https://raw.githubusercontent.com/thoughtbot/laptop/master/mac
 %h3 Installing ruby on rails using the script
 %h5 Just run this.
 .codeblock
-  %p $ sh mac 2>&1 | tee ~/laptop.log
+  %p sh mac 2>&1 | tee ~/laptop.log
 %h5 Keep in eye on the progress of the script it does ask for your password.
+%h3 Configuring Git
+%h5 This part of installing Ruby on Rails requries a github account if you do not have a account #{link_to "click here", "https://github.com/", target: :_blank}.
+%h5 To have Ubuntu know your github account run.
+.codeblock
+  %p git config --global color.ui true
+  %p git config --global user.name "YOUR USERNAME"
+  %p git config --global user.email "YOUR@EMAIL.com"
 %h3 Done!
 %h3 Credits to the script.
 %h5= link_to "thoughtbot", "https://github.com/thoughtbot/laptop", target: :_blank
