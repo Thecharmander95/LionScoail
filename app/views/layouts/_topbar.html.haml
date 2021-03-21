@@ -20,6 +20,12 @@
               %li= link_to "Chat Rooms", rooms_path
           - if current_user.role == "admin"
             %li.has-submenu
+              %a{:herf => "#0"} Not public yet
+              %ul.submenu.menu.vertical{"data-submenu" => ""}
+                %li= link_to "How To Page", howtos_index_path
+                %li= link_to "Info Page", infos_index_path
+                %li= link_to "Stories", stories_path
+            %li.has-submenu
               %a{:herf => "#0"} Admin
               %ul.submenu.menu.vertical{"data-submenu" => ""}
                 %li= link_to "Admin Page", admin_path
