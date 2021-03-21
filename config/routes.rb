@@ -47,4 +47,5 @@ Rails.application.routes.draw do
   get 'howtos/index'
   get "infos/calabria"
   get "infos/bobgibson"
+  get "infos/albertosordi"
 end
