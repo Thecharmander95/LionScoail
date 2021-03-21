@@ -3,9 +3,5 @@
   - @users.each do |user|
     .medium-4.cell
       .callout
-        = user.username
-        %br/
-        Bio = #{user.body}
-        %br/
-        = link_to "#{user.username}'s Profile", user_path(user)
-        %br/
+        %h6= user.username
+        %p= link_to "#{user.username}'s Profile", user_path(user)
