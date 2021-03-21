@@ -46,4 +46,5 @@ Rails.application.routes.draw do
   get 'infos/index'
   get 'howtos/index'
   get "infos/calabria"
+  get "infos/bobgibson"
 end

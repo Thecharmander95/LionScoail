@@ -4,4 +4,7 @@ class InfosController < ApplicationController
 
   def calabria
   end
+
+  def bobgibson
+  end
 end
