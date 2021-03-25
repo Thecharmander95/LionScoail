@@ -48,4 +48,5 @@ Rails.application.routes.draw do
   get "infos/calabria"
   get "infos/bobgibson"
   get "infos/albertosordi"
+  get "infos/garrettmorgan"
 end

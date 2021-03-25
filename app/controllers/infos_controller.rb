@@ -10,4 +10,7 @@ class InfosController < ApplicationController
 
   def albertosordi
   end
+
+  def garrettmorgan
+  end
 end
