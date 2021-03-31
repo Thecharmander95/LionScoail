@@ -1,7 +1,7 @@
 .grid-x
   .medium-6.cell
     %h3 Send a message
-    - if current_user.role == "bad_user"
+    - if current_user.role == "banned"
       = render "shared/banned"
     - else
       = form_for [@conversation, @message] do |f|
@@ -18,7 +18,7 @@
         - if !conversation.unread_message_count(current_user).zero?
           (#{conversation.unread_message_count(current_user)})
   .medium-6.cell
-    - if current_user.role == "bad_user"
+    - if current_user.role == "banned"
       = render "shared/banned"
     - else
       %h1

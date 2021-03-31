@@ -1,6 +1,6 @@
 .grid-x
   .medium-4.cell
-    - if current_user.role == "bad_user"
+    - if current_user.role == "banned"
       = render "shared/banned"
     - else
       %h3= @user.username
@@ -12,7 +12,7 @@
       %br/
       = render partial: 'rooms'
   .medium-8.cell
-    - if current_user.role == "bad_user"
+    - if current_user.role == "banned"
       = render "shared/banned"
     - else
       %h1

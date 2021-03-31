@@ -21,7 +21,7 @@
       %h4 Would you like to view posts?
       %h4= link_to "Posts", posts_path, class: "button"
     .medium-6.cell
-      - if current_user.role == "bad_user"
+      - if current_user.role == "banned"
         = render "shared/banned"
       - else
         %h4 Join a Chat Room if you like.

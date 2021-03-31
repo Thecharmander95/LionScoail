@@ -49,7 +49,7 @@
   .medium-6.cell
     %h3 Users who are banned.
     - @users.each do |u|
-      - if u.role == 'bad_user'
+      - if u.role == 'banned'
         .callout
           = u.username
           %br/
