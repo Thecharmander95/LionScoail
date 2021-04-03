@@ -16,6 +16,9 @@
         .callout
           %ul
             %li= msg
+      - if Announcement.first.text == ""
+      -else
+        =render "announcements/render"
     .grid-container
       = yield
     = render 'layouts/footer'
