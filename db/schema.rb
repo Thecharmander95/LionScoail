@@ -10,22 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_03_022959) do
+ActiveRecord::Schema.define(version: 2021_04_03_175615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "abouts", force: :cascade do |t|
-    t.string "title"
-    t.text "toppara"
-    t.text "change"
-    t.text "list1"
-    t.text "list2"
-    t.text "list3"
-    t.text "buttum"
-    t.text "linkgithub"
-    t.text "githubtitle"
-  end
 
   create_table "acindents", force: :cascade do |t|
     t.string "username"
@@ -137,6 +125,18 @@ ActiveRecord::Schema.define(version: 2021_04_03_022959) do
     t.text "with"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "labouts", force: :cascade do |t|
+    t.string "title"
+    t.text "ltoppara"
+    t.text "lchange"
+    t.text "llist1"
+    t.text "llist2"
+    t.text "llist3"
+    t.text "lbuttum"
+    t.text "llinkgithub"
+    t.text "lgithubtitle"
   end
 
   create_table "messages", force: :cascade do |t|

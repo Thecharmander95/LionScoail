@@ -1,0 +1,18 @@
+- @labouts.each do |about|
+  %br/
+  %h1= about.title
+  %br/
+  %h4= about.ltoppara
+  %br/
+  %h4= about.lchange
+  %h6= about.llist1
+  %h6= about.llist2
+  %h6= about.llist3
+  %br/
+  %p= link_to "#{about.lgithubtitle}", about.llinkgithub, target: :_blank
+  %br/
+  %h5= about.lbuttum
+  %br/
+  - if user_signed_in?
+    - if current_user.role == "admin"
+      = link_to 'Delete', labout_path(about), method: :delete, data: {confirm: "You must make a new about page"}, class: "button"

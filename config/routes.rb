@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'homes#index'
   # All the resources
   resources :posts
-  resources :abouts
+  resources :labouts
   resources :errors
   resources :relationships, only: [:create, :destroy]
   resources :articles

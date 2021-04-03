@@ -1,0 +1,2 @@
+class Labout < ApplicationRecord
+end

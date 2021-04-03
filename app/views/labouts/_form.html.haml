@@ -1,44 +1,44 @@
-- if @about.errors.any?
+- if @labout.errors.any?
   %h2 The following errors prevented the about page from saving:
   %ul
-    - @about.errors.full_messages.each do |msg|
+    - @labout.errors.full_messages.each do |msg|
       %li= msg
-= form_for @about do |f|
+= form_for @labout do |f|
   %p
-    = f.label :title
+    = f.label :Title
     %br/
     = f.text_field :title
   %p
-    = f.label :top_paragrath
+    = f.label :Top_paragrath
     %br/
-    = f.text_area :toppara
+    = f.text_area :ltoppara
   %p
     = f.label :Version
     %br/
-    =f.text_field :change
+    =f.text_field :lchange
   %p
-    = f.label :"list1"
+    = f.label :list1
     %br/
-    = f.text_field :"list1"
+    = f.text_field :llist1
   %p
-    = f.label :"list2"
+    = f.label :list2
     %br/
-    = f.text_field :list2
+    = f.text_field :llist2
   %p
     = f.label :list3
     %br/
-    = f.text_field :list3
+    = f.text_field :llist3
   %p
     = f.label :Github_Name_For_link
     %br/
-    = f.text_field :githubtitle
+    = f.text_field :lgithubtitle
   %p
     = f.label :Link_For_Github
     %br/
-    = f.text_field :linkgithub
+    = f.text_field :llinkgithub
   %p
     = f.label :bottom
     %br/
-    = f.text_area :buttum
+    = f.text_area :lbuttum
   %p
     = f.submit class: "button"
