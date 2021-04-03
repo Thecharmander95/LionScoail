@@ -32,5 +32,5 @@
     = f.submit "Update", class:"button"
 %h3 Cancel my account
 %p
-  Whant to leave LionNav. #{button_to "Remove my account", "https://git.heroku.com/users/edit", data: { confirm: "Are you sure? There is no going back." }, method: :delete}
+  Whant to leave LionNav. #{button_to "Remove my account", root_path, data: { confirm: "You have to go to data.lionnav.com to remove your account the email and password are the SAME!" }, method: :delete}
 = link_to "Back", root_path , class: "button"
