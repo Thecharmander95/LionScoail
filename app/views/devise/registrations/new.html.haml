@@ -1,25 +1,35 @@
 %h2 Sign up
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :Email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :username
-    %br/
-    = f.text_field :username
-  .field
-    = f.label :Password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :Password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
+  .grid-x
+    .medium-6.cell
+      .field
+        = f.label :Email
+        %br/
+        = f.email_field :email, autofocus: true, autocomplete: "email"
+      .field
+        = f.label :Username
+        %br/
+        = f.text_field :username
+      .field
+        = f.label :Password
+        - if @minimum_password_length
+          %em
+            (#{@minimum_password_length} characters minimum)
+        %br/
+        = f.password_field :password, autocomplete: "new-password"
+      .field
+        = f.label :Password_confirmation
+        %br/
+        = f.password_field :password_confirmation, autocomplete: "new-password"
+    .medium-6.cell
+      %h3 Add profile picture
+      %h5 (Leave blank if you chose to.)
+      .field
+        = f.label :avatar, "Profile Picture"
+        = f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png'
+        - if f.object.avatar.attached?
+          = image_tag f.object.avatar.variant(resize_to_limit: [400, 400])
   .actions
     = f.submit "Sign up", class:"button"
 = render "devise/shared/links"
