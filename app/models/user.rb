@@ -9,7 +9,6 @@ class User < ApplicationRecord
   has_many :following, through: :active_relationships, source: :followed, dependent: :delete_all
   has_many :followers, through: :passive_relationships, source: :follower, dependent: :delete_all
 
-  has_many :stories, dependent: :destroy
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :suggestions, dependent: :destroy
