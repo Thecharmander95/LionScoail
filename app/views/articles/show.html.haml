@@ -10,20 +10,6 @@
 %p= @article.content
 %br/
 .noprint
-  = render 'feedbacks/form'
-
-  %h3
-    Feedback (#{@article.feedbacks.count})
-  - if user_signed_in?
-    - @article.feedbacks.each do |feedback|
-      - if feedback.persisted?
-        .callout
-          = feedback.user.username
-          %br/
-          = feedback.body
-          %br/
-          = link_to 'Delete', [feedback.article, feedback], :method => :delete,
-          data: { confirm: 'Are you sure?' } if current_user == feedback.user
   - else
     %p #{link_to "Sign in", new_user_session_path} to leave some feedback.
   %p
