@@ -35,11 +35,4 @@ Rails.application.routes.draw do
   resources :articles do
     resources :feedbacks
   end
-
-  # Lion Wiki gets
-  get 'infos/index'
-  get "infos/calabria"
-  get "infos/bobgibson"
-  get "infos/albertosordi"
-  get "infos/garrettmorgan"
 end
