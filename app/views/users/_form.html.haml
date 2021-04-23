@@ -48,5 +48,4 @@
     = f.submit "Update", class:"button"
 %h3 Cancel my account
 %p
-  Whant to leave LionNav. #{button_to "Remove my account", type = "button" , data: { confirm: "You have to go to data.lionnav.com to remove your account the email and password are the SAME!" }}
-= link_to "Back", root_path , class: "button"
+  Whant to leave LionNav. #{button_to "Remove my account", user_path, method: :delete , data: { confirm: "Are you sure? All data will be deleted." }}
