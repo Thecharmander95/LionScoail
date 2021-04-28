@@ -18,10 +18,6 @@ class RoomsController < ApplicationController
     @room = Room.new permitted_parameters
     @rooms = Room.all
     if @room.save
-      ActionCable.server.broadcast("roomdisplay_channel", {
-      message: "A new room was added refersh the page to see it"
-      })
-      flash[:success] = "Room #{@room.name} was created successfully"
       redirect_to rooms_path
     else
       render :new
