@@ -1,7 +1,7 @@
 class Conversation < ApplicationRecord
   belongs_to :sender, class_name: "User", foreign_key: "sender_id", dependent: :destroy
   belongs_to :receiver, class_name: "User", foreign_key: "receiver_id", dependent: :destroy
-  has_many :messages, dependent: :destroy
+  has_many :messages, dependent: :delete_all
 
   validates_uniqueness_of :sender_id, scope: :receiver_id
 
