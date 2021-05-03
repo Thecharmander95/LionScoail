@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  root 'homes#index'
+
   resources :announcements
   devise_for :users
-  root 'homes#index'
   # All the resources
   resources :posts
   resources :labouts

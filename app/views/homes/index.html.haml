@@ -1,0 +1,13 @@
+.grid-x
+  - if user_signed_in?
+    %h1 Welcome back #{current_user.username}
+  -else
+    %h1 Welcome to Lion Social
+    %h5
+      Are you going to
+      = link_to 'Sign up', new_user_registration_path
+      or are you going to
+      = link_to 'Log in', new_user_session_path
+      ?
+    %br/
+    = image_pack_tag('home.jpeg')
