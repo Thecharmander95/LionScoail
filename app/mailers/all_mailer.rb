@@ -14,11 +14,6 @@ class AllMailer < ApplicationMailer
     mail(to: User.all.find_by_role('admin').email, subject: 'A user was reported.')
   end
 
-  def acindent
-    @url = acindents_url
-    mail(to: User.all.find_by_role('admin').email, subject: "Someone thinks they were banned by acindent")
-  end
-
   def help
     mail(to: User.all.find_by_role("admin").email, subject: "Someone needs help!")
   end
