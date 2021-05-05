@@ -2,7 +2,6 @@ module ApplicationHelper
   include DisablesHelper
   include UsersHelper
   include ConversationsHelper
-  include ArticlesHelper
   include PostsHelper
 
   def check_admin
