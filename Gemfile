@@ -43,7 +43,7 @@ gem 'autoprefixer-rails'
 gem 'friendly_id', '~> 5.2.4'
 
 # devise gem
-gem 'devise'
+gem 'devise', '~> 4'
 
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'

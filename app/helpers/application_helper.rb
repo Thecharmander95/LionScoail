@@ -21,4 +21,11 @@ module ApplicationHelper
                 class: "user-#{user.id} online_status #{'online' if user.online?}"
   end
 
+  def check_convo_user
+    if @conversation.sender_id == current_user.id or @conversation.receiver_id == current_user.id
+    else
+      redirect_to root_path, notice: "You do not have access to this"
+    end
+  end
+
 end
