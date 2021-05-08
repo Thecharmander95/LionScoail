@@ -33,6 +33,7 @@ development:
 production:
   primary:
     adapter: postgresql
+    url: <%= ENV['DATABASE_URL'] %>
   users:
     adapter: postgresql
     url: <%= ENV['USER_DB_URL'] %>
