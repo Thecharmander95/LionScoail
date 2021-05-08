@@ -1,6 +1,7 @@
 class ConversationsController < ApplicationController
   before_action :authenticate_user!
   before_action :conversationdisable_check
+  before_action :sitedisable_check
   def index
     @page_title = "Conversations Lion social"
     @users = User.where.not(id: current_user.id)

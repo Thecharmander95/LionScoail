@@ -2,6 +2,8 @@ class SuggestionsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_sg, only: [:destroy]
   before_action :check_admin, only: [:index, :destroy]
+  before_action :sitedisable_check
+
 
   def new
     @sg = Suggestion.new

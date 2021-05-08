@@ -40,6 +40,6 @@ class DisablesController < ApplicationController
 
   private
     def disable_params
-      params.require(:disable).permit(:postdisable, :conversationdisable, :articledisable, :chatroomdisable, :storydisable)
+      params.require(:disable).permit(:homedisable, :postdisable, :conversationdisable, :articledisable, :chatroomdisable, :storydisable)
     end
 end

@@ -1,6 +1,7 @@
 class RoomMessagesController < ApplicationController
   before_action :authenticate_user!
   before_action :load_entities
+  before_action :sitedisable_check
 
   def create
     @room_message = @room.room_messages.build(room_message_params)

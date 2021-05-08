@@ -1,4 +1,5 @@
 class LaboutsController < ApplicationController
+  before_action :sitedisable_check
   before_action :set_labout, only: [:edit, :update, :destroy]
   before_action :check_admin, only: [:new, :destroy, :edit]
 

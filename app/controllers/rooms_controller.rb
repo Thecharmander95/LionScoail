@@ -2,6 +2,8 @@ class RoomsController < ApplicationController
   before_action :authenticate_user!
   before_action :chatroomdisable_check
   before_action :load_entities
+  before_action :sitedisable_check
+
 
   def index
     @page_title = "Chat rooms Lion social"
