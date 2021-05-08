@@ -10,9 +10,9 @@
         = f.label :Disable_Posts
         %br/
         = f.text_field :postdisable
-    .medium-3.cell
+    .medium-2.cell
       %p
-        = f.label :Disable_Private_Messages
+        = f.label :Disable_Messages
         %br/
         = f.text_field :conversationdisable
     .medium-2.cell
@@ -30,5 +30,10 @@
         = f.label :Disable_Stories
         %br/
         = f.text_field :storydisable
+    .medium-2.cell
+      %p
+        = f.label :Site_Disable
+        %br/
+        = f.text_field :homedisable
   %p
     = f.submit class: "button"

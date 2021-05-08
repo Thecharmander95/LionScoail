@@ -36,4 +36,6 @@ Rails.application.routes.draw do
   resources :articles do
     resources :feedbacks
   end
+
+  get :dis , "disables/change"
 end

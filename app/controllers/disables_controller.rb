@@ -32,6 +32,10 @@ class DisablesController < ApplicationController
   def index
   end
 
+  def change
+    @disables = Disable.all
+  end
+
   private
 
     def set_disable
