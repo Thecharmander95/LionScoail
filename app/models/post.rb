@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+  establish_connection(:users)
+
   belongs_to :user
   has_many :comments
 

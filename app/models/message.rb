@@ -1,4 +1,6 @@
 class Message < ApplicationRecord
+  establish_connection(:users)
+
   belongs_to :conversation
   belongs_to :user
 
