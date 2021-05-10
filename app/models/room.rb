@@ -1,4 +1,5 @@
 class Room < ApplicationRecord
+  establish_connection(:users)
   has_many :room_messages, dependent: :destroy, inverse_of: :room
 
   validates :name, presence:true, length: { minimum:2}
