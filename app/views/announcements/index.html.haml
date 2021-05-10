@@ -6,7 +6,6 @@
       %th Text
       %th
       %th
-      %th
 
   %tbody
     - @announcements.each do |announcement|
@@ -14,8 +13,7 @@
         %td= announcement.text
         %td= link_to 'Show', announcement
         %td= link_to 'Edit', edit_announcement_path(announcement)
-        %td= link_to 'Destroy', announcement, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
-= link_to 'New Announcement', new_announcement_path
+= link_to 'New Announcement', new_announcement_path, class: "button"
