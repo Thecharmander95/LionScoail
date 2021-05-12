@@ -38,4 +38,9 @@ Rails.application.routes.draw do
   end
 
   get :dis , "disables/change"
+  get 'admins/index'
+  get 'admins/users'
+  get 'admins/rooms'
+  get 'admins/conversations'
+
 end
