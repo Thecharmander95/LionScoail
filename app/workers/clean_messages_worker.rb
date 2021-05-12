@@ -1,6 +1,5 @@
 class CleanMessagesWorker
   include Sidekiq::Worker
-  queue_as :default
 
   def perform(*args)
     self.class.perform_at 1.second.from_now.change
