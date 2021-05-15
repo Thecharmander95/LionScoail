@@ -22,7 +22,6 @@ class MessagesController < ApplicationController
     @message.user = current_user
 
     if @message.save
-    #  CleanMessagsWorker.perform_async
       ActionCable.server.broadcast("message_channel", {
       username: @message.user.username,
       conversation: @conversation.id,
