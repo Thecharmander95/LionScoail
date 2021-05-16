@@ -5,32 +5,22 @@
       %li= msg
 = form_for @disable do |f|
   .grid-x
-    .medium-2.cell
+    .medium-3.cell
       %p
         = f.label :Disable_Posts
         %br/
         = f.text_field :postdisable
-    .medium-2.cell
+    .medium-3.cell
       %p
         = f.label :Disable_Messages
         %br/
         = f.text_field :conversationdisable
-    .medium-2.cell
-      %p
-        = f.label :Disable_Articles
-        %br/
-        =f.text_field :articledisable
-    .medium-2.cell
+    .medium-3.cell
       %p
         = f.label :Disable_Chat_Rooms
         %br/
         = f.text_field :chatroomdisable
-    .medium-2.cell
-      %p
-        = f.label :Disable_Stories
-        %br/
-        = f.text_field :storydisable
-    .medium-2.cell
+    .medium-3.cell
       %p
         = f.label :Site_Disable
         %br/
