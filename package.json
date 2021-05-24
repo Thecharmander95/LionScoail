@@ -16,7 +16,9 @@
     "sass-loader": "^8.0.2",
     "turbolinks": "^5.2.0",
     "webpack": "^4.42.1",
-    "what-input": "^5.2.7"
+    "what-input": "^5.2.7",
+    "postcss": "^8.2.10",
+    "dns-packet": "^5.2.2"
   },
   "devDependencies": {
     "webpack-cli": "^3.3.11",
