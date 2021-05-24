@@ -25,6 +25,7 @@ gem 'webpacker', '~> 5.x'
 gem 'cocoon', '~> 1.2.10'
 
 # Background Stuff
+gem "sidekiq"
 gem 'redis'
 
 # Html to Haml gem
