@@ -25,12 +25,7 @@ gem 'webpacker', '~> 5.x'
 gem 'cocoon', '~> 1.2.10'
 
 # Background Stuff
-gem "sidekiq"
 gem 'redis'
-
-# Paginate
-gem 'will_paginate'
-gem 'will_paginate-bootstrap'
 
 # Html to Haml gem
 gem 'html2haml'
