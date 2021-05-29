@@ -37,3 +37,4 @@ production:
   users:
     adapter: postgresql
     url: <%= ENV['USER_DB_URL'] %>
+    migrations_paths: db/users_migrate
