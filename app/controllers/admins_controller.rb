@@ -8,6 +8,7 @@ class AdminsController < ApplicationController
   end
 
   def rooms
+    @rooms = Room.all
   end
 
   def conversations

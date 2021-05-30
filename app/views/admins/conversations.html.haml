@@ -1,6 +1,4 @@
 %h1 Conversations
-// %h5 Clear Messages older than 7 days
-// = link_to "Remove Old Messages", Message.where('created_at < ?', 1.week.ago).delete_all
 %table
   %thead
     %tr
@@ -18,3 +16,5 @@
         %td= conversation.receiver_id
         %td= conversation.messages.count
         %td= link_to 'Destroy', admins_conversations_path, data: { confirm: 'As of right now use rails c to delete conversations' }
+%br/
+= link_to "Back", admins_index_path, class: "button"

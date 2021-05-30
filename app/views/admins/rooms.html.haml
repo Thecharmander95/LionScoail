@@ -1,2 +1,20 @@
-%h1 Admins#rooms
-%p Find me in app/views/admins/rooms.html.haml
+%h1 Rooms
+%table
+  %thead
+    %tr
+      %th Id
+      %th Name
+      %th Messages
+      %th Edit
+      %th Remove
+
+  %tbody
+    - @rooms.each do |room|
+      %tr
+        %td= room.id
+        %td= room.name
+        %td= room.room_messages.count
+        %td= link_to 'Edit', edit_room_path(room)
+        %td= link_to 'Destroy', room, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to "Back", admins_index_path, class: "button"
