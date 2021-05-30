@@ -11,6 +11,7 @@ class AdminsController < ApplicationController
   end
 
   def conversations
+    @conversations = Conversation.all
   end
 
 end

@@ -20,9 +20,9 @@ class ConversationsController < ApplicationController
 
   def destroy
     @conversation = Conversation.find(params[:id])
-    @conversation.destroy
+    @conversation.delete
     if current_user.role == "admin"
-      redirect_to admin_path
+      redirect_to admin_conversation_path
     else
       redirect_to conversations_path
     end
