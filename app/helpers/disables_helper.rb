@@ -32,4 +32,11 @@ module DisablesHelper
       end
     end
   end
+
+  def userdisable_check
+    if Disable.first.userdisable == "yes"
+      redirect_to disables_path
+    else
+    end
+  end
 end

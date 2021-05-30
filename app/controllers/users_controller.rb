@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :check_user, only: [:edit]
   before_action :sitedisable_check
+  before_action :userdisable_check, only: [:edit, :update]
 
 
   def index

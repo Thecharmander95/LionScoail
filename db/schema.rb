@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_16_232922) do
+ActiveRecord::Schema.define(version: 2021_05_30_012347) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 2021_05_16_232922) do
     t.string "conversationdisable"
     t.string "chatroomdisable"
     t.text "homedisable"
+    t.text "userdisable"
   end
 
   create_table "errors", force: :cascade do |t|
