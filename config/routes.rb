@@ -3,10 +3,10 @@ Rails.application.routes.draw do
 
   resources :announcements
   devise_for :users
-  
+
   # All the resources
   resources :posts
-  resources :labouts
+  resources :abouts
   resources :errors
   resources :relationships, only: [:create, :destroy]
   resources :articles

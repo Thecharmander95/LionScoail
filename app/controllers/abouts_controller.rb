@@ -1,17 +1,17 @@
-class LaboutsController < ApplicationController
+class AboutsController < ApplicationController
   before_action :sitedisable_check
   before_action :set_labout, only: [:edit, :update, :destroy]
   before_action :check_admin, only: [:new, :destroy, :edit]
 
   def new
-    @labout = Labout.new
+    @labout = About.new
   end
 
   def create
-    @labout = Labout.new(labout_params)
+    @labout = About.new(about_params)
     if @labout.save
       flash[:notice] = "About page was successfully created"
-      redirect_to labouts_path
+      redirect_to abouts_path
     else
       render 'new'
     end
@@ -21,9 +21,9 @@ class LaboutsController < ApplicationController
   end
 
   def update
-    if @labout.update(labout_params)
+    if @labout.update(about_params)
      flash[:notice] = "About page was updated"
-     redirect_to labouts_path
+     redirect_to abouts_path
     else
      flash[:notice] = "About page was not updated"
      render 'edit'
@@ -32,22 +32,22 @@ class LaboutsController < ApplicationController
 
   def index
     @page_title = "About Lion social"
-    @labouts = Labout.all
+    @labouts = About.all
   end
 
   def destroy
     @labout.destroy
     flash[:notice] = "About page was deleted"
-    redirect_to labouts_path
+    redirect_to abouts_path
   end
 
   private
 
     def set_labout
-      @labout = Labout.find(params[:id])
+      @labout = About.find(params[:id])
     end
 
     def labout_params
-      params.require(:labout).permit(:title, :ltoppara, :lchange, :llist1, :llist2, :llist3, :lbuttum, :llinkgithub, :lgithubtitle)
+      params.require(:about).permit(:title, :ltoppara, :lchange, :llist1, :llist2, :llist3, :lbuttum, :llinkgithub, :lgithubtitle)
     end
 end

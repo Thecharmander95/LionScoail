@@ -10,10 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_30_012347) do
+ActiveRecord::Schema.define(version: 2021_05_31_164754) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "abouts", force: :cascade do |t|
+    t.string "title"
+    t.text "ltoppara"
+    t.text "lchange"
+    t.text "llist1"
+    t.text "llist2"
+    t.text "llist3"
+    t.text "lbuttum"
+    t.text "llinkgithub"
+    t.text "lgithubtitle"
+  end
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -94,18 +106,6 @@ ActiveRecord::Schema.define(version: 2021_05_30_012347) do
     t.text "with"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "labouts", force: :cascade do |t|
-    t.string "title"
-    t.text "ltoppara"
-    t.text "lchange"
-    t.text "llist1"
-    t.text "llist2"
-    t.text "llist3"
-    t.text "lbuttum"
-    t.text "llinkgithub"
-    t.text "lgithubtitle"
   end
 
   create_table "messages", force: :cascade do |t|
