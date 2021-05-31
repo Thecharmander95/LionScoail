@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_15_160301) do
+ActiveRecord::Schema.define(version: 2021_05_31_164506) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -114,14 +114,6 @@ ActiveRecord::Schema.define(version: 2021_05_15_160301) do
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
   end
 
-  create_table "helps", force: :cascade do |t|
-    t.text "email"
-    t.text "number"
-    t.text "with"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "messages", force: :cascade do |t|
     t.text "body"
     t.bigint "conversation_id"
@@ -195,14 +187,6 @@ ActiveRecord::Schema.define(version: 2021_05_15_160301) do
     t.index ["movie_id"], name: "index_scenes_on_movie_id"
   end
 
-  create_table "suggestions", force: :cascade do |t|
-    t.string "name"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_suggestions_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -234,5 +218,4 @@ ActiveRecord::Schema.define(version: 2021_05_15_160301) do
   add_foreign_key "room_messages", "rooms"
   add_foreign_key "room_messages", "users"
   add_foreign_key "scenes", "movies"
-  add_foreign_key "suggestions", "users"
 end
