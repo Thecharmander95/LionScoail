@@ -108,3 +108,9 @@ video.small {
   background-color: darkgray;
   font-size: 14px;
 }
+
+@media screen and (max-width: 767px) {
+  .content-desktop {
+    display: none;
+  }
+}
