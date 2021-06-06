@@ -38,5 +38,6 @@ Rails.application.routes.draw do
   get 'admins/users'
   get 'admins/rooms'
   get 'admins/conversations'
+  get 'admins/posts'
 
 end

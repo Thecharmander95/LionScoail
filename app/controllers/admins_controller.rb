@@ -15,4 +15,8 @@ class AdminsController < ApplicationController
     @conversations = Conversation.all
   end
 
+  def posts
+    @posts = Post.all
+  end
+
 end
