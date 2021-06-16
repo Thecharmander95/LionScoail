@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @page_title = "Posts Lion social"
-    @posts = Post.of_followed_users(current_user.following).by_newest
+    @posts = Post.all.by_newest
     @post = current_user.posts.new
     @user = current_user
   end
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.new(post_params)
     respond_to do |format|
       if @post.save
-        format.html { redirect_to posts_path, notice: 'Your post was successfully posted. If your a little concerend why its not showing its because you can only see posts form people you follow.' }
+        format.html { redirect_to posts_path, notice: 'Your post was successfully posted.' }
         format.json { render :index, status: :created, location: @post }
       else
         format.html { render :new }

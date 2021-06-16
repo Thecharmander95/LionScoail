@@ -43,3 +43,5 @@ yarn-debug.log*
 .yarn-integrity
 # Redis Dumb
 dump.rdb
+
+ngrok
