@@ -27,6 +27,7 @@ h1, h2, h3, h4, h5, h6, a, p, s, body,  b{
 a.button {
     background-color: yellow;
     color: red;
+    border-radius: 10px;
 }
 
 a {
@@ -36,6 +37,7 @@ a {
 a.button:hover {
     background-color: coral;
     color: red;
+    border-radius: 10px;
 }
 
 h1, h2{
@@ -45,11 +47,13 @@ h1, h2{
 input.button {
   background-color: yellow;
   color: orangered;
+  border-radius: 10px;
 }
 
 input.button:hover {
     background-color: coral;
     color: red;
+    border-radius: 10px;
 }
 input:visited {
     color: orange;
@@ -113,4 +117,7 @@ video.small {
   .content-desktop {
     display: none;
   }
+}
+input#user_email, input#user_password, input#user_username, input#user_password_confirmation, textarea#message_body {
+  border-radius: 10px;
 }
