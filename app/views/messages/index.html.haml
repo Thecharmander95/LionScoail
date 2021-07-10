@@ -1,15 +1,12 @@
 .grid-x
   .medium-6.cell
     %h3 Send a message
-    - if current_user.role == "banned"
-      = render "shared/banned"
-    - else
-      = form_for [@conversation, @message] do |f|
-        .field
-          = f.text_area :body, placeholder: "Your message"
-        = f.submit "Send", class: "button"
-        %br/
-        = link_to "Back", conversations_path, class: "button"
+    = form_for [@conversation, @message] do |f|
+      .field
+        = f.text_area :body, placeholder: "Your message"
+      = f.submit "Send", class: "button"
+      %br/
+      = link_to "Back", conversations_path, class: "button"
     %br/
     .content-desktop
       %h5 Other Conversations
@@ -19,9 +16,5 @@
           - if !conversation.unread_message_count(current_user).zero?
             (#{conversation.unread_message_count(current_user)})
   .medium-6.cell
-    - if current_user.role == "banned"
-      = render "shared/banned"
-    - else
-      %h1
-      %div{id: "messages#{@conversation.id}"}
-        = render @messages
+    %div{id: "messages#{@conversation.id}"}
+      = render @messages

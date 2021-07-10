@@ -1,22 +1,16 @@
 .grid-x
   .medium-4.cell
-    - if current_user.role == "banned"
-      = render "shared/banned"
-    - else
-      %h3= @user.username
-      - if @user.avatar.attached?
-        = image_tag @user.avatar.variant(resize_to_fill: [150, 150])
-      %section.stats= render 'shared/stats'
-      %br/
-      = render 'room_messages/form'
-      %br/
-      = render partial: 'rooms'
+    %h3= @user.username
+    - if @user.avatar.attached?
+      = image_tag @user.avatar.variant(resize_to_fill: [150, 150])
+    %section.stats= render 'shared/stats'
+    %br/
+    = render 'room_messages/form'
+    %br/
+    = render partial: 'rooms'
   .medium-8.cell
-    - if current_user.role == "banned"
-      = render "shared/banned"
-    - else
-      %h1
-        This room is
-        = @room.name
-      %div{id: "room_messages#{@room.id}"}
-        = render @room_messages
+    %h1
+      This room is
+      = @room.name
+    %div{id: "room_messages#{@room.id}"}
+      = render @room_messages
