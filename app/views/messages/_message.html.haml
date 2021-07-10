@@ -1,9 +1,13 @@
 - if message.persisted?
   .callout
-    .center
-      Sent at:
-      = time_ago_in_words(message.created_at)
-      ago
+    .grid-x
+      .medium-9.cell
+        Sent at:
+        = time_ago_in_words(message.created_at)
+        ago
+      .medium-3.cell
+        Seen =
+        = message.read
     = message.user.username
     said:
     = message.body
