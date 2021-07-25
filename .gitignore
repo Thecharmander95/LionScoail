@@ -45,3 +45,5 @@ yarn-debug.log*
 dump.rdb
 
 ngrok
+
+.ruby-version
