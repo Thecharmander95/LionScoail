@@ -1,7 +1,7 @@
 - if user_signed_in?
   %h1 Welcome back
   .grid-x
-    .medium-6.cell.space
+    .medium-6.cell
       %h3= current_user.username
       %h5 You have
       = render "shared/stats"
@@ -28,7 +28,7 @@
     ?
   %br/
   .grid-x
-    .medium-6.cell.space
+    .medium-6.cell
       = image_pack_tag('home.jpeg')
     .medium-6.cell.space
       = image_pack_tag('lion.png')
