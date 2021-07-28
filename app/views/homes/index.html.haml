@@ -1,14 +1,14 @@
 - if user_signed_in?
   %h1 Welcome back
   .grid-x
-    .medium-6.cell
+    .medium-6.cell.space
       %h3= current_user.username
       %h5 You have
       = render "shared/stats"
       %br/
       - if current_user.avatar.attached?
         = image_tag current_user.avatar.variant(resize_to_fill: [150, 150])
-    .medium-6.cell
+    .medium-6.cell.space
       %h5
         Check out some
         = link_to "posts,", posts_path
@@ -28,7 +28,7 @@
     ?
   %br/
   .grid-x
-    .medium-6.cell
+    .medium-6.cell.space
       = image_pack_tag('home.jpeg')
-    .medium-6.cell
+    .medium-6.cell.space
       = image_pack_tag('lion.png')

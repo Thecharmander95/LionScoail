@@ -1,25 +1,25 @@
 .grid-x
-  .medium-1.cell
-  .medium-3.cell
+  .medium-1.cell.space
+  .medium-3.cell.space
     - if @user.avatar.attached?
       = image_tag @user.avatar.variant(resize_to_fill: [150, 150])
     - else
       .small
         = image_pack_tag ("profilepic.png")
-  .medium-8.cell
+  .medium-8.cell.space
     %h1= @user.username
     %h5
       .grid-x
-        .medium-2.cell
+        .medium-2.cell.space
           %b
             #{@user.posts.count}
           posts
-        .medium-2.cell
+        .medium-2.cell.space
           %b
             %a{:href => "#{followers_user_path(@user)}"}
               #{@user.followers.count}
           followers
-        .medium-2.cell
+        .medium-2.cell.space
           %b
             %a{:href => "#{following_user_path(@user)}"}
               #{@user.following.count}
@@ -30,7 +30,7 @@
     = render 'follow_form', user: @user if user_signed_in?
 .grid-x
   - @user.posts.each do |post|
-    .medium-4.cell
+    .medium-4.cell.space
       .callout
         .center
           - if post.picture.attached?

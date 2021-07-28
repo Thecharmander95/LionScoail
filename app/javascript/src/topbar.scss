@@ -2,11 +2,11 @@
   background-color: wheat;
 }
 
-a {
-    color: orange;
-}
-
 .title-bar {
   background-color: bisque;
   color: orange;
+}
+
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after{
+  border-color: #ff0000 transparent transparent;
 }
