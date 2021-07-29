@@ -18,6 +18,6 @@ consumer.subscriptions.create("RoomChannel", {
       data["message"] +
       '</div>'
     )
-    // sound.play();
+    sound.play();
   }
 });

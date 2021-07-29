@@ -18,6 +18,6 @@ consumer.subscriptions.create("MessageChannel", {
       data["message"] +
       '</div>'
     )
-    // sound.play();
+    sound.play();
   }
 });
