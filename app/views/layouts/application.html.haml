@@ -10,15 +10,10 @@
     = csrf_meta_tags
   %body
     = render 'layouts/topbar'
-    %br/
-    .noprint
-      - flash.each do |name, msg|
-        .callout
-          %ul
-            %li= msg
-      - if Announcement.first.text == ""
-      -else
-        =render "announcements/render"
+    = render 'layouts/flashmessages'
+    - if Announcement.first.text == ""
+    -else
+      =render "announcements/render"
     .grid-container
       = yield
     = render 'layouts/footer'
