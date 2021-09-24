@@ -3,7 +3,7 @@ class RoomsController < ApplicationController
   before_action :chatroomdisable_check
   before_action :load_entities
   before_action :sitedisable_check
-
+  before_action :lionnav_disable
 
   def index
     @page_title = "Chat rooms Lion social"

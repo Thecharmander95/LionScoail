@@ -4,6 +4,7 @@ class PostsController < ApplicationController
   before_action :is_post_user, only: [:edit]
   before_action :postdisable_check
   before_action :sitedisable_check
+  before_action :lionnav_disable
 
   # GET /posts
   # GET /posts.json

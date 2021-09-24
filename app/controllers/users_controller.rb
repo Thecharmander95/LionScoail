@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :check_user, only: [:edit]
   before_action :sitedisable_check
   before_action :userdisable_check, only: [:edit, :update]
-
+  before_action :lionnav_disable
 
   def index
     @page_title = "All users Lion social"

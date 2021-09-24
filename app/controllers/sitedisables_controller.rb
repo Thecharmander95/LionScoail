@@ -1,5 +1,4 @@
 class SitedisablesController < ApplicationController
-  before_action :lionnav_disable
   before_action :set_sitedisable, only: %i[ edit update destroy ]
 
   # GET /sitedisables or /sitedisables.json

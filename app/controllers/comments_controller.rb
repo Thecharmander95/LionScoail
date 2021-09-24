@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   before_action :set_post
   before_action :authenticate_user!
   before_action :sitedisable_check
+  before_action :lionnav_disable
 
   def new
     @comment = @post.comments.new

@@ -2,6 +2,7 @@ class RoomMessagesController < ApplicationController
   before_action :authenticate_user!
   before_action :load_entities
   before_action :sitedisable_check
+  before_action :lionnav_disable
 
   def create
     @room_message = @room.room_messages.build(room_message_params)
