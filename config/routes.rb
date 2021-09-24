@@ -1,18 +1,20 @@
 Rails.application.routes.draw do
   root 'homes#index'
 
-  resources :announcements
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
 
   # All the resources
   resources :posts
   resources :abouts
   resources :errors
   resources :relationships, only: [:create, :destroy]
-  resources :articles
   resources :badusers
   resources :acindents
   resources :disables
+  resources :announcements
+  resources :sitedisables
 
   # All resources with do and end
   resources :users do

@@ -34,6 +34,7 @@ class UsersController < ApplicationController
     @user.avatar.attach(user_params[:avatar]) if user_params[:avatar].present?
     respond_to do |format|
       if @user.update(user_params)
+        UserMailer.change(@user).deliver_now
         format.html { redirect_to root_path, notice: 'User was successfully updated.' }
         format.json { render :index, status: :ok, location: @user }
       else

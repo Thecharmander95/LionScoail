@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_29_020657) do
+ActiveRecord::Schema.define(version: 2021_09_03_010340) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -114,6 +114,16 @@ ActiveRecord::Schema.define(version: 2021_06_29_020657) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "forms", force: :cascade do |t|
+    t.text "question"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_forms_on_slug", unique: true
+    t.index ["user_id"], name: "index_forms_on_user_id"
+  end
+
   create_table "forums", force: :cascade do |t|
     t.text "question"
     t.datetime "created_at", precision: 6, null: false
@@ -134,6 +144,14 @@ ActiveRecord::Schema.define(version: 2021_06_29_020657) do
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+  end
+
+  create_table "helps", force: :cascade do |t|
+    t.text "email"
+    t.text "number"
+    t.text "with"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "labouts", force: :cascade do |t|
@@ -221,12 +239,26 @@ ActiveRecord::Schema.define(version: 2021_06_29_020657) do
     t.index ["movie_id"], name: "index_scenes_on_movie_id"
   end
 
+  create_table "sitedisables", force: :cascade do |t|
+    t.string "disable"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "stories", force: :cascade do |t|
     t.text "content"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_stories_on_user_id"
+  end
+
+  create_table "suggestions", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_suggestions_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

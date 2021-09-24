@@ -1,0 +1,15 @@
+%h1 LionNav Disable
+
+= form_for @sitedisable do |f|
+  - if @sitedisable.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@sitedisable.errors.count, "error")} prohibited this sitedisable from being saved:"
+      %ul
+        - @sitedisable.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :disable
+    = f.text_field :disable
+  .actions
+    = f.submit 'Save', class: "button"
