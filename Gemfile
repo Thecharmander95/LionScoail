@@ -8,7 +8,7 @@ gem 'rails', '~> 6.1.4'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
-gem 'puma', '~> 4.3'
+gem 'puma', '~> 5'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -36,7 +36,7 @@ gem 'haml-rails', '~> 2.0.1'
 gem 'foundation-rails'
 gem 'autoprefixer-rails'
 
-gem 'friendly_id', '~> 5.2.4'
+gem 'friendly_id'
 
 # devise gem
 gem 'devise', '~> 4'
@@ -48,6 +48,7 @@ gem "aws-sdk-s3", require: false
 gem 'fastimage'
 
 gem 'hirb'
+gem "childprocess", '~> 4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -62,8 +63,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring', '>= 3'
 end
 
 group :test do
