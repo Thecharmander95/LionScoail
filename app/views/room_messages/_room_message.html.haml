@@ -1,6 +1,0 @@
-- if room_message.persisted?
-  .callout
-    = image_tag room_message.user.avatar.variant(resize_to_fill: [40, 40]) if room_message.user.avatar.attached?
-    = room_message.user.username
-    said:
-    = room_message.message

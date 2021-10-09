@@ -1,5 +1,24 @@
-# Lion Social
+# README
 
-##### Lion Social is not your everyday social media. You can see what everyone posts from every were. You experience what people all over the world are doing and what they do for a living. You also can experience different cultures. And the best thing about it is free and ad-free unlike Facebook, Instagram, and also Snapchat.
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-###### Version 35-beta
+Things you may want to cover:
+
+* Ruby version
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...

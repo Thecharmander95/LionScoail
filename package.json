@@ -1,32 +1,17 @@
 {
-  "name": "LionSocial",
+  "name": "lion-social",
   "private": true,
   "dependencies": {
-    "@babel/core": "^7.0.0",
-    "@rails/actioncable": "^6.x",
-    "@rails/activestorage": "^6.x",
-    "@rails/ujs": "^6.x",
-    "@rails/webpacker": "5.2.1",
-    "babel-loader": "^8.1.0",
-    "css-loader": "^3.5.2",
-    "dns-packet": "^5.2.2",
-    "file-loader": "^6.0.0",
-    "foundation-sites": "^6.6.3",
-    "is-svg": "4.2.2",
-    "jquery": "^3.4.1",
-    "postcss": "^8.2.10",
-    "sass-loader": "^8.0.2",
+    "@rails/actioncable": "^6.0.0",
+    "@rails/activestorage": "^6.0.0",
+    "@rails/ujs": "^6.0.0",
+    "@rails/webpacker": "5.4.3",
     "turbolinks": "^5.2.0",
-    "webpack": "^4.42.1",
-    "what-input": "^5.2.7"
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12"
   },
+  "version": "0.1.0",
   "devDependencies": {
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.11.2"
-  },
-  "engines": {
-    "yarn": "1.22.x",
-    "node": "12.x",
-    "npm": "6.x"
+    "webpack-dev-server": "^3"
   }
 }

@@ -13,12 +13,14 @@
 !/log/.keep
 !/tmp/.keep
 
-# Ignore uploaded files in development
+# Ignore pidfiles, but keep the directory.
+/tmp/pids/*
+!/tmp/pids/
+!/tmp/pids/.keep
+
+# Ignore uploaded files in development.
 /storage/*
 !/storage/.keep
-
-/node_modules
-/yarn-error.log
 
 /public/assets
 .byebug_history
@@ -32,18 +34,3 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
-/storage
-.env
-
-/public/packs
-/public/packs-test
-/node_modules
-/yarn-error.log
-yarn-debug.log*
-.yarn-integrity
-# Redis Dumb
-dump.rdb
-
-ngrok
-
-.ruby-version
