@@ -1,0 +1,64 @@
+body p {
+    color: darkslategray;
+    font-size: 16px;
+}
+
+html body {
+    background-color: khaki;
+    padding: 10px 0 10px 0
+}
+
+a.button {
+  background-color: yellow;
+  color: red;
+  border-radius: 10px;
+}
+
+a {
+  color: orange;
+}
+
+a.button:hover {
+  background-color: coral;
+  color: red;
+  border-radius: 10px;
+}
+
+h1, h2{
+  color: #FF6633;
+}
+
+input.button {
+  background-color: yellow;
+  color: orangered;
+  border-radius: 10px;
+}
+
+input.button:hover {
+  background-color: coral;
+  color: red;
+  border-radius: 10px;
+}
+input:visited {
+  color: orange;
+}
+
+body h3, h4, b {
+  color: chocolate;
+}
+
+body h5{
+  color: brown;
+}
+
+a.hover {
+  background-color: coral;
+  color: red;
+}
+
+.callout {
+  background-color: bisque;
+  color: orangered;
+  font-size: 14px;
+  border-radius: 10px;
+}
