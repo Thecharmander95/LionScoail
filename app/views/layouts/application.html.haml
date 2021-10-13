@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title LionSocial
+    %title Lion Social
     %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
     = favicon_link_tag asset_pack_path('media/images/favicon.ico')
     = csrf_meta_tags
@@ -10,7 +10,7 @@
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    // = render 'layouts/topbar'
+    = render 'layouts/topbar'
     = render 'layouts/flashmessages'
     // - if Announcement.first.text == ""
     // -else
