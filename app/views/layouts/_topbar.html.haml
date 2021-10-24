@@ -9,6 +9,7 @@
   .top-bar-right
     %ul.dropdown.menu{"data-dropdown-menu" => ""}
       - if user_signed_in?
+        %li= link_to "Posts", posts_path
         %li.has-submenu
           %a{:href => "#0"} #{current_user.username}
           %ul.submenu.menu.vertical{"data-submenu" => ""}

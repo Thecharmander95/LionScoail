@@ -1,0 +1,22 @@
+.grid-x
+  .medium-3.cell
+    %h2 Upload a post
+    = render "posts/form"
+  .medium-1.cell
+  .medium-6.cell
+    - @posts.each do |post|
+      = link_to post do
+        .callout.rounded
+          = link_to user_path(post.user), class: "box" do
+            = image_tag post.user.avatar.variant(resize_to_fill: [60, 60]) if post.user.avatar.attached?
+            %h5= post.user.username
+          - if post.picture.attached?
+            - if post.picture.image?
+              .thumbnail= image_tag post.picture.variant(resize: "200x200")
+            - if post.picture.video?
+              = video_tag rails_blob_path(post.picture), controls: true, class: "small"
+
+          %h6= post.body
+          %h6
+            = time_ago_in_words(post.created_at)
+            ago

@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_one_attached :avatar, dependent: :destroy
 
+  has_many :post
+
   validates :username, uniqueness: true, length: { minimum:1}
 
   extend FriendlyId
