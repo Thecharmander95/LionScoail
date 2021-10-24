@@ -1,2 +1,35 @@
-%h1 Edit user
-= render 'form', user: @user
+= form_for @user do |f|
+  - if f.object.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(f.object.errors.count, "error")} prohibited this post from being saved:"
+      %ul
+        - f.object.errors.full_messages.each do |message|
+          %li= message
+  .callout.rounded
+    %h2 Edit User
+    .field
+      = f.label :email
+      = f.email_field :email, autofocus: true, autocomplete: "email"
+    .field
+      = f.label :password
+      - if @minimum_password_length
+        %em
+          = @minimum_password_length
+          characters minimum
+      %i (Leave blank if you don't want to change it)
+      = f.password_field :password, autocomplete: "new-password"
+    .field
+      = f.label :Username
+      = f.text_field :username
+    .field
+      = f.label :bio
+      = f.text_area :body, rows: 2
+    .field
+      = f.label :avatar, "Profile Picture"
+      = f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png'
+    .actions
+      = f.submit "Update", class:"button"
+    -if current_user == @user
+      %h4 Cancel my account
+      %p
+        Whant to leave LionNav. #{button_to "Remove my account", user_path, method: :delete , data: { confirm: "Are you sure? All data will be deleted. This is not reversable." }}
