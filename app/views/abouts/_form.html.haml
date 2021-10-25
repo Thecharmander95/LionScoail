@@ -6,30 +6,39 @@
 = form_for @about do |f|
   %p
     = f.label :Title
+    %br/
     = f.text_field :title
   %p
     = f.label :Top_paragrath
-    = f.text_area :toparea
+    %br/
+    = f.text_area :ltoppara
   %p
     = f.label :Version
-    =f.text_field :change
+    %br/
+    =f.text_field :lchange
   %p
     = f.label :list1
-    = f.text_field :list1
+    %br/
+    = f.text_field :llist1
   %p
     = f.label :list2
-    = f.text_field :list2
+    %br/
+    = f.text_field :llist2
   %p
     = f.label :list3
-    = f.text_field :list3
+    %br/
+    = f.text_field :llist3
   %p
     = f.label :Github_Name_For_link
-    = f.text_field :githubtitle
+    %br/
+    = f.text_field :lgithubtitle
   %p
     = f.label :Link_For_Github
-    = f.text_field :linkgithub
+    %br/
+    = f.text_field :llinkgithub
   %p
     = f.label :bottom
-    = f.text_area :bottom
+    %br/
+    = f.text_area :lbuttum
   %p
     = f.submit class: "button"

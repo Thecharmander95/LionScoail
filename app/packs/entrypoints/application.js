@@ -26,11 +26,11 @@ $(document).on('turbolinks:load', function() {
   $(document).foundation()
 });
 
+
 // Custom scss files.
 import 'entrypoints/application'
 
 // images
 require.context('../images', true)
 
-// JavaScript Files
 import 'src/direct_upload'

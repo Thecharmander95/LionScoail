@@ -25,16 +25,16 @@ development:
   primary:
     adapter: postgresql
     database: LionSocial_development
-  # users:
-  #   adapter: postgresql
-  #   database: DataLionNav_development
-  #   migrations_paths: db/users_migrate
+  users:
+    adapter: postgresql
+    database: DataLionNav_development
+    migrations_paths: db/users_migrate
 
 production:
   primary:
     adapter: postgresql
     url: <%= ENV['DATABASE_URL'] %>
-  # users:
-  #   adapter: postgresql
-  #   url: <%= ENV['USER_DB_URL'] %>
-  #   migrations_paths: db/users_migrate
+  users:
+    adapter: postgresql
+    url: <%= ENV['USER_DB_URL'] %>
+    migrations_paths: db/users_migrate

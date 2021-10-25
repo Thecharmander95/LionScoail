@@ -1,0 +1,21 @@
+.grid-x
+  .medium-3.cell
+    = render "buttons/admin"
+  .medium-9.cell
+    .grid-x
+      .medium-4.cell
+      .medium-6.cell
+        %h3 Disable LionNav
+      - @sitedisables.each do |sitedisable|
+        .callout.info
+          %h4 Disable LionNav
+          %p
+            Is disabled:
+            - if sitedisable.disable == "no"
+              no
+            - else
+              yes
+          .grid-x
+            .medium-3.cell
+            .medium-5.cell
+              = link_to 'Change', edit_sitedisable_path(sitedisable), class: "button"

@@ -1,6 +1,8 @@
-@import "stylesheets/foundation";
-@import "stylesheets/homes";
-@import "stylesheets/fonts";
+@import "stylesheets/foundation_and_overrides";
+@import "stylesheets/computer";
 @import "stylesheets/topbar";
+@import "stylesheets/fonts";
 @import "stylesheets/direct_upload";
+@import "stylesheets/phone";
+@import "stylesheets/shared";
 @import "stylesheets/footer";

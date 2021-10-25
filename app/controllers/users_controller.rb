@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  before_action :check_user, only: [:edit]
+  before_action :sitedisable_check
+  before_action :userdisable_check, only: [:edit, :update]
+  before_action :lionnav_disable
 
   def index
     @page_title = "All users Lion social"
@@ -14,6 +18,10 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.friendly.find(params[:id])
+    @posts = @user.posts
+    @posts = Post.by_newest
+    @page_title = "#{@user.username}'s profile Lion social"
   end
 
   def edit
@@ -35,6 +43,21 @@ class UsersController < ApplicationController
       end
     end
   end
+
+  def following
+    @title = "Following"
+    @user = User.friendly.find(params[:id])
+    @users = @user.following
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @user = User.friendly.find(params[:id])
+    @users = @user.followers
+    render 'show_follow'
+  end
+
 
   private
 

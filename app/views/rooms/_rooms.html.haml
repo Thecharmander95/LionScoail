@@ -1,0 +1,10 @@
+- if @rooms.present?
+  %nav
+    - @rooms.each do |room|
+      .callout
+        = link_to room.name, room_path(room)
+- else
+  %div
+    %p The are no rooms
+
+= link_to "Back", rooms_path, class: "button"

@@ -2,15 +2,11 @@
   background-color: wheat;
 }
 
-.dropdown.menu > li.is-dropdown-submenu-parent > a::after{
-  border-color: #ff0000 transparent transparent;
+.title-bar {
+  background-color: bisque;
+  color: orange;
 }
 
-.title-bar {
-  padding: 0.5rem;
-  background: #ed8547;
-  color: #fefefe;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after{
+  border-color: #ff0000 transparent transparent;
 }
