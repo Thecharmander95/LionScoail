@@ -5,9 +5,6 @@
       %h3= current_user.username
       %h5 You have
       = render "shared/stats"
-      %br/
-      - if current_user.avatar.attached?
-        = image_tag current_user.avatar.variant(resize_to_fill: [150, 150])
     .medium-6.cell.space
       %h5
         Check out some
@@ -16,7 +13,7 @@
         = link_to "chat rooms,", rooms_path
         or check out
         = link_to "your messages.", conversations_path
-      = image_pack_tag('lions.jpeg')
+      = image_tag('lions.jpeg')
 
 -else
   %h1 Welcome to Lion Social
@@ -29,6 +26,6 @@
   %br/
   .grid-x
     .medium-6.cell
-      = image_pack_tag('home.jpeg')
+      = image_tag('home.jpeg')
     .medium-6.cell.space
-      = image_pack_tag('lion.png')
+      = image_tag('lion.png')

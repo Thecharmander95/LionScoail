@@ -11,4 +11,4 @@
     - @users.each do |user|
       .callout
         %h6= online_status user
-        %h6= link_to "Start Conversation", conversations_path(sender_id: current_user.id, receiver_id: user.id), method: :post
+        %h6= link_to "Start Conversation", conversations_path(sender_id: current_user.id, receiver_id: user.id),'data-turbo-method': :post

@@ -10,5 +10,5 @@
     How long ago the error was created at
     = time_ago_in_words(error.created_at)
     %br/
-    = link_to 'Delete', error_path(error), method: :delete, data: {confirm: "Are you sure?"}, class: "dude"
+    = link_to 'Delete', error_path(error),'data-turbo-method': :delete, data: {confirm: "Are you sure?"}, class: "dude"
     %br/

@@ -13,6 +13,6 @@
         %td= post.id
         %td= post.user.username
         %td= post.content
-        %td= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Destroy', post,'data-turbo-method': :delete, data: { confirm: 'Are you sure?' }
 %br/
 = link_to "Back", admins_index_path, class: "button"

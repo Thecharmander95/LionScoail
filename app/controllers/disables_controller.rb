@@ -1,7 +1,6 @@
 class DisablesController < ApplicationController
   before_action :set_disable, only: [:create, :update, :edit]
   before_action :check_admin, only: [:new, :edit]
-  before_action :lionnav_disable
 
   def new
     @disable = Disable.new

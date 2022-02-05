@@ -4,26 +4,18 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1.4'
+gem 'rails', '~> 7.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 # gem 'puma', '~> 5'
 gem "passenger", ">= 5.3.2", require: "phusion_passenger/rack_handler"
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap'
-
-gem "actionview", ">= 6"
-
-# Webpacker
-gem 'webpacker', '~> 5.x'
-gem 'cocoon', '~> 1.2.10'
 
 # Background Stuff
 gem "sidekiq"
@@ -38,6 +30,19 @@ gem 'foundation-rails'
 gem 'autoprefixer-rails'
 
 gem 'friendly_id'
+
+# New Gems
+# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
+# gem "kredis"
+# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
+gem "importmap-rails"
+# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
+gem "turbo-rails"
+# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
+gem "stimulus-rails"
+# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
+gem "sprockets-rails"
+gem "sassc-rails"
 
 # devise gem
 gem 'devise', '~> 4'

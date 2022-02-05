@@ -2,7 +2,6 @@ class AboutsController < ApplicationController
   before_action :sitedisable_check
   before_action :set_about, only: [:edit, :update, :destroy]
   before_action :check_admin, only: [:new, :destroy, :edit]
-  before_action :lionnav_disable
 
   def new
     @about = About.new

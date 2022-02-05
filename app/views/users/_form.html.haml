@@ -51,4 +51,4 @@
 -if current_user == user
   %h3 Cancel my account
   %p
-    Whant to leave LionNav. #{button_to "Remove my account", user_path, method: :delete , data: { confirm: "Are you sure? All data will be deleted." }}
+    Whant to leave LionNav. #{button_to "Remove my account", user_path,'data-turbo-method': :delete , data: { confirm: "Are you sure? All data will be deleted." }}

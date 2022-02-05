@@ -1,7 +1,6 @@
 class RelationshipsController < ApplicationController
   before_action :sitedisable_check
   before_action :authenticate_user!
-  before_action :lionnav_disable
   
   def create
     @user = User.find(params[:followed_id])
