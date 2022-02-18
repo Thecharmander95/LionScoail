@@ -14,7 +14,6 @@
         %li.has-submenu
           %a{:herf => "#0"} Everything
           %ul.submenu.menu.vertical{"data-submenu" => ""}
-            %li= link_to "Chat Rooms", rooms_path
             %li= link_to "Posts", posts_path
         - if current_user.role == "admin"
           %li.has-submenu
