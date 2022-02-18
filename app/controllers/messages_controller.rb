@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
   before_action :sitedisable_check
   before_action :authenticate_user!
-  
+
   before_action do
     @conversation = Conversation.find(params[:conversation_id])
   end
@@ -21,15 +21,11 @@ class MessagesController < ApplicationController
   def create
     @message = @conversation.messages.new(message_params)
     @message.user = current_user
-
-    if @message.save
-      ActionCable.server.broadcast("message_channel", {
-      username: @message.user.username,
-      conversation: @conversation.id,
-      message: @message.body
-      })
-
-      redirect_to conversation_messages_path(@conversation)
+    respond_to do |format|
+      if @message.save
+        format.html { redirect_to conversation_messages_url(@conversation)}
+        format.json { render :index, status: :created, location: conversation_messages_url(@conversation) }
+      end
     end
   end
 
