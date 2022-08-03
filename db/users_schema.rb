@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_18_151403) do
-
+ActiveRecord::Schema[7.0].define(version: 2022_02_18_151403) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,7 +19,7 @@ ActiveRecord::Schema.define(version: 2022_02_18_151403) do
     t.string "record_type", null: false
     t.bigint "record_id", null: false
     t.bigint "blob_id", null: false
-    t.datetime "created_at", precision: 6, null: false
+    t.datetime "created_at", null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
@@ -33,7 +32,7 @@ ActiveRecord::Schema.define(version: 2022_02_18_151403) do
     t.string "service_name", null: false
     t.bigint "byte_size", null: false
     t.string "checksum"
-    t.datetime "created_at", precision: 6, null: false
+    t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
@@ -45,21 +44,21 @@ ActiveRecord::Schema.define(version: 2022_02_18_151403) do
 
   create_table "acts", force: :cascade do |t|
     t.text "part"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "announcements", force: :cascade do |t|
     t.string "text"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "badusers", force: :cascade do |t|
     t.text "user"
     t.text "what"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "comics", force: :cascade do |t|
@@ -68,8 +67,8 @@ ActiveRecord::Schema.define(version: 2022_02_18_151403) do
     t.string "by"
     t.string "number"
     t.string "siries"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "price", null: false
   end
 
@@ -77,8 +76,8 @@ ActiveRecord::Schema.define(version: 2022_02_18_151403) do
     t.bigint "user_id", null: false
     t.bigint "post_id", null: false
     t.text "body"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
@@ -86,16 +85,16 @@ ActiveRecord::Schema.define(version: 2022_02_18_151403) do
   create_table "conversations", force: :cascade do |t|
     t.integer "sender_id"
     t.integer "receiver_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "credits", force: :cascade do |t|
     t.text "person"
     t.text "for"
     t.bigint "movie_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["movie_id"], name: "index_credits_on_movie_id"
   end
 
@@ -110,14 +109,14 @@ ActiveRecord::Schema.define(version: 2022_02_18_151403) do
   create_table "errors", force: :cascade do |t|
     t.string "error"
     t.text "description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "forms", force: :cascade do |t|
     t.text "question"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
     t.string "slug"
     t.index ["slug"], name: "index_forms_on_slug", unique: true
@@ -126,8 +125,8 @@ ActiveRecord::Schema.define(version: 2022_02_18_151403) do
 
   create_table "forums", force: :cascade do |t|
     t.text "question"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
     t.string "slug"
     t.string "title"
@@ -140,7 +139,7 @@ ActiveRecord::Schema.define(version: 2022_02_18_151403) do
     t.integer "sluggable_id", null: false
     t.string "sluggable_type", limit: 50
     t.string "scope"
-    t.datetime "created_at", precision: 6
+    t.datetime "created_at"
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
@@ -150,8 +149,8 @@ ActiveRecord::Schema.define(version: 2022_02_18_151403) do
     t.text "email"
     t.text "number"
     t.text "with"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "labouts", force: :cascade do |t|
@@ -171,16 +170,16 @@ ActiveRecord::Schema.define(version: 2022_02_18_151403) do
     t.bigint "conversation_id"
     t.bigint "user_id"
     t.boolean "read", default: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "movies", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "author"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_movies_on_user_id"
@@ -189,24 +188,24 @@ ActiveRecord::Schema.define(version: 2022_02_18_151403) do
   create_table "picturescenes", force: :cascade do |t|
     t.string "name"
     t.bigint "movie_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["movie_id"], name: "index_picturescenes_on_movie_id"
   end
 
   create_table "posts", force: :cascade do |t|
     t.string "content"
     t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "relationships", force: :cascade do |t|
     t.integer "follower_id"
     t.integer "followed_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["followed_id"], name: "index_relationships_on_followed_id"
     t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
@@ -216,25 +215,31 @@ ActiveRecord::Schema.define(version: 2022_02_18_151403) do
     t.string "name"
     t.text "content"
     t.bigint "movie_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "actor"
     t.index ["movie_id"], name: "index_scenes_on_movie_id"
+  end
+
+  create_table "sitedisables", force: :cascade do |t|
+    t.string "disable"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "stories", force: :cascade do |t|
     t.text "content"
     t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_stories_on_user_id"
   end
 
   create_table "suggestions", force: :cascade do |t|
     t.string "name"
     t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_suggestions_on_user_id"
   end
 
@@ -242,10 +247,10 @@ ActiveRecord::Schema.define(version: 2022_02_18_151403) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
-    t.datetime "reset_password_sent_at", precision: 6
-    t.datetime "remember_created_at", precision: 6
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.text "body"
     t.string "username", null: false
     t.string "role"
