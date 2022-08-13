@@ -46,8 +46,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # DELETE /resource
   def destroy
     @user = current_user
-    require 'stripe'
-    Stripe::Customer.delete(@user.stripe_id)
     @user.destroy
     redirect_to root_path, notice: 'User deleted.'
   end

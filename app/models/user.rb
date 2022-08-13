@@ -12,7 +12,6 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many :suggestions, dependent: :destroy
   has_one_attached :avatar, dependent: :destroy
   has_many :messages, dependent: :delete_all
 
