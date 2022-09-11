@@ -10,8 +10,6 @@ Rails.application.routes.draw do
   resources :abouts
   resources :errors
   resources :relationships, only: [:create, :destroy]
-  resources :badusers
-  resources :acindents
   resources :disables
   resources :announcements
 
@@ -26,7 +24,7 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  resources :conversations, only: [:index, :create, :destroy, :update] do
+  resources :conversations, only: [:index, :create, :destroy] do
     resources :messages, only: [:index, :create]
   end
 

@@ -16,7 +16,7 @@
         .field
           = f.label :avatar, "Profile Picture"
           (Optional)
-          = f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png', direct_upload: true
+          = f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png'
         .field
           = f.label :password
           - if @minimum_password_length
