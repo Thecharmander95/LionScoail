@@ -13,13 +13,6 @@ module DisablesHelper
     end
   end
 
-  def chatroomdisable_check
-    if Disable.first.chatroomdisable == "yes"
-      redirect_to disables_path
-    else
-    end
-  end
-
   def sitedisable_check
     if Disable.first.homedisable == "yes"
       if user_signed_in?

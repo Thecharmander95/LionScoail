@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_post
   before_action :authenticate_user!
-  before_action :sitedisable_check
 
   def new
     @comment = @post.comments.new

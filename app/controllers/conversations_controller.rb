@@ -1,7 +1,7 @@
 class ConversationsController < ApplicationController
   before_action :authenticate_user!
-  before_action :conversationdisable_check
   before_action :sitedisable_check
+  before_action :conversationdisable_check
 
   def index
     @page_title = "Conversations Lion social"
@@ -19,14 +19,23 @@ class ConversationsController < ApplicationController
     redirect_to conversation_messages_path(@conversation)
   end
 
+  def update
+    @conversation = Conversation.find(params[:id])
+    respond_to do |format|
+      if @conversation.update(conversation_params)
+        format.html { redirect_to conversations_path, notice: 'Conversation was successfully deleted.' }
+        format.json { render :index, status: :ok, location: @conversation }
+      else
+        format.html { render :edit }
+        format.json { render json: @conversation.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def destroy
     @conversation = Conversation.find(params[:id])
     @conversation.delete
-    if current_user.role == "admin"
-      redirect_to admin_conversation_path
-    else
-      redirect_to conversations_path
-    end
+    redirect_to admin_conversation_path
   end
 
   private

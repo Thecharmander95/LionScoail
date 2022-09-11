@@ -44,11 +44,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # DELETE /resource
-  def destroy
-    @user = current_user
-    @user.destroy
-    redirect_to root_path, notice: 'User deleted.'
-  end
+  # def destroy
+  #   @user = current_user
+  #   @user.destroy
+  #   redirect_to root_path, notice: 'User deleted.'
+  # end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign

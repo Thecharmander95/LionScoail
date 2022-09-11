@@ -6,6 +6,7 @@
       = render 'messages/form'
     %br/
     .content-desktop
+      = render 'messages/delete'
       %h5 Other Conversations
       - @conversations.each do |conversation|
         .callout
@@ -15,3 +16,5 @@
   .medium-6.cell.space
     = turbo_frame_tag dom_id(@conversation) do
       = render @messages
+
+ 

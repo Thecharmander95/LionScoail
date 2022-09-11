@@ -1,0 +1,6 @@
+%h5 To delete this conversation set all values to blank
+= form_for @conversation do |f|
+    .field
+        = f.text_field :sender_id
+        = f.text_field :receiver_id
+    = f.submit "Remove", class: "button"

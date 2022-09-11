@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_02_18_151403) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_30_022155) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -113,6 +113,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_18_151403) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "expenses", force: :cascade do |t|
+    t.string "title"
+    t.decimal "amount"
+    t.date "time"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "payments_id"
+    t.index ["payments_id"], name: "index_expenses_on_payments_id"
+    t.index ["user_id"], name: "index_expenses_on_user_id"
+  end
+
   create_table "forms", force: :cascade do |t|
     t.text "question"
     t.datetime "created_at", null: false
@@ -185,6 +197,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_18_151403) do
     t.index ["user_id"], name: "index_movies_on_user_id"
   end
 
+  create_table "payments", force: :cascade do |t|
+    t.string "option"
+    t.string "info"
+    t.decimal "amount"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "expenses_id"
+    t.index ["expenses_id"], name: "index_payments_on_expenses_id"
+    t.index ["user_id"], name: "index_payments_on_user_id"
+  end
+
   create_table "picturescenes", force: :cascade do |t|
     t.string "name"
     t.bigint "movie_id"
@@ -219,12 +243,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_18_151403) do
     t.datetime "updated_at", null: false
     t.string "actor"
     t.index ["movie_id"], name: "index_scenes_on_movie_id"
-  end
-
-  create_table "sitedisables", force: :cascade do |t|
-    t.string "disable"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "stories", force: :cascade do |t|
@@ -266,10 +284,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_18_151403) do
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "credits", "movies"
+  add_foreign_key "expenses", "payments", column: "payments_id"
+  add_foreign_key "expenses", "users"
   add_foreign_key "forums", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
   add_foreign_key "movies", "users"
+  add_foreign_key "payments", "expenses", column: "expenses_id"
+  add_foreign_key "payments", "users"
   add_foreign_key "picturescenes", "movies"
   add_foreign_key "posts", "users"
   add_foreign_key "scenes", "movies"

@@ -11,10 +11,7 @@
       - if user_signed_in?
         %li= link_to "Users", users_path
         %li= link_to "Your Messages", conversations_path
-        %li.has-submenu
-          %a{:herf => "#0"} Everything
-          %ul.submenu.menu.vertical{"data-submenu" => ""}
-            %li= link_to "Posts", posts_path
+        %li= link_to "Posts", posts_path
         - if current_user.role == "admin"
           %li.has-submenu
             %a{:herf => "#0"} Admin
