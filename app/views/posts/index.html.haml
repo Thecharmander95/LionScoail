@@ -7,9 +7,7 @@
     %h1 Everyones posts
     - @posts.each do |post|
       .callout
-        = link_to user_path(post.user), class: "box" do
-          = image_tag post.user.avatar.variant(resize_to_fill: [60, 60]) if post.user.avatar.attached?
-          %h5= post.user.username
+        %h5= post.user.username
         .center
           - if post.picture.attached?
             - if post.picture.image?
