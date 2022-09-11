@@ -4,6 +4,8 @@
     %h3 Send your message
     = turbo_frame_tag "new_message" do
       = render 'messages/form'
+    = link_to "Back", conversations_path, class: "button"
+
     %br/
     .content-desktop
       %h5 Other Conversations
