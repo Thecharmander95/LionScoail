@@ -13,7 +13,11 @@ class User < ApplicationRecord
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_one_attached :avatar, dependent: :destroy
-  has_many :messages, dependent: :delete_all
+  has_many :messages, dependent: :destroy
+  has_many :movies, dependent: :destroy
+  has_many :forums, dependent: :destroy
+  has_many :payments, dependent: :destroy
+
 
   validates :username, uniqueness: true, length: { minimum:1}
 
