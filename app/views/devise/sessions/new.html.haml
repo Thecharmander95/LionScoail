@@ -1,16 +1,19 @@
 .sign-in
-  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  = form_for(resource, as: resource_name, url: session_path(resource_name), html: { data: { turbo: false} } ) do |f|
     .grid-x
       .medium-3.cell
         %br/
       .medium-6.cell.space
         .callout.round
-          %h2 Log in
+          .center
+            %h2 Log in
           .field
             = f.label :Email
+            %br/
             = f.email_field :email, autofocus: true, autocomplete: "email"
           .field
             = f.label :Password
+            %br/
             = f.password_field :password, autocomplete: "current-password"
           - if devise_mapping.rememberable?
             .field
