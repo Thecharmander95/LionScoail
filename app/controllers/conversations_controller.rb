@@ -19,23 +19,12 @@ class ConversationsController < ApplicationController
     redirect_to conversation_messages_path(@conversation)
   end
 
-  def update
-    @conversation = Conversation.find(params[:id])
-    respond_to do |format|
-      if @conversation.update(conversation_params)
-        format.html { redirect_to conversations_path, notice: 'Conversation was successfully deleted.' }
-        format.json { render :index, status: :ok, location: @conversation }
-      else
-        format.html { render :edit }
-        format.json { render json: @conversation.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   def destroy
     @conversation = Conversation.find(params[:id])
+    @conversation.update_attribute(:sender_id , "")
+    @conversation.update_attribute(:receiver_id , "")
     @conversation.delete
-    redirect_to admin_conversation_path
+    redirect_to root_path, notice: 'Conversation was successfully deleted.'
   end
 
   private

@@ -6,6 +6,7 @@
         %h6= link_to conversation.recipient(current_user).username, conversation_messages_path(conversation)
         - if !conversation.unread_message_count(current_user).zero?
           (#{conversation.unread_message_count(current_user)})
+        = link_to "Delete Conversation", conversation ,'data-turbo-method': :delete, data: { confirm: 'Are you sure?' }
   .medium-6.cell.space
     %h3 All Users
     - @users.each do |user|
