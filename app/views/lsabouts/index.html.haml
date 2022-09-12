@@ -1,0 +1,15 @@
+- @abouts.each do |about|
+  %br/
+  %h1= about.title
+  %br/
+  %h4= about.toppara
+  %br/
+  %h4= about.change
+  %h6= about.list1
+  %h6= about.list2
+  %h6= about.list3
+  %br/
+  %p= link_to "#{about.githubtitle}", about.linkgithub, target: :_blank
+  %br/
+  %h5= about.buttom
+  %br/

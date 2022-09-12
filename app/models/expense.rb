@@ -1,5 +1,4 @@
 class Expense < ApplicationRecord
-    establish_connection (:users)
     belongs_to :payments
 
     validates :title, presence: true, length: { minimum: 4}

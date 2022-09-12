@@ -1,5 +1,4 @@
 class Forum < ApplicationRecord
-  establish_connection(:users)
   extend FriendlyId
 
   belongs_to :user

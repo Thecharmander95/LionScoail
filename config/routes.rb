@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   # All the resources
   resources :posts
-  resources :abouts
+  resources :lsabouts
   resources :errors
   resources :relationships, only: [:create, :destroy]
   resources :disables

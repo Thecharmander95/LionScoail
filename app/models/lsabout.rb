@@ -1,0 +1,2 @@
+class Lsabout < ApplicationRecord
+end

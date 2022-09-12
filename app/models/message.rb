@@ -1,5 +1,4 @@
 class Message < ApplicationRecord
-  establish_connection(:users)
   after_create_commit { broadcast_prepend_to "messages", target: self.conversation }
 
   belongs_to :conversation
