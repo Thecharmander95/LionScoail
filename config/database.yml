@@ -24,7 +24,7 @@ default: &default
 development:
   primary:
     adapter: postgresql
-    database: DataLionNav_development
+    database: DataLionNav_production
 
 production:
   primary:
