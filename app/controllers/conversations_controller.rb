@@ -23,6 +23,7 @@ class ConversationsController < ApplicationController
     @conversation = Conversation.find(params[:id])
     @conversation.update_attribute(:sender_id , "")
     @conversation.update_attribute(:receiver_id , "")
+    @conversation.messages.destroy_all
     @conversation.delete
     redirect_to root_path, notice: 'Conversation was successfully deleted.'
   end
