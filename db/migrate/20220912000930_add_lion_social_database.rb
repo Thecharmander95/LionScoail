@@ -24,13 +24,5 @@ class AddLionSocialDatabase < ActiveRecord::Migration[7.0]
       t.text :linkgithub
       t.text :githubtitle
     end
-
-    create_table :errors do |t|
-      t.string :error
-      t.string :site
-      t.text :description
-
-      t.timestamps
-    end
   end
 end
