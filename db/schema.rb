@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_12_004216) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_18_203043) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -79,6 +79,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_12_004216) do
     t.string "conversationdisable"
     t.string "homedisable"
     t.string "userdisable"
+    t.string "movie"
+    t.string "scene"
+    t.string "credit"
+    t.string "error"
+    t.string "expense"
+    t.string "forums"
+    t.string "lsabout"
+    t.string "payment"
+    t.string "picturescene"
+    t.string "lionsocial"
+    t.string "lionfianace"
+    t.string "moviemaker"
+    t.string "tutorial"
+    t.string "myaccont"
   end
 
   create_table "errors", force: :cascade do |t|
