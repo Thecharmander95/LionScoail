@@ -1,0 +1,5 @@
+[phases.setup]
+nixPkgs = ["...", "imagemagick"]
+
+[phases.build]
+cmds = ["bundle"]
