@@ -35,7 +35,7 @@ hr {
 }
 
 pre {
-  font-family: monospace, monospace;
+  font-family: "JosefinSans";
   font-size: 1em;
 }
 
@@ -57,7 +57,7 @@ strong {
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
+  font-family: "JosefinSans";
   font-size: 1em;
 }
 
@@ -90,7 +90,7 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit;
+  font-family: "JosefinSans";
   font-size: 100%;
   line-height: 1.15;
   margin: 0;
@@ -208,7 +208,7 @@ template {
 }
 
 .foundation-mq {
-  font-family: "small=0em&medium=40em&large=64em&xlarge=75em&xxlarge=90em";
+  font-family: "JosefinSans";
 }
 
 html {
@@ -228,7 +228,7 @@ body {
   margin: 0;
   padding: 0;
   background: #fefefe;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "JosefinSans";
   font-weight: normal;
   line-height: 1.5;
   color: #0a0a0a;
@@ -292,7 +292,7 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit;
+  font-family: "JosefinSans";
 }
 
 .is-visible {
@@ -317,7 +317,7 @@ textarea {
   background-color: #fefefe;
   -webkit-box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
   box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
-  font-family: inherit;
+  font-family: "JosefinSans";
   font-size: 1rem;
   font-weight: normal;
   line-height: 1.5;
@@ -570,7 +570,7 @@ select {
   border: 1px solid #cacaca;
   border-radius: 0;
   background-color: #fefefe;
-  font-family: inherit;
+  font-family: "JosefinSans";
   font-size: 1rem;
   font-weight: normal;
   line-height: 1.5;
@@ -718,7 +718,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: "JosefinSans";
   font-style: normal;
   font-weight: normal;
   color: inherit;
@@ -888,7 +888,7 @@ kbd {
   margin: 0;
   padding: 0.125rem 0.25rem 0;
   background-color: #e6e6e6;
-  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  font-family: "JosefinSans";
   color: #0a0a0a;
 }
 
@@ -932,7 +932,7 @@ cite:before, .cite-block:before {
 code, .code-inline {
   border: 1px solid #cacaca;
   background-color: #e6e6e6;
-  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  font-family: "JosefinSans";
   font-weight: normal;
   color: #0a0a0a;
   display: inline;
@@ -944,7 +944,7 @@ code, .code-inline {
 .code-block {
   border: 1px solid #cacaca;
   background-color: #e6e6e6;
-  font-family: Consolas, "Liberation Mono", Courier, monospace;
+  font-family: "JosefinSans";
   font-weight: normal;
   color: #0a0a0a;
   display: block;
@@ -3719,7 +3719,7 @@ h3 {
   border-radius: 0;
   -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
   transition: background-color 0.25s ease-out, color 0.25s ease-out;
-  font-family: inherit;
+  font-family: "JosefinSans";
   font-size: 0.9rem;
   -webkit-appearance: none;
   line-height: 1;

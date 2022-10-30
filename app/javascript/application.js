@@ -9,4 +9,5 @@ import foundation from "foundation-sites"
 document.addEventListener("turbo:load", () => {
   $(document).foundation();
 });
+
 import "./controllers"
