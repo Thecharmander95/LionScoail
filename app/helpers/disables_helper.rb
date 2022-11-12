@@ -18,10 +18,10 @@ module DisablesHelper
       if user_signed_in?
         if current_user.role == "admin"
         else
-          redirect_to disables_path
+          redirect_to lionnav_path
         end
       else
-        redirect_to disables_path
+        redirect_to lionnav_path
       end
     end
   end
@@ -32,4 +32,26 @@ module DisablesHelper
     else
     end
   end
+
+  def errordisable_check
+    if Disable.first.error == "yes"
+      redirect_to disables_path
+    else
+    end
+  end
+
+  def aboutdisable_check
+    if Disable.first.lsabout == "yes"
+      redirect_to disables_path
+    else
+    end
+  end
+
+  def lionsocialdisable_check
+    if Disable.first.lionsocial == "yes"
+      redirect_to lionsocial_path
+    else
+    end
+  end
+
 end

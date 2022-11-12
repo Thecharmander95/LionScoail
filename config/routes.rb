@@ -28,10 +28,7 @@ Rails.application.routes.draw do
     resources :messages, only: [:index, :create]
   end
 
-  get :dis , "disables/change"
-  get 'admins/index'
-  get 'admins/users'
-  get 'admins/conversations'
-  get 'admins/posts'
+  get :lionnav , "disables/lionnav"
+  get :lionsocial, "disables/lionsocial"
 
 end

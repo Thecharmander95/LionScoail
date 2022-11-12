@@ -32,6 +32,12 @@ class DisablesController < ApplicationController
   def index
   end
 
+  def lionnav
+  end
+
+  def lionsocial
+  end
+
   def change
     @disables = Disable.all
   end

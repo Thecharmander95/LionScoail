@@ -1,5 +1,6 @@
 class RelationshipsController < ApplicationController
   before_action :sitedisable_check
+  before_action :lionsocialdisable_check
   before_action :authenticate_user!
   
   def create
