@@ -10,19 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_09_18_203043) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_01_010208) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "abouts", force: :cascade do |t|
-    t.string "title"
-    t.text "toppara"
-    t.text "change"
-    t.text "list1"
-    t.text "list2"
-    t.text "list3"
-    t.text "buttum"
-  end
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -54,13 +44,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_18_203043) do
 
   create_table "announcements", force: :cascade do |t|
     t.string "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "badusers", force: :cascade do |t|
-    t.text "user"
-    t.text "what"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -114,21 +97,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_18_203043) do
 
   create_table "errors", force: :cascade do |t|
     t.string "error"
+    t.string "site"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "expenses", force: :cascade do |t|
-    t.string "title"
-    t.decimal "amount"
-    t.date "time"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "payments_id"
-    t.index ["payments_id"], name: "index_expenses_on_payments_id"
-    t.index ["user_id"], name: "index_expenses_on_user_id"
   end
 
   create_table "forums", force: :cascade do |t|
@@ -147,7 +119,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_18_203043) do
     t.integer "sluggable_id", null: false
     t.string "sluggable_type", limit: 50
     t.string "scope"
-    t.datetime "created_at", precision: nil
+    t.datetime "created_at"
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
@@ -183,18 +155,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_18_203043) do
     t.string "author"
     t.bigint "user_id"
     t.index ["user_id"], name: "index_movies_on_user_id"
-  end
-
-  create_table "payments", force: :cascade do |t|
-    t.string "option"
-    t.string "info"
-    t.decimal "amount"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "expenses_id"
-    t.index ["expenses_id"], name: "index_payments_on_expenses_id"
-    t.index ["user_id"], name: "index_payments_on_user_id"
   end
 
   create_table "picturescenes", force: :cascade do |t|
@@ -256,14 +216,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_18_203043) do
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "credits", "movies"
-  add_foreign_key "expenses", "payments", column: "payments_id"
-  add_foreign_key "expenses", "users"
   add_foreign_key "forums", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
   add_foreign_key "movies", "users"
-  add_foreign_key "payments", "expenses", column: "expenses_id"
-  add_foreign_key "payments", "users"
   add_foreign_key "picturescenes", "movies"
   add_foreign_key "posts", "users"
   add_foreign_key "scenes", "movies"
