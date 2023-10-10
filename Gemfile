@@ -18,7 +18,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap'
 
 # Background Stuff
-gem 'sidekiq', '<7'
+gem "sidekiq", ">= 6.5.10"
 gem 'redis'
 
 # Html to Haml gem
