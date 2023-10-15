@@ -2,12 +2,17 @@
 import jquery from "jquery"
 window.jQuery = jquery
 window.$ = jquery
+
 import "@hotwired/turbo-rails"
+import "@rails/activestorage"
+import "./controllers"
 
-import foundation from "foundation-sites"
+// Foundation setup.
+import Foundation from 'foundation-sites'
 
-document.addEventListener("turbo:load", () => {
+$(document).on('turbo:load', function () {
   $(document).foundation();
 });
 
-import "./controllers"
+// My Custom JavaScript
+import "./custom/direct_upload"

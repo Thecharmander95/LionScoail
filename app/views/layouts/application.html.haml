@@ -5,9 +5,10 @@
     %meta{name: "viewport", content: "width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86"}/
     %title= @page_title || 'Lion Social'
     = favicon_link_tag ('favicon.ico')
-    = stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload"
-    = javascript_importmap_tags
     = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
   %body
     = render 'layouts/topbar'
     = render 'layouts/flashmessages'

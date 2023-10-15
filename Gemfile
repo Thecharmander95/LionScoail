@@ -29,6 +29,9 @@ gem 'haml-rails', '~> 2.0.1'
 gem 'foundation-rails'
 gem 'autoprefixer-rails'
 
+gem 'jsbundling-rails'
+gem 'cssbundling-rails'
+
 gem 'friendly_id'
 
 # New Gems

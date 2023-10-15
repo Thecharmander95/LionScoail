@@ -38,7 +38,7 @@
       .medium-4.cell.space
         .field
           = f.label :avatar, "Profile Picture"
-          = f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png,image/heic'
+          = f.file_field :avatar, accept: 'image/jpeg,image/gif,image/png,image/heic', direct_upload: true
           - if f.object.avatar.attached?
             = image_tag f.object.avatar.variant(resize_to_limit: [400, 400])
   -else

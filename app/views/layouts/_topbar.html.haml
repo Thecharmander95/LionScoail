@@ -1,4 +1,7 @@
 - unless controller_name == "disables"
+  .title-bar{"data-hide-for" => "medium", "data-responsive-toggle" => "responsive-menu"}
+    %button.menu-icon{"data-toggle" => "responsive-menu", :type => "button"}
+    .title-bar-title Lion Social
   #responsive-menu.top-bar
     .top-bar-left
       %ul.dropdown.menu{"data-dropdown-menu" => ""}
@@ -10,8 +13,6 @@
           %li= link_to "Users", users_path
           %li= link_to "Your Messages", conversations_path
           %li= link_to "Posts", posts_path
-          - if current_user.role == "admin"
-            // %li= link_to "Admin"
           %li.has-submenu
             %a{:href => "#0"} #{current_user.username}
             %ul.submenu.menu.vertical{"data-submenu" => ""}

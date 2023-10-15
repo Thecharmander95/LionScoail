@@ -31,3 +31,9 @@
 /public/packs
 /public/packs-test
 .ruby-version
+
+/node_modules
+yarn-error.log
+
+/app/assets/builds/*
+!/app/assets/builds/.keep
