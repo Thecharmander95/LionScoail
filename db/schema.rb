@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_01_010208) do
+ActiveRecord::Schema[7.1].define(version: 2023_10_16_214639) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -137,6 +137,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_010208) do
     t.text "githubtitle"
   end
 
+  create_table "mabouts", force: :cascade do |t|
+    t.string "title"
+    t.text "toppara"
+    t.text "change"
+    t.text "list1"
+    t.text "list2"
+    t.text "list3"
+    t.text "buttom"
+    t.text "linkgithub"
+    t.text "githubtitle"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "messages", force: :cascade do |t|
     t.text "body"
     t.bigint "conversation_id"
@@ -183,6 +197,24 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_010208) do
     t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
+  create_table "room_messages", force: :cascade do |t|
+    t.bigint "room_id", null: false
+    t.bigint "user_id", null: false
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["room_id"], name: "index_room_messages_on_room_id"
+    t.index ["user_id"], name: "index_room_messages_on_user_id"
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_rooms_on_name", unique: true
+  end
+
   create_table "scenes", force: :cascade do |t|
     t.string "name"
     t.text "content"
@@ -222,5 +254,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_01_010208) do
   add_foreign_key "movies", "users"
   add_foreign_key "picturescenes", "movies"
   add_foreign_key "posts", "users"
+  add_foreign_key "room_messages", "rooms"
+  add_foreign_key "room_messages", "users"
   add_foreign_key "scenes", "movies"
 end
