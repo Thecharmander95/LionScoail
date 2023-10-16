@@ -16,7 +16,7 @@ class User < ApplicationRecord
   has_many :movies, dependent: :destroy
   has_many :forums, dependent: :destroy
   has_many :payments, dependent: :destroy
-
+  has_many :room_messages, dependent: :delete_all
 
   validates :username, uniqueness: true, length: { minimum:1}
 

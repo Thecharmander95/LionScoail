@@ -15,5 +15,8 @@ class CreateChatRooms < ActiveRecord::Migration[7.1]
 
       t.timestamps
     end
+
+    add_column :disables, :chatrooms, :string
+
   end
 end

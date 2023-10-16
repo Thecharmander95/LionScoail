@@ -93,6 +93,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_16_214639) do
     t.string "moviemaker"
     t.string "tutorial"
     t.string "myaccont"
+    t.string "chatrooms"
   end
 
   create_table "errors", force: :cascade do |t|

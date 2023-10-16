@@ -28,6 +28,10 @@ Rails.application.routes.draw do
     resources :messages, only: [:index, :create]
   end
 
+  resources :rooms do
+    resources :room_messages
+  end
+
   get :lionnav , "disables/lionnav"
   get :lionsocial, "disables/lionsocial"
 
