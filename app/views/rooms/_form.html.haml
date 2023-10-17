@@ -10,4 +10,8 @@
 = form_for @room do |form|
   = form.label :Name_for_new_chat_room
   = form.text_field :name
+
+  = form.label :What_is_this_room_about
+  = form.text_field :description
+
   = form.submit "Create chat room", class: 'button'

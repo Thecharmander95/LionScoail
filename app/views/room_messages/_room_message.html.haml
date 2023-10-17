@@ -1,6 +1,11 @@
-- if room_message.persisted?
-  .callout
-    = image_tag room_message.user.avatar.variant(resize_to_fill: [40, 40]) if room_message.user.avatar.attached?
-    = room_message.user.username
-    said:
-    = room_message.message
+= turbo_frame_tag dom_id(room_message) do
+  - if room_message.persisted?
+    .callout
+      .grid-x
+        .medium-9.cell
+          Sent at:
+          = time_ago_in_words(room_message.created_at)
+          ago
+      = room_message.user.username
+      said:
+      = room_message.message

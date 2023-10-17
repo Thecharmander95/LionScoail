@@ -12,5 +12,5 @@
     %h1
       This room is
       = @room.name
-    %div{id: "room_messages#{@room.id}"}
+    = turbo_frame_tag dom_id(@room) do
       = render @room_messages
