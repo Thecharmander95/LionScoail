@@ -5,40 +5,34 @@
       %li= msg
 = form_for @about do |f|
   %p
+    = f.label :Site
+    = f.text_field :site
+  %p
     = f.label :Title
-    %br/
     = f.text_field :title
   %p
     = f.label :Top_paragrath
-    %br/
     = f.text_area :toppara
   %p
     = f.label :Version
-    %br/
     =f.text_field :change
   %p
     = f.label :list1
-    %br/
     = f.text_field :list1
   %p
     = f.label :list2
-    %br/
     = f.text_field :list2
   %p
     = f.label :list3
-    %br/
     = f.text_field :list3
   %p
     = f.label :Github_Name_For_link
-    %br/
     = f.text_field :githubtitle
   %p
     = f.label :Link_For_Github
-    %br/
     = f.text_field :linkgithub
   %p
     = f.label :bottom
-    %br/
     = f.text_area :buttom
   %p
     = f.submit class: "button"

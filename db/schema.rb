@@ -10,9 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_10_16_214639) do
+ActiveRecord::Schema[7.1].define(version: 2023_10_17_210310) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "abouts", force: :cascade do |t|
+    t.string "title"
+    t.text "toppara"
+    t.text "change"
+    t.text "list1"
+    t.text "list2"
+    t.text "list3"
+    t.text "buttom"
+    t.text "linkgithub"
+    t.text "githubtitle"
+    t.string "site"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -124,32 +139,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_16_214639) do
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
-  end
-
-  create_table "lsabouts", force: :cascade do |t|
-    t.string "title"
-    t.text "toppara"
-    t.text "change"
-    t.text "list1"
-    t.text "list2"
-    t.text "list3"
-    t.text "buttom"
-    t.text "linkgithub"
-    t.text "githubtitle"
-  end
-
-  create_table "mabouts", force: :cascade do |t|
-    t.string "title"
-    t.text "toppara"
-    t.text "change"
-    t.text "list1"
-    t.text "list2"
-    t.text "list3"
-    t.text "buttom"
-    t.text "linkgithub"
-    t.text "githubtitle"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "messages", force: :cascade do |t|
