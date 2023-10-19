@@ -12,9 +12,7 @@
   %body
     = render 'layouts/topbar'
     = render 'layouts/flashmessages'
-    - if Announcement.first.text == ""
-    -else
-      =render "announcements/render"
+    = render "announcements/render"
     .grid-container
       .top-bar-padding-bottom 
       = yield
