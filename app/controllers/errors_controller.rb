@@ -12,6 +12,8 @@ class ErrorsController < ApplicationController
 
   def create
     @error = Error.new(error_params)
+    @error.update_attribute(:site, "social")
+    @error.update_attribute(:resolved, false)
     if @error.save
       flash[:notice] = "Error was successfully reported. We will review it and fix this error #{current_user.username}."
       redirect_to root_path
@@ -39,7 +41,7 @@ class ErrorsController < ApplicationController
   end
 
   def error_params
-    params.require(:error).permit(:error, :description)
+    params.require(:error).permit(:error, :description, :site, :resolved)
   end
 
 end
