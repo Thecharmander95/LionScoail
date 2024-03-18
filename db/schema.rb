@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_08_220145) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_10_175356) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -66,6 +66,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_08_220145) do
     t.boolean "hidden"
   end
 
+  create_table "badusers", force: :cascade do |t|
+    t.text "user"
+    t.text "what"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "comments", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "post_id"
@@ -96,30 +103,30 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_08_220145) do
   end
 
   create_table "disables", force: :cascade do |t|
-    t.string "postdisable"
-    t.string "conversationdisable"
-    t.string "homedisable"
-    t.string "userdisable"
-    t.string "movie"
-    t.string "scene"
-    t.string "credit"
-    t.string "error"
-    t.string "expense"
-    t.string "forums"
-    t.string "lsabout"
-    t.string "payment"
-    t.string "picturescene"
-    t.string "lionsocial"
-    t.string "lionfianace"
-    t.string "moviemaker"
-    t.string "tutorial"
-    t.string "myaccont"
-    t.string "chatrooms"
+    t.boolean "postdisable"
+    t.boolean "conversationdisable"
+    t.boolean "homedisable"
+    t.boolean "userdisable"
+    t.boolean "movie"
+    t.boolean "scene"
+    t.boolean "credit"
+    t.boolean "error"
+    t.boolean "expense"
+    t.boolean "forums"
+    t.boolean "about"
+    t.boolean "payment"
+    t.boolean "picturescene"
+    t.boolean "lionsocial"
+    t.boolean "lionfianace"
+    t.boolean "moviemaker"
+    t.boolean "tutorial"
+    t.boolean "myaccont"
+    t.boolean "chatrooms"
+    t.boolean "video"
   end
 
   create_table "errors", force: :cascade do |t|
     t.string "error"
-    t.string "site"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -142,7 +149,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_08_220145) do
     t.integer "sluggable_id", null: false
     t.string "sluggable_type", limit: 50
     t.string "scope"
-    t.datetime "created_at"
+    t.datetime "created_at", precision: nil
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
@@ -168,6 +175,19 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_08_220145) do
     t.index ["user_id"], name: "index_movies_on_user_id"
   end
 
+  create_table "payments", force: :cascade do |t|
+    t.string "method"
+    t.date "experation"
+    t.boolean "expierd"
+    t.integer "digts"
+    t.float "samount"
+    t.float "camount"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_payments_on_user_id"
+  end
+
   create_table "picturescenes", force: :cascade do |t|
     t.string "name"
     t.bigint "movie_id"
@@ -182,6 +202,19 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_08_220145) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "purchases", force: :cascade do |t|
+    t.string "name"
+    t.date "date"
+    t.float "amount"
+    t.boolean "recurring"
+    t.bigint "user_id", null: false
+    t.bigint "payment_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["payment_id"], name: "index_purchases_on_payment_id"
+    t.index ["user_id"], name: "index_purchases_on_user_id"
   end
 
   create_table "relationships", force: :cascade do |t|
@@ -210,6 +243,21 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_08_220145) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_rooms_on_name", unique: true
+  end
+
+  create_table "savings", force: :cascade do |t|
+    t.string "account"
+    t.float "samount"
+    t.float "camount"
+    t.float "rate"
+    t.integer "years"
+    t.date "start"
+    t.date "end"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "intrest"
+    t.index ["user_id"], name: "index_savings_on_user_id"
   end
 
   create_table "scenes", force: :cascade do |t|
@@ -259,9 +307,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_08_220145) do
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
   add_foreign_key "movies", "users"
+  add_foreign_key "payments", "users"
   add_foreign_key "picturescenes", "movies"
   add_foreign_key "posts", "users"
+  add_foreign_key "purchases", "payments"
+  add_foreign_key "purchases", "users"
   add_foreign_key "room_messages", "rooms"
   add_foreign_key "room_messages", "users"
+  add_foreign_key "savings", "users"
   add_foreign_key "scenes", "movies"
 end

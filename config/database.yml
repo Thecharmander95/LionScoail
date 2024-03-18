@@ -24,9 +24,9 @@ default: &default
 development:
   primary:
     adapter: postgresql
-    database: DataLionNav_development
+    database: DataLionNav_production
 
 production:
   primary:
     adapter: postgresql
-    url: <%= ENV['DATABASE_URL'] %>
+    database: DataLionNav_production
