@@ -21,17 +21,17 @@ default: &default
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-# development:
-#   primary:
-#     adapter: postgresql
-#     database: DataLionNav_production
+development:
+  primary:
+    adapter: postgresql
+    database: DataLionNav_production
 
 production:
   primary:
     adapter: postgresql
     encoding: utf8
-    database: DataLionNav_production
-    username: postgres
-    password: charmander23
-    host: web-server.cbgwe84g4dtv.us-east-2.rds.amazonaws.com
-    port: 5432
+    database: <%= ENV.fetch("RDS_DB_NAME")%>
+    username: <%= ENV.fetch("RDS_USERNAME")%>
+    password: <%= ENV.fetch("RDS_PASSWORD")%>
+    host: <%= ENV.fetch("RDS_HOSTNAME")%>
+    port: <%= ENV.fetch("RDS_PORT")%>
