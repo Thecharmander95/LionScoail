@@ -1,10 +1,10 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.18.1"
 
-server '172.31.3.122', user: 'ubuntu', roles: %w{app db web}
+server 'ec2-18-227-79-63.us-east-2.compute.amazonaws.com', user: 'ubuntu', roles: %w{app db web}
 
 set :application, "LionScoail"
-set :repo_url, "git@github.com:Thecharmader95/LionScoail.git"
+set :repo_url, "git@github.com:Thecharmander95/LionScoail.git"
 
 # Deploy to the user's home directory
 set :deploy_to, "/home/ubuntu/#{fetch :application}"
