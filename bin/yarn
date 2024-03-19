@@ -9,8 +9,6 @@ Dir.chdir(APP_ROOT) do
 
   if yarn
     exec yarn, *ARGV
-    exec yarn build
-    exec yarn build:css 
   else
     $stderr.puts "Yarn executable was not detected in the system."
     $stderr.puts "Download Yarn at https://yarnpkg.com/en/docs/install"
