@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.18.1"
 
-server 'ec2-18-227-79-63.us-east-2.compute.amazonaws.com', user: 'ubuntu', roles: %w{app db web}
+server 'ec2-3-130-66-185.us-east-2.compute.amazonaws.com', user: 'ubuntu', roles: %w{app db web}
 
 set :application, "LionScoail"
 set :repo_url, "git@github.com:Thecharmander95/LionScoail.git"

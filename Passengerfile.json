@@ -1,0 +1,3 @@
+passenger_user_switching on;
+passenger_user ubuntu;
+passenger_group ubuntu;

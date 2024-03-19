@@ -49,7 +49,7 @@
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
-server "ec2-18-227-79-63.us-east-2.compute.amazonaws.com",
+server "ec2-3-130-66-185.us-east-2.compute.amazonaws.com",
   user: "ubuntu",
   roles: %w{app db web},
   ssh_options: {
