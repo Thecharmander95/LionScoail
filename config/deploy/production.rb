@@ -54,7 +54,7 @@ server "ec2-3-130-66-185.us-east-2.compute.amazonaws.com",
   roles: %w{app db web},
   ssh_options: {
     user: "ubuntu", # overrides user setting above
-    keys: %w(/Users/leo/Documents/Programing/heyhey.pem),
+    keys: %w(/Users/leo/Documents/Programing/new3-web-server.pem),
     forward_agent: false,
     auth_methods: %w(publickey password),
     password: "please use keys"

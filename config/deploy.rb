@@ -1,20 +1,18 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.18.1"
 
-server 'ec2-3-130-66-185.us-east-2.compute.amazonaws.com', user: 'ubuntu', roles: %w{app db web}
-
-set :application, "LionScoail"
-set :repo_url, "git@github.com:Thecharmander95/LionScoail.git"
-
-# Deploy to the user's home directory
-set :deploy_to, "/home/ubuntu/#{fetch :application}"
-
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 
 # Only keep the last 5 releases to save disk space
 set :keep_releases, 5
 
 set :branch, "main"
+set :application, "LionScoail"
+set :repo_url, "https://github.com/Thecharmander95/LionScoail.git"
+set :branch, "main"
+set :deploy_to, "/home/ubuntu/#{fetch :application}"
+append :linked_files, "config/master.key"
+
 
 # Optionally, you can symlink your database.yml and/or secrets.yml file from the shared directory during deploy
 # This is useful if you don't want to use ENV variables
