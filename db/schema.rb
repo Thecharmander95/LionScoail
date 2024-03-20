@@ -66,13 +66,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_10_175356) do
     t.boolean "hidden"
   end
 
-  create_table "badusers", force: :cascade do |t|
-    t.text "user"
-    t.text "what"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "comments", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "post_id"
@@ -127,6 +120,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_10_175356) do
 
   create_table "errors", force: :cascade do |t|
     t.string "error"
+    t.string "site"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -149,7 +143,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_10_175356) do
     t.integer "sluggable_id", null: false
     t.string "sluggable_type", limit: 50
     t.string "scope"
-    t.datetime "created_at", precision: nil
+    t.datetime "created_at"
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"

@@ -1,8 +1,5 @@
 class CreatePayments < ActiveRecord::Migration[7.1]
   def change
-    remove_foreign_key :expenses, :payments
-    drop_table :payments
-    drop_table :expenses
     create_table :payments do |t|
       t.string :method
       t.date :experation
