@@ -41,7 +41,7 @@ module DisablesHelper
   end
 
   def aboutdisable_check
-    if Disable.first.lsabout == "yes"
+    if Disable.first.about == "yes"
       redirect_to disables_path
     else
     end

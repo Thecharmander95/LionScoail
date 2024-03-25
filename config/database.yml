@@ -24,14 +24,14 @@ default: &default
 development:
   primary:
     adapter: postgresql
-    database: DataLionNav_production
+    database: DataLionNav_development 
 
 production:
   primary:
     adapter: postgresql
     encoding: utf8
-    database: <%= ENV.fetch("RDS_DB_NAME")%>
-    username: <%= ENV.fetch("RDS_USERNAME")%>
-    password: <%= ENV.fetch("RDS_PASSWORD")%>
-    host: <%= ENV.fetch("RDS_HOSTNAME")%>
-    port: <%= ENV.fetch("RDS_PORT")%>
+    database: <%= Rails.application.credentials.dig(:rds, :dbname) %>
+    username: <%= Rails.application.credentials.dig(:rds, :username) %>
+    password: <%= Rails.application.credentials.dig(:rds, :password) %>
+    host: <%= Rails.application.credentials.dig(:rds, :hostname) %>
+    port: <%= Rails.application.credentials.dig(:rds, :port) %>

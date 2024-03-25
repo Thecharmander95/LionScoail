@@ -3,8 +3,8 @@
   .medium-8.collum
     .center
       - @abouts.each do |about|
-        .callout
-          - if about.site == "lionsocial"
+        - if about.site == "social" and about.hidden == true
+          .callout
             %h1= about.title
             %h5= about.toppara
             %h5= about.change
