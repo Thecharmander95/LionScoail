@@ -3,7 +3,7 @@
   .medium-8.collum
     .center
       - @abouts.each do |about|
-        - if about.site == "social" and about.hidden == true
+        - if about.site == "social" and about.hidden == false
           .callout
             %h1= about.title
             %h5= about.toppara
