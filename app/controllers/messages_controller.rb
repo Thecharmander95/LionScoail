@@ -10,12 +10,11 @@ class MessagesController < ApplicationController
 
   def index
     @page_title = "Messages Lion social"
-    @messages = @conversation.messages
+    @messages = @conversation.messages.order(created_at: :desc)
 
     @messages.where("user_id != ? AND read = ?", current_user.id, false).update_all(read: true)
 
     @message = @conversation.messages.new
-    @messages = @messages.by_newest
     @conversations = Conversation.where("sender_id = ? OR receiver_id = ?", current_user.id, current_user.id)
   end
 

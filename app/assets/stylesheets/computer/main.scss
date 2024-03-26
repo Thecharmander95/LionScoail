@@ -1,3 +1,5 @@
+@import "messages";
+
 .content-mobile {
   display: none;
 }
@@ -9,10 +11,6 @@ html body{
 
 .space {
   padding-right: 5%;
-}
-
-#message_body {
-  border-radius: 10px;
 }
 
 .split-profile {
