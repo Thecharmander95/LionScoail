@@ -6347,6 +6347,14 @@ a.thumbnail image {
     background-color: #ffe4c4;
     padding-bottom: 1px;
   }
+  .callout.msg.blank {
+    height: calc(100vh - 103px);
+    border-radius: 0;
+    border: 0;
+    margin-bottom: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
   .content-mobile {
     display: none;
   }
