@@ -26,7 +26,8 @@
             %h5= @conversation.recipient(current_user).username
           .medium-1.cell
             = link_to "Delete", @conversation ,data: { "turbo-method": :delete, turbo_confirm: 'Are you sure? This will delete it on both ends.' }
-      %h3= @conversation.recipient(current_user).username
+      .content-mobile
+        %h3= @conversation.recipient(current_user).username
     .callout.msg
       = turbo_frame_tag dom_id(@conversation) do
         = render @messages
