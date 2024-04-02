@@ -10,9 +10,10 @@ set :branch, "main"
 set :application, "LionScoail"
 set :repo_url, "https://github.com/Thecharmander95/LionScoail.git"
 set :branch, "main"
-set :deploy_to, "/home/ubuntu/#{fetch :application}"
+set :deploy_to, "/home/leo/#{fetch :application}"
 append :linked_files, "config/master.key"
 
+set :rbenv_type, :user
 
 # Optionally, you can symlink your database.yml and/or secrets.yml file from the shared directory during deploy
 # This is useful if you don't want to use ENV variables
