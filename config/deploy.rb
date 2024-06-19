@@ -10,7 +10,7 @@ set :branch, "main"
 set :application, "LionScoail"
 set :repo_url, "https://github.com/Thecharmander95/LionScoail.git"
 set :branch, "main"
-set :deploy_to, "/home/leo/#{fetch :application}"
+set :deploy_to, "/home/leo/Production/#{fetch :application}"
 append :linked_files, "config/master.key"
 
 set :rbenv_type, :user
