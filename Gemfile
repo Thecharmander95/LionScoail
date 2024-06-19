@@ -21,6 +21,8 @@ gem 'bootsnap'
 gem "sidekiq", ">= 6.5.10"
 gem 'redis'
 
+gem "net-pop", require: false
+
 # Html to Haml gem
 gem 'html2haml'
 gem 'haml-rails', '~> 2.0.1'

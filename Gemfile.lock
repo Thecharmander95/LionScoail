@@ -222,6 +222,7 @@ GEM
       date
       net-protocol
     net-pop (0.1.2)
+      net-protocol
     net-protocol (0.2.2)
       timeout
     net-scp (4.0.0)
@@ -418,6 +419,7 @@ DEPENDENCIES
   jsbundling-rails
   listen (>= 3.2.1)
   mini_magick (~> 4.8)
+  net-pop
   nokogiri (>= 1.12.5)
   pg (>= 0.18, < 2.0)
   puma (~> 6)
