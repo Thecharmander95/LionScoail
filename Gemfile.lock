@@ -222,7 +222,6 @@ GEM
       date
       net-protocol
     net-pop (0.1.2)
-      net-protocol
     net-protocol (0.2.2)
       timeout
     net-scp (4.0.0)
@@ -435,7 +434,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.3.0p0
+   ruby 3.3.3p89
 
 BUNDLED WITH
    2.4.20
