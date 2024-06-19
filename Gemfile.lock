@@ -215,13 +215,14 @@ GEM
     matrix (0.4.2)
     mini_magick (4.13.1)
     mini_mime (1.1.5)
-    minitest (5.23.1)
+    minitest (5.24.0)
     msgpack (1.7.2)
     mutex_m (0.2.0)
     net-imap (0.4.13)
       date
       net-protocol
     net-pop (0.1.2)
+      net-protocol
     net-protocol (0.2.2)
       timeout
     net-scp (4.0.0)
@@ -434,7 +435,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.3.3p89
+   ruby 3.3.0p0
 
 BUNDLED WITH
    2.4.20
