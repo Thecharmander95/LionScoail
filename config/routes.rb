@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   resources :errors
   resources :relationships, only: [:create, :destroy]
   resources :disables
-  resources :announcements
 
   # All resources with do and end
   resources :users do
