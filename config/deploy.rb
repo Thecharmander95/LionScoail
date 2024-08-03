@@ -7,9 +7,8 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bund
 set :keep_releases, 5
 
 set :branch, "main"
-set :application, "MyAccount"
-set :repo_url, "https://github.com/Thecharmander95/MyAccount.git"
-set :branch, "main"
+set :application, "LionScoail"
+set :repo_url, "https://github.com/Thecharmander95/LionScoail.git"
 set :deploy_to, "/home/leo/Production/#{fetch :application}"
 append :linked_files, "config/master.key"
 
